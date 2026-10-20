@@ -8,19 +8,21 @@
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
 
         :root {
-            --bg-base: #f0f3f8;
-            --surface: #ffffff;
-            --surface-subtle: #f8fafc;
-            --accent: #1e3a8a;
-            --accent-glow: #0284c7;
-            --text-heading: #0f172a;
-            --text-body: #334155;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --border-highlight: rgba(2, 132, 199, 0.35);
-            --radius-lg: 20px;
+            /* Warm, Eye-Soothing Cream & Almond Palette (No Pure White) */
+            --bg-base: #f3eee7;
+            --surface: #faf7f2;
+            --surface-subtle: #eee7de;
+            --surface-accent: #e5ded4;
+            --accent: #2e5a88;
+            --accent-glow: #3b82f6;
+            --text-heading: #1f2937;
+            --text-body: #374151;
+            --text-muted: #6b7280;
+            --border: #dfd7cc;
+            --border-highlight: #b0a394;
+            --radius-lg: 18px;
             --radius-md: 12px;
-            --shadow-card: 0 12px 30px -5px rgba(15, 23, 42, 0.08);
+            --shadow-card: 0 10px 25px -4px rgba(60, 50, 40, 0.07);
         }
 
         * {
@@ -42,7 +44,7 @@
             position: relative;
         }
 
-        /* Background Moving Network Animation */
+        /* Subtle Background Canvas */
         #networkCanvas {
             position: fixed;
             top: 0;
@@ -51,17 +53,17 @@
             height: 100vh;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.85;
+            opacity: 0.7;
         }
 
-        /* Static Clean Top Navigation Bar with Hover Highlights */
+        /* Top Navigation Bar */
         .nav-wrapper {
             position: sticky;
             top: 0;
             z-index: 1000;
             display: flex;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(243, 238, 231, 0.92);
             backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border);
             padding: 0.85rem 1rem;
@@ -90,14 +92,12 @@
             transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
         }
 
-        /* Clean Flat Hover State (No 3D rotation/tilt) */
         .tab-btn:hover {
             color: var(--text-heading);
             background-color: var(--surface-subtle);
             border-color: var(--border);
         }
 
-        /* Active Tab Highlight */
         .tab-btn.active {
             color: #ffffff;
             background-color: var(--text-heading);
@@ -113,7 +113,7 @@
             z-index: 2;
         }
 
-        /* Clean White Cards */
+        /* Warm Surface Cards */
         .card {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -122,7 +122,7 @@
             box-shadow: var(--shadow-card);
         }
 
-        /* Hero Header */
+        /* Hero Overview */
         .hero {
             display: grid;
             grid-template-columns: 260px 1fr;
@@ -131,7 +131,7 @@
             margin-bottom: 2.5rem;
         }
 
-        /* Profile Photo Frame (240x290px Display Area) */
+        /* Profile Picture Frame (480x580 px recommended) */
         .profile-container {
             display: flex;
             justify-content: center;
@@ -140,10 +140,10 @@
         .profile-frame {
             width: 240px;
             height: 290px;
-            background: #ffffff;
+            background: var(--surface-subtle);
             border-radius: 18px;
             border: 2px solid var(--border);
-            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+            box-shadow: 0 8px 20px rgba(60, 50, 40, 0.08);
             position: relative;
             display: flex;
             align-items: center;
@@ -183,7 +183,7 @@
         }
 
         .hero-meta h1 span {
-            color: var(--accent-glow);
+            color: var(--accent);
             display: block;
             font-size: 1.6rem;
             font-weight: 600;
@@ -219,21 +219,31 @@
             color: var(--text-heading);
         }
 
-        /* Lateral Slide-In Animation for View Panes */
+        /* -------------------------------------------------------------
+           Active View Panes with Slide-In Keyframe Animation
+        ------------------------------------------------------------- */
         .view-pane {
             display: none;
             opacity: 0;
-            transform: translateX(40px);
-            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .view-pane.active-view {
             display: block;
-            opacity: 1;
-            transform: translateX(0);
+            animation: slideInRight 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        /* Section Components */
+        @keyframes slideInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Section Layouts */
         .section-header {
             border-bottom: 2px solid var(--border);
             padding-bottom: 0.8rem;
@@ -255,7 +265,7 @@
             font-weight: 600;
         }
 
-        /* Timeline Layout */
+        /* Timeline */
         .timeline {
             position: relative;
         }
@@ -285,7 +295,7 @@
             position: absolute;
             width: 14px;
             height: 14px;
-            background: #ffffff;
+            background: var(--surface);
             border: 3px solid var(--text-heading);
             border-radius: 50%;
             left: -6px;
@@ -294,8 +304,8 @@
         }
 
         .timeline-item:hover::before {
-            background: var(--accent-glow);
-            border-color: var(--accent-glow);
+            background: var(--accent);
+            border-color: var(--accent);
         }
 
         .job-title {
@@ -306,7 +316,7 @@
         }
 
         .job-meta {
-            color: var(--accent-glow);
+            color: var(--accent);
             font-size: 0.92rem;
             margin-bottom: 1.2rem;
             font-weight: 700;
@@ -334,11 +344,11 @@
             content: "▹";
             position: absolute;
             left: 0;
-            color: var(--accent-glow);
+            color: var(--accent);
             font-weight: 800;
         }
 
-        /* Cards Grid */
+        /* Inner Cards Grid */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -355,7 +365,7 @@
 
         .inner-box:hover {
             border-color: var(--border-highlight);
-            background: #ffffff;
+            background: var(--surface);
         }
 
         .inner-box h3 {
@@ -363,7 +373,7 @@
             font-size: 1.25rem;
             color: var(--text-heading);
             margin-bottom: 1.2rem;
-            border-left: 3px solid var(--accent-glow);
+            border-left: 3px solid var(--accent);
             padding-left: 0.75rem;
         }
 
@@ -384,14 +394,14 @@
             content: "•";
             position: absolute;
             left: 0;
-            color: var(--accent-glow);
+            color: var(--accent);
             font-size: 1.2rem;
             line-height: 1;
         }
 
         /* Footer */
         footer {
-            background: #ffffff;
+            background: var(--surface);
             padding: 3rem 0;
             border-top: 1px solid var(--border);
             text-align: center;
@@ -416,7 +426,7 @@
         }
 
         .footer-contacts a:hover {
-            color: var(--accent-glow);
+            color: var(--accent);
         }
 
         .copyright-text {
@@ -436,7 +446,7 @@
             color: #ffffff;
             border: none;
             cursor: pointer;
-            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
+            box-shadow: 0 8px 20px rgba(60, 50, 40, 0.2);
             font-size: 1.1rem;
             opacity: 0;
             visibility: hidden;
@@ -451,7 +461,7 @@
 
         #backToTopBtn:hover {
             transform: translateY(-3px);
-            background: var(--accent-glow);
+            background: var(--accent);
         }
 
         @media (max-width: 900px) {
@@ -480,7 +490,7 @@
     <!-- Subtle Moving Background Network & Wireframe Cube -->
     <canvas id="networkCanvas"></canvas>
 
-    <!-- Clean Header Navigation Bar with Slide-In Triggers -->
+    <!-- Top Navigation Tabs (Slides Details In Upon Click) -->
     <nav class="nav-wrapper">
         <div class="tab-deck">
             <button class="tab-btn active" onclick="switchTab('experience', this)">Experience</button>
@@ -512,23 +522,23 @@
 
             <div class="hero-meta">
                 <h1>IT Architect <span>& Systems Engineer</span></h1>
-                <p>Experienced IT Engineer with over 15 years of expertise in designing, implementing, and managing robust IT infrastructure to support business operations[cite: 2]. Highly skilled in system administration, network management, and cloud computing, with a strong track record of optimizing system performance, ensuring high availability, and driving digital transformation initiatives[cite: 2].</p>
+                <p>Experienced IT Engineer with over 15 years of expertise in designing, implementing, and managing robust IT infrastructure to support business operations[cite: 1, 2]. Highly skilled in system administration, network management, and cloud computing, with a strong track record of optimizing system performance, ensuring high availability, and driving digital transformation initiatives[cite: 1, 2].</p>
                 
                 <div class="metric-badges">
                     <div class="metric-pill">
-                        <strong>15+</strong> Years Professional Experience[cite: 2]
+                        <strong>15+</strong> Years Professional Experience[cite: 1, 2]
                     </div>
                     <div class="metric-pill">
-                        <strong>3000+</strong> Infrastructure Servers Managed[cite: 2]
+                        <strong>3000+</strong> Infrastructure Servers Managed[cite: 1, 2]
                     </div>
                     <div class="metric-pill">
-                        <strong>4</strong> Regional Deployment Markets[cite: 2]
+                        <strong>4</strong> Regional Deployment Markets[cite: 1, 2]
                     </div>
                 </div>
             </div>
         </header>
 
-        <!-- ================= TAB 1: PROFESSIONAL EXPERIENCE (SLIDE IN) ================= -->
+        <!-- ================= TAB 1: PROFESSIONAL EXPERIENCE (SLIDES IN) ================= -->
         <div id="pane-experience" class="view-pane active-view">
             <div class="card">
                 <div class="section-header">
@@ -541,17 +551,17 @@
                     <div class="timeline-item">
                         <div class="job-title">IT Architect</div>
                         <div class="job-meta">
-                            <span>Bangalore, India[cite: 2]</span>
-                            <span>June 2022 - Current[cite: 2]</span>
+                            <span>Bangalore, India[cite: 1, 2]</span>
+                            <span>June 2022 - Current[cite: 1, 2]</span>
                         </div>
                         <ul class="bullet-list">
-                            <li>Manage and maintain staging infrastructure comprising over 3000 servers deployed across VMware, AWS, and on-premises environments[cite: 2].</li>
-                            <li>Perform regular security patching and OS package upgrades to ensure systems remain secure, up-to-date, and compliant with organizational policies and industry standards[cite: 2].</li>
-                            <li>Monitor server performance and availability, troubleshoot issues, and implement solutions to optimize system reliability and efficiency[cite: 2].</li>
-                            <li>Coordinate with cross-functional teams to support deployment, testing, and maintenance activities in staging and production environments[cite: 2].</li>
-                            <li>Develop and maintain documentation for infrastructure management, patching processes, and upgrade procedures[cite: 2].</li>
-                            <li>Ensure adherence to best practices in system administration, security, and performance tuning across all platforms[cite: 2].</li>
-                            <li>Creating ansible playbooks using AI for automated installations of packages to the servers[cite: 2].</li>
+                            <li>Manage and maintain staging infrastructure comprising over 3000 servers deployed across VMware, AWS, and on-premises environments[cite: 1, 2].</li>
+                            <li>Perform regular security patching and OS package upgrades to ensure systems remain secure, up-to-date, and compliant with organizational policies and industry standards[cite: 1, 2].</li>
+                            <li>Monitor server performance and availability, troubleshoot issues, and implement solutions to optimize system reliability and efficiency[cite: 1, 2].</li>
+                            <li>Coordinate with cross-functional teams to support deployment, testing, and maintenance activities in staging and production environments[cite: 1, 2].</li>
+                            <li>Develop and maintain documentation for infrastructure management, patching processes, and upgrade procedures[cite: 1, 2].</li>
+                            <li>Ensure adherence to best practices in system administration, security, and performance tuning across all platforms[cite: 1, 2].</li>
+                            <li>Creating ansible playbooks using AI for automated installations of packages to the servers[cite: 1, 2].</li>
                         </ul>
                     </div>
 
@@ -559,17 +569,17 @@
                     <div class="timeline-item">
                         <div class="job-title">Lead – IT</div>
                         <div class="job-meta">
-                            <span>Bangalore, India[cite: 2]</span>
-                            <span>January 2020 - June 2022[cite: 2]</span>
+                            <span>Bangalore, India[cite: 1, 2]</span>
+                            <span>January 2020 - June 2022[cite: 1, 2]</span>
                         </div>
                         <ul class="bullet-list">
-                            <li>Manage and maintain staging infrastructure comprising over 600+ servers for company, deployed and running on VMware[cite: 2].</li>
-                            <li>Deploy and configure servers on AWS and GCP, leveraging knowledge of cloud platforms to meet infrastructure needs[cite: 2].</li>
-                            <li>Plan and implement Virtual Desktop Infrastructure (VDI) on-premises, enabling seamless remote work for users[cite: 2].</li>
-                            <li>Provide support and troubleshooting for servers, storage, and network devices, coordinating with vendors and internal teams to ensure minimal downtime[cite: 2].</li>
-                            <li>Deploy and manage monitoring and visualization tools like Prometheus, Grafana, and remote access solutions such as Apache Guacamole[cite: 2].</li>
-                            <li>Mentor, guide, and support team members in managing and optimizing staging infrastructure operations[cite: 2].</li>
-                            <li>Lead the implementation of OpenStack on-premises using existing hardware to modernize and enhance infrastructure capabilities[cite: 2].</li>
+                            <li>Manage and maintain staging infrastructure comprising over 600+ servers for company, deployed and running on VMware[cite: 1, 2].</li>
+                            <li>Deploy and configure servers on AWS and GCP, leveraging knowledge of cloud platforms to meet infrastructure needs[cite: 1, 2].</li>
+                            <li>Plan and implement Virtual Desktop Infrastructure (VDI) on-premises, enabling seamless remote work for users[cite: 1, 2].</li>
+                            <li>Provide support and troubleshooting for servers, storage, and network devices, coordinating with vendors and internal teams to ensure minimal downtime[cite: 1, 2].</li>
+                            <li>Deploy and manage monitoring and visualization tools like Prometheus, Grafana, and remote access solutions such as Apache Guacamole[cite: 1, 2].</li>
+                            <li>Mentor, guide, and support team members in managing and optimizing staging infrastructure operations[cite: 1, 2].</li>
+                            <li>Lead the implementation of OpenStack on-premises using existing hardware to modernize and enhance infrastructure capabilities[cite: 1, 2].</li>
                         </ul>
                     </div>
 
@@ -577,26 +587,26 @@
                     <div class="timeline-item">
                         <div class="job-title">Sr. Systems Engineer</div>
                         <div class="job-meta">
-                            <span>Bangalore & Navi Mumbai, India[cite: 2]</span>
-                            <span>January 2010 - December 2019[cite: 2]</span>
+                            <span>Bangalore & Navi Mumbai, India[cite: 1, 2]</span>
+                            <span>January 2010 - December 2019[cite: 1, 2]</span>
                         </div>
                         <ul class="bullet-list">
-                            <li>Manage and implement Mobile Money platforms for clients in regions including Burundi, Uganda, Zimbabwe, and Kenya, ensuring successful onsite deployments[cite: 2].</li>
-                            <li>Oversee Datacenter operations at DAKC, Navi Mumbai, including facilities management for power, cabling, cooling, and compliance with audit standards[cite: 2].</li>
-                            <li>Deploy and configure Nagios monitoring tools to track server and infrastructure performance effectively[cite: 2].</li>
-                            <li>Deploy servers on AWS and GCP, utilizing cloud platform knowledge to meet infrastructure needs[cite: 2].</li>
-                            <li>Plan and execute deployment and disaster recovery (DR) projects, managing the delivery of infrastructure requirements[cite: 2].</li>
-                            <li>Provide support and troubleshooting for servers, storage, and network devices, coordinating with vendors, clients, and internal teams to resolve issues promptly[cite: 2].</li>
-                            <li>Install and configure Linux servers, including system hardening to ensure security and compliance[cite: 2].</li>
-                            <li>Conduct internal and external ISMS audits, including infrastructure assessment, inventory verification, and compliance with physical and operational standards[cite: 2].</li>
-                            <li>Prepare and deliver day-to-day reports, ensuring adherence to audit and compliance requirements[cite: 2].</li>
+                            <li>Manage and implement Mobile Money platforms for clients in regions including Burundi, Uganda, Zimbabwe, and Kenya, ensuring successful onsite deployments[cite: 1, 2].</li>
+                            <li>Oversee Datacenter operations at DAKC, Navi Mumbai, including facilities management for power, cabling, cooling, and compliance with audit standards[cite: 1, 2].</li>
+                            <li>Deploy and configure Nagios monitoring tools to track server and infrastructure performance effectively[cite: 1, 2].</li>
+                            <li>Deploy servers on AWS and GCP, utilizing cloud platform knowledge to meet infrastructure needs[cite: 1, 2].</li>
+                            <li>Plan and execute deployment and disaster recovery (DR) projects, managing the delivery of infrastructure requirements[cite: 1, 2].</li>
+                            <li>Provide support and troubleshooting for servers, storage, and network devices, coordinating with vendors, clients, and internal teams to resolve issues promptly[cite: 1, 2].</li>
+                            <li>Install and configure Linux servers, including system hardening to ensure security and compliance[cite: 1, 2].</li>
+                            <li>Conduct internal and external ISMS audits, including infrastructure assessment, inventory verification, and compliance with physical and operational standards[cite: 1, 2].</li>
+                            <li>Prepare and deliver day-to-day reports, ensuring adherence to audit and compliance requirements[cite: 1, 2].</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ================= TAB 2: CORE COMPETENCIES (SLIDE IN) ================= -->
+        <!-- ================= TAB 2: CORE COMPETENCIES (SLIDES IN) ================= -->
         <div id="pane-competencies" class="view-pane">
             <div class="card">
                 <div class="section-header">
@@ -608,37 +618,37 @@
                     <div class="inner-box">
                         <h3>Infrastructure & Cloud</h3>
                         <ul>
-                            <li>IT Infrastructure Management[cite: 2]</li>
-                            <li>Cloud Platforms (AWS, GCP)[cite: 2]</li>
-                            <li>System Administration (Linux, Windows Servers)[cite: 2]</li>
-                            <li>Virtualization (VMware, XCP - NG)[cite: 2]</li>
+                            <li>IT Infrastructure Management[cite: 1, 2]</li>
+                            <li>Cloud Platforms (AWS, GCP)[cite: 1, 2]</li>
+                            <li>System Administration (Linux, Windows Servers)[cite: 1, 2]</li>
+                            <li>Virtualization (VMware, XCP - NG)[cite: 1, 2]</li>
                         </ul>
                     </div>
 
                     <div class="inner-box">
                         <h3>Monitoring & Security</h3>
                         <ul>
-                            <li>Monitoring Tools (Nagios, Prometheus, Grafana)[cite: 2]</li>
-                            <li>Security Patching and Compliance[cite: 2]</li>
-                            <li>Technical Documentation on upgrades & patching[cite: 2]</li>
-                            <li>Internal & External ISMS Audits[cite: 2]</li>
+                            <li>Monitoring Tools (Nagios, Prometheus, Grafana)[cite: 1, 2]</li>
+                            <li>Security Patching and Compliance[cite: 1, 2]</li>
+                            <li>Technical Documentation on upgrades & patching[cite: 1, 2]</li>
+                            <li>Internal & External ISMS Audits[cite: 1, 2]</li>
                         </ul>
                     </div>
 
                     <div class="inner-box">
                         <h3>Automation & Creative</h3>
                         <ul>
-                            <li>Ansible Playbooks Automation using AI[cite: 2]</li>
-                            <li>Team Leadership & Mentoring[cite: 2]</li>
-                            <li>3D Graphics & Models using Blender[cite: 2]</li>
-                            <li>Motion Graphics Production[cite: 2]</li>
+                            <li>Ansible Playbooks Automation using AI[cite: 1, 2]</li>
+                            <li>Team Leadership & Mentoring[cite: 1, 2]</li>
+                            <li>3D Graphics & Models using Blender[cite: 1, 2]</li>
+                            <li>Motion Graphics Production[cite: 1, 2]</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ================= TAB 3: FEATURED CAPABILITIES (SLIDE IN) ================= -->
+        <!-- ================= TAB 3: FEATURED CAPABILITIES (SLIDES IN) ================= -->
         <div id="pane-capabilities" class="view-pane">
             <div class="card">
                 <div class="section-header">
@@ -649,38 +659,38 @@
                 <div class="cards-grid">
                     <div class="inner-box">
                         <h3>⚡ AI Infrastructure Automation</h3>
-                        <p>Authored Ansible playbooks with AI assistance to automate package deployment and server configurations across large-scale infrastructures[cite: 2].</p>
+                        <p>Authored Ansible playbooks with AI assistance to automate package deployment and server configurations across large-scale infrastructures[cite: 1, 2].</p>
                     </div>
 
                     <div class="inner-box">
                         <h3>☁ Hybrid Cloud & OpenStack Modernization</h3>
-                        <p>Bridged on-premises hardware with AWS and GCP, leading OpenStack implementations on existing hardware to boost resource modernization[cite: 2].</p>
+                        <p>Bridged on-premises hardware with AWS and GCP, leading OpenStack implementations on existing hardware to boost resource modernization[cite: 1, 2].</p>
                     </div>
 
                     <div class="inner-box">
                         <h3>🌍 Global Platform Deployments</h3>
-                        <p>Managed onsite international deployment of high-availability Mobile Money platforms across Burundi, Uganda, Zimbabwe, and Kenya[cite: 2].</p>
+                        <p>Managed onsite international deployment of high-availability Mobile Money platforms across Burundi, Uganda, Zimbabwe, and Kenya[cite: 1, 2].</p>
                     </div>
 
                     <div class="inner-box">
                         <h3>🖥 Enterprise Virtual Desktop (VDI)</h3>
-                        <p>Planned and implemented on-premises VDI infrastructure, enabling high-performance and secure remote work operations[cite: 2].</p>
+                        <p>Planned and implemented on-premises VDI infrastructure, enabling high-performance and secure remote work operations[cite: 1, 2].</p>
                     </div>
 
                     <div class="inner-box">
                         <h3>🏢 High-Density Datacenter Operations</h3>
-                        <p>Supervised operations at DAKC, Navi Mumbai, encompassing physical power, cabling, cooling facilities, and ISMS audit standards[cite: 2].</p>
+                        <p>Supervised operations at DAKC, Navi Mumbai, encompassing physical power, cabling, cooling facilities, and ISMS audit standards[cite: 1, 2].</p>
                     </div>
 
                     <div class="inner-box">
                         <h3>🎨 3D Visualization & Modeling</h3>
-                        <p>Cross-disciplinary design skill creating structural 3D models and dynamic motion graphics inside Blender to communicate complex systems[cite: 2].</p>
+                        <p>Cross-disciplinary design skill creating structural 3D models and dynamic motion graphics inside Blender to communicate complex systems[cite: 1, 2].</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ================= TAB 4: EDUCATION & CREDENTIALS (SLIDE IN) ================= -->
+        <!-- ================= TAB 4: EDUCATION & CREDENTIALS (SLIDES IN) ================= -->
         <div id="pane-education" class="view-pane">
             <div class="card">
                 <div class="section-header">
@@ -694,15 +704,15 @@
                         <ul>
                             <li>
                                 <strong>Master Degree of Computer Applications</strong><br>
-                                University of Madras | 2016 - 2018[cite: 2]
+                                University of Madras | 2016 - 2018[cite: 1, 2]
                             </li>
                             <li>
                                 <strong>Bachelor Degree of Computer Applications</strong><br>
-                                University of Madras | 2001 - 2004[cite: 2]
+                                University of Madras | 2001 - 2004[cite: 1, 2]
                             </li>
                             <li>
                                 <strong>Diploma in Civil Engineering</strong><br>
-                                Shreeram Polytechnic, Navi Mumbai | 1991 - 1995[cite: 2]
+                                Shreeram Polytechnic, Navi Mumbai | 1991 - 1995[cite: 1, 2]
                             </li>
                         </ul>
                     </div>
@@ -712,15 +722,15 @@
                         <ul>
                             <li>
                                 <strong>Certified Internal Auditor</strong><br>
-                                Audit standards, risk mitigation, and compliance[cite: 2].
+                                Audit standards, risk mitigation, and compliance.
                             </li>
                             <li>
                                 <strong>Diploma in Redhat Linux</strong><br>
-                                Enterprise system administration and hardening[cite: 2].
+                                Enterprise system administration and hardening.
                             </li>
                             <li>
                                 <strong>ITIL Foundations V3 Certified</strong><br>
-                                ITSM lifecycle and incident management[cite: 2].
+                                ITSM lifecycle and incident management.
                             </li>
                         </ul>
                     </div>
@@ -728,7 +738,7 @@
             </div>
         </div>
 
-        <!-- ================= TAB 5: PERSONAL DETAILS (SLIDE IN) ================= -->
+        <!-- ================= TAB 5: PERSONAL DETAILS (SLIDES IN) ================= -->
         <div id="pane-details" class="view-pane">
             <div class="card">
                 <div class="section-header">
@@ -740,25 +750,25 @@
                     <div class="inner-box">
                         <h3>Location & Status</h3>
                         <ul>
-                            <li><strong>Location:</strong> Bangalore, India[cite: 2]</li>
-                            <li><strong>Marital Status:</strong> Married[cite: 2]</li>
+                            <li><strong>Location:</strong> Bangalore, India[cite: 1, 2]</li>
+                            <li><strong>Marital Status:</strong> Married[cite: 1, 2]</li>
                         </ul>
                     </div>
 
                     <div class="inner-box">
                         <h3>Languages Known</h3>
                         <ul>
-                            <li>English[cite: 2]</li>
-                            <li>Hindi[cite: 2]</li>
-                            <li>Malayalam[cite: 2]</li>
-                            <li>Marathi[cite: 2]</li>
+                            <li>English[cite: 1, 2]</li>
+                            <li>Hindi[cite: 1, 2]</li>
+                            <li>Malayalam[cite: 1, 2]</li>
+                            <li>Marathi[cite: 1, 2]</li>
                         </ul>
                     </div>
 
                     <div class="inner-box">
                         <h3>References</h3>
                         <ul>
-                            <li>Available upon request[cite: 2]</li>
+                            <li>Available upon request[cite: 1, 2]</li>
                         </ul>
                     </div>
                 </div>
@@ -771,34 +781,39 @@
     <footer>
         <div class="footer-contacts">
             <a href="mailto:your.email@domain.com">✉ your.email@domain.com</a>
-            <span style="color: #cbd5e1;">|</span>
+            <span style="color: #b0a394;">|</span>
             <a href="tel:+919876543210">📞 +91 98765 43210</a>
         </div>
         <p class="copyright-text">&copy; 2026 IT Architect Portfolio. All rights reserved.</p>
     </footer>
 
-    <!-- Interactive Scripts: Lateral Slide Tabs & Kinetic Canvas -->
+    <!-- Interactive Scripts: Re-Trigger Slide-In Animation & Canvas -->
     <script>
-        /* 1. Lateral Slide-In Tab Transition */
+        /* Lateral Slide-In Tab Transition */
         function switchTab(paneId, btnElement) {
+            // Update Tab Button UI
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             btnElement.classList.add('active');
 
+            // Hide all panes
             const allPanes = document.querySelectorAll('.view-pane');
             allPanes.forEach(pane => {
                 pane.classList.remove('active-view');
             });
 
+            // Target the active pane
             const activePane = document.getElementById(`pane-${paneId}`);
             if (activePane) {
-                // Trigger smooth slide from right
+                // Force an element animation reflow so the slide-in triggers smoothly on every click
+                activePane.classList.remove('active-view');
+                void activePane.offsetWidth;
                 activePane.classList.add('active-view');
             }
 
             document.getElementById('backToTopBtn').classList.add('visible');
         }
 
-        /* 2. Scroll Trigger for Back-to-Top Button */
+        /* Scroll Trigger for Back-to-Top Button */
         const backToTopBtn = document.getElementById('backToTopBtn');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
@@ -808,7 +823,7 @@
             }
         });
 
-        /* 3. Subtle Kinetic Canvas Animation */
+        /* Background Network Node Canvas */
         const canvas = document.getElementById('networkCanvas');
         const ctx = canvas.getContext('2d');
 
@@ -821,19 +836,19 @@
         });
 
         const nodes = [];
-        const nodeCount = 35;
+        const nodeCount = 30;
         for (let i = 0; i < nodeCount; i++) {
             nodes.push({
                 x: Math.random() * width,
                 y: Math.random() * height,
-                vx: (Math.random() - 0.5) * 0.45,
-                vy: (Math.random() - 0.5) * 0.45,
-                radius: Math.random() * 2 + 1.5
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                radius: Math.random() * 2 + 1.2
             });
         }
 
         let cubeAngle = 0;
-        const cubeSize = 65;
+        const cubeSize = 60;
 
         function project3D(x, y, z, originX, originY) {
             const rad = cubeAngle;
@@ -856,9 +871,9 @@
                     const dy = nodes[i].y - nodes[j].y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
 
-                    if (dist < 150) {
-                        const alpha = (1 - dist / 150) * 0.12;
-                        ctx.strokeStyle = `rgba(30, 58, 138, ${alpha})`;
+                    if (dist < 140) {
+                        const alpha = (1 - dist / 140) * 0.09;
+                        ctx.strokeStyle = `rgba(46, 90, 136, ${alpha})`;
                         ctx.beginPath();
                         ctx.moveTo(nodes[i].x, nodes[i].y);
                         ctx.lineTo(nodes[j].x, nodes[j].y);
@@ -874,7 +889,7 @@
                 if (node.x < 0 || node.x > width) node.vx *= -1;
                 if (node.y < 0 || node.y > height) node.vy *= -1;
 
-                ctx.fillStyle = 'rgba(2, 132, 199, 0.25)';
+                ctx.fillStyle = 'rgba(46, 90, 136, 0.18)';
                 ctx.beginPath();
                 ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
                 ctx.fill();
@@ -896,7 +911,7 @@
             const cubeOriginY = height * 0.75;
 
             const projected = vertices.map(v => project3D(v[0], v[1], v[2], cubeOriginX, cubeOriginY));
-            ctx.strokeStyle = 'rgba(15, 23, 42, 0.08)';
+            ctx.strokeStyle = 'rgba(60, 50, 40, 0.07)';
             ctx.lineWidth = 1.2;
 
             edges.forEach(edge => {
