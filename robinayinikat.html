@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Architect & Systems Engineer | 3D Interactive Portfolio</title>
+    <title>IT Architect & Systems Engineer | Portfolio</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
 
         :root {
             --bg-base: #f0f3f8;
             --surface: #ffffff;
-            --surface-glass: rgba(255, 255, 255, 0.75);
             --surface-subtle: #f8fafc;
             --accent: #1e3a8a;
             --accent-glow: #0284c7;
@@ -21,7 +20,7 @@
             --border-highlight: rgba(2, 132, 199, 0.35);
             --radius-lg: 20px;
             --radius-md: 12px;
-            --shadow-3d: 0 20px 40px -10px rgba(15, 23, 42, 0.1);
+            --shadow-card: 0 12px 30px -5px rgba(15, 23, 42, 0.08);
         }
 
         * {
@@ -43,7 +42,7 @@
             position: relative;
         }
 
-        /* Background Animated Canvas */
+        /* Background Moving Network Animation */
         #networkCanvas {
             position: fixed;
             top: 0;
@@ -55,68 +54,57 @@
             opacity: 0.85;
         }
 
-        /* -------------------------------------------------------------
-           1. 3D Floating Isometric Tab Navigation Bar
-        ------------------------------------------------------------- */
+        /* Static Clean Top Navigation Bar with Hover Highlights */
         .nav-wrapper {
             position: sticky;
-            top: 20px;
+            top: 0;
             z-index: 1000;
             display: flex;
             justify-content: center;
-            padding: 0 1rem;
-            perspective: 1000px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.85rem 1rem;
         }
 
         .tab-deck {
             display: flex;
-            gap: 12px;
-            background: rgba(255, 255, 255, 0.82);
-            backdrop-filter: blur(20px);
-            padding: 10px 14px;
-            border-radius: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 0 15px 35px -5px rgba(15, 23, 42, 0.12),
-                        0 0 0 1px rgba(226, 232, 240, 0.8);
-            transform-style: preserve-3d;
-            transition: transform 0.3s ease;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .tab-btn {
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
-            font-size: 0.86rem;
+            font-size: 0.85rem;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            padding: 10px 22px;
-            border: none;
-            border-radius: 30px;
+            padding: 9px 20px;
+            border: 1px solid transparent;
+            border-radius: 8px;
             background: transparent;
             color: var(--text-muted);
             cursor: pointer;
             outline: none;
-            position: relative;
-            transform-style: preserve-3d;
-            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
         }
 
-        .tab-btn:hover:not(.active) {
+        /* Clean Flat Hover State (No 3D rotation/tilt) */
+        .tab-btn:hover {
             color: var(--text-heading);
-            transform: translateY(-3px) translateZ(10px);
+            background-color: var(--surface-subtle);
+            border-color: var(--border);
         }
 
-        /* 3D Pressed/Extruded Active Tab Style */
+        /* Active Tab Highlight */
         .tab-btn.active {
             color: #ffffff;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.25),
-                        0 2px 4px rgba(2, 132, 199, 0.3);
-            transform: translateY(-5px) translateZ(25px) scale(1.05);
+            background-color: var(--text-heading);
+            border-color: var(--text-heading);
         }
 
-        /* -------------------------------------------------------------
-           2. Layout Structure & Containers
-        ------------------------------------------------------------- */
+        /* Main Container */
         .container {
             max-width: 1200px;
             margin: 2.5rem auto 4rem;
@@ -125,50 +113,37 @@
             z-index: 2;
         }
 
-        /* 3D Tilting Cards */
-        .tilt-card {
+        /* Clean White Cards */
+        .card {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
             padding: 2.5rem;
-            box-shadow: var(--shadow-3d);
-            transform-style: preserve-3d;
-            transition: transform 0.2s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow-card);
         }
 
-        .tilt-card:hover {
-            border-color: var(--border-highlight);
-            box-shadow: 0 25px 50px -10px rgba(15, 23, 42, 0.15);
-        }
-
-        /* -------------------------------------------------------------
-           3. Hero Header Section
-        ------------------------------------------------------------- */
+        /* Hero Header */
         .hero {
             display: grid;
-            grid-template-columns: 280px 1fr;
+            grid-template-columns: 260px 1fr;
             gap: 3.5rem;
             align-items: center;
             margin-bottom: 2.5rem;
         }
 
-        /* 3D Profile Picture Frame */
+        /* Profile Photo Frame (240x290px Display Area) */
         .profile-container {
-            perspective: 1200px;
             display: flex;
             justify-content: center;
         }
 
-        .profile-3d-frame {
+        .profile-frame {
             width: 240px;
             height: 290px;
             background: #ffffff;
-            border-radius: 20px;
-            border: 2px solid var(--text-heading);
-            transform: rotateY(12deg) rotateX(6deg);
-            transform-style: preserve-3d;
-            transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
-            box-shadow: -15px 15px 35px rgba(15, 23, 42, 0.12);
+            border-radius: 18px;
+            border: 2px solid var(--border);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
             position: relative;
             display: flex;
             align-items: center;
@@ -176,48 +151,41 @@
             overflow: hidden;
         }
 
-        .profile-3d-frame img {
+        .profile-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 18px;
-            transform: translateZ(20px);
-        }
-
-        .profile-3d-frame:hover {
-            transform: rotateY(0deg) rotateX(0deg) scale(1.02);
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18);
         }
 
         .profile-placeholder {
             padding: 1.5rem;
             text-align: center;
             color: var(--text-muted);
-            font-size: 0.85rem;
-            transform: translateZ(25px);
+            font-size: 0.82rem;
+            line-height: 1.5;
         }
 
         .profile-placeholder strong {
             display: block;
             color: var(--text-heading);
-            font-size: 1.1rem;
-            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+            margin-bottom: 0.3rem;
         }
 
         .hero-meta h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 700;
             color: var(--text-heading);
             line-height: 1.15;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
             letter-spacing: -1px;
         }
 
         .hero-meta h1 span {
             color: var(--accent-glow);
             display: block;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 600;
             letter-spacing: normal;
         }
@@ -251,25 +219,21 @@
             color: var(--text-heading);
         }
 
-        /* -------------------------------------------------------------
-           4. Tabbed Views (Smooth 3D Sliding Panes)
-        ------------------------------------------------------------- */
+        /* Lateral Slide-In Animation for View Panes */
         .view-pane {
             display: none;
             opacity: 0;
-            transform: translateY(35px) scale(0.98);
-            transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateX(40px);
+            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .view-pane.active-view {
             display: block;
             opacity: 1;
-            transform: translateY(0) scale(1);
+            transform: translateX(0);
         }
 
-        /* -------------------------------------------------------------
-           5. Section-Specific Component Styles
-        ------------------------------------------------------------- */
+        /* Section Components */
         .section-header {
             border-bottom: 2px solid var(--border);
             padding-bottom: 0.8rem;
@@ -291,7 +255,7 @@
             font-weight: 600;
         }
 
-        /* Experience Timeline */
+        /* Timeline Layout */
         .timeline {
             position: relative;
         }
@@ -332,7 +296,6 @@
         .timeline-item:hover::before {
             background: var(--accent-glow);
             border-color: var(--accent-glow);
-            transform: scale(1.3);
         }
 
         .job-title {
@@ -387,11 +350,10 @@
             border: 1px solid var(--border);
             padding: 2rem;
             border-radius: var(--radius-md);
-            transition: transform 0.25s, border-color 0.25s;
+            transition: border-color 0.25s ease, background 0.25s ease;
         }
 
         .inner-box:hover {
-            transform: translateY(-3px);
             border-color: var(--border-highlight);
             background: #ffffff;
         }
@@ -462,7 +424,7 @@
             font-size: 0.85rem;
         }
 
-        /* Back to top button */
+        /* Back to Top Button */
         #backToTopBtn {
             position: fixed;
             bottom: 30px;
@@ -478,7 +440,7 @@
             font-size: 1.1rem;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s;
+            transition: opacity 0.3s ease, transform 0.3s ease;
             z-index: 1001;
         }
 
@@ -503,13 +465,11 @@
             .metric-badges {
                 justify-content: center;
             }
-            .tab-deck {
-                flex-wrap: wrap;
-                justify-content: center;
-                border-radius: 20px;
+            .hero-meta h1 {
+                font-size: 2.3rem;
             }
             .tab-btn {
-                padding: 8px 14px;
+                padding: 7px 14px;
                 font-size: 0.78rem;
             }
         }
@@ -517,12 +477,12 @@
 </head>
 <body>
 
-    <!-- Subtle Moving Background Network & 3D Wireframe Cube -->
+    <!-- Subtle Moving Background Network & Wireframe Cube -->
     <canvas id="networkCanvas"></canvas>
 
-    <!-- 3D Floating Interactive Navigation Tabs -->
+    <!-- Clean Header Navigation Bar with Slide-In Triggers -->
     <nav class="nav-wrapper">
-        <div class="tab-deck" id="tabDeck">
+        <div class="tab-deck">
             <button class="tab-btn active" onclick="switchTab('experience', this)">Experience</button>
             <button class="tab-btn" onclick="switchTab('competencies', this)">Competencies</button>
             <button class="tab-btn" onclick="switchTab('capabilities', this)">Capabilities</button>
@@ -531,28 +491,28 @@
         </div>
     </nav>
 
-    <!-- Back to Top Trigger -->
+    <!-- Floating Back to Top Button -->
     <button id="backToTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to top">↑</button>
 
     <div class="container">
 
-        <!-- Hero Card -->
-        <header class="tilt-card hero">
+        <!-- Hero Overview Section -->
+        <header class="card hero">
             <div class="profile-container">
-                <div class="profile-3d-frame">
-                    <!-- UNCOMMENT BELOW AND SET SRC TO YOUR PICTURE PATH -->
+                <div class="profile-frame">
+                    <!-- UNCOMMENT BELOW AND SET SRC TO YOUR IMAGE FILE (Recommended: 480x580px) -->
                     <!-- <img src="profile.jpg" alt="Profile Picture"> -->
                     
                     <div class="profile-placeholder">
                         <strong>Profile Photo</strong>
-                        Uncomment the &lt;img&gt; tag in HTML to insert your picture.
+                        Recommended: 480 × 580 px<br>Uncomment the &lt;img&gt; tag in HTML
                     </div>
                 </div>
             </div>
 
             <div class="hero-meta">
                 <h1>IT Architect <span>& Systems Engineer</span></h1>
-                <p>Experienced IT Engineer with over 15 years of expertise in designing, implementing, and managing robust IT infrastructure to support business operations. Highly skilled in system administration, network management, and cloud computing, with a strong track record of optimizing system performance, ensuring high availability, and driving digital transformation initiatives[cite: 2].</p>
+                <p>Experienced IT Engineer with over 15 years of expertise in designing, implementing, and managing robust IT infrastructure to support business operations[cite: 2]. Highly skilled in system administration, network management, and cloud computing, with a strong track record of optimizing system performance, ensuring high availability, and driving digital transformation initiatives[cite: 2].</p>
                 
                 <div class="metric-badges">
                     <div class="metric-pill">
@@ -568,9 +528,9 @@
             </div>
         </header>
 
-        <!-- ================= TAB 1: PROFESSIONAL EXPERIENCE ================= -->
+        <!-- ================= TAB 1: PROFESSIONAL EXPERIENCE (SLIDE IN) ================= -->
         <div id="pane-experience" class="view-pane active-view">
-            <div class="tilt-card">
+            <div class="card">
                 <div class="section-header">
                     <h2>Professional Experience</h2>
                     <span>Career Track Record</span>
@@ -636,9 +596,9 @@
             </div>
         </div>
 
-        <!-- ================= TAB 2: CORE COMPETENCIES ================= -->
+        <!-- ================= TAB 2: CORE COMPETENCIES (SLIDE IN) ================= -->
         <div id="pane-competencies" class="view-pane">
-            <div class="tilt-card">
+            <div class="card">
                 <div class="section-header">
                     <h2>Core Competencies</h2>
                     <span>Technical & Operational Mastery</span>
@@ -678,12 +638,12 @@
             </div>
         </div>
 
-        <!-- ================= TAB 3: FEATURED CAPABILITIES ================= -->
+        <!-- ================= TAB 3: FEATURED CAPABILITIES (SLIDE IN) ================= -->
         <div id="pane-capabilities" class="view-pane">
-            <div class="tilt-card">
+            <div class="card">
                 <div class="section-header">
                     <h2>Featured Capabilities</h2>
-                    <span>Applied Value & Engineering Solutions</span>
+                    <span>Applied Value & Architecture Highlights</span>
                 </div>
 
                 <div class="cards-grid">
@@ -720,9 +680,9 @@
             </div>
         </div>
 
-        <!-- ================= TAB 4: EDUCATION & CERTIFICATIONS ================= -->
+        <!-- ================= TAB 4: EDUCATION & CREDENTIALS (SLIDE IN) ================= -->
         <div id="pane-education" class="view-pane">
-            <div class="tilt-card">
+            <div class="card">
                 <div class="section-header">
                     <h2>Education & Certifications</h2>
                     <span>Academic & Professional Credentials</span>
@@ -768,9 +728,9 @@
             </div>
         </div>
 
-        <!-- ================= TAB 5: PERSONAL DETAILS ================= -->
+        <!-- ================= TAB 5: PERSONAL DETAILS (SLIDE IN) ================= -->
         <div id="pane-details" class="view-pane">
-            <div class="tilt-card">
+            <div class="card">
                 <div class="section-header">
                     <h2>Personal Details</h2>
                     <span>Candidate Profile Information</span>
@@ -817,62 +777,28 @@
         <p class="copyright-text">&copy; 2026 IT Architect Portfolio. All rights reserved.</p>
     </footer>
 
-    <!-- Interactive Scripts: 3D Tabs, Tilt Physics & Canvas Animation -->
+    <!-- Interactive Scripts: Lateral Slide Tabs & Kinetic Canvas -->
     <script>
-        /* -----------------------------------------------------------
-           1. 3D Animated Tab Switching
-        ----------------------------------------------------------- */
+        /* 1. Lateral Slide-In Tab Transition */
         function switchTab(paneId, btnElement) {
-            // Update active state on tab buttons
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             btnElement.classList.add('active');
 
-            // 3D slide transition between panes
-            document.querySelectorAll('.view-pane').forEach(pane => {
+            const allPanes = document.querySelectorAll('.view-pane');
+            allPanes.forEach(pane => {
                 pane.classList.remove('active-view');
             });
 
             const activePane = document.getElementById(`pane-${paneId}`);
             if (activePane) {
+                // Trigger smooth slide from right
                 activePane.classList.add('active-view');
             }
 
-            // Show back-to-top button on switch
             document.getElementById('backToTopBtn').classList.add('visible');
         }
 
-        /* -----------------------------------------------------------
-           2. 3D Tilt Physics for Navigation Deck & Cards
-        ----------------------------------------------------------- */
-        const tabDeck = document.getElementById('tabDeck');
-        tabDeck.addEventListener('mousemove', (e) => {
-            const rect = tabDeck.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            tabDeck.style.transform = `rotateX(${-y * 0.15}deg) rotateY(${x * 0.15}deg)`;
-        });
-
-        tabDeck.addEventListener('mouseleave', () => {
-            tabDeck.style.transform = `rotateX(0deg) rotateY(0deg)`;
-        });
-
-        const tiltCards = document.querySelectorAll('.tilt-card');
-        tiltCards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                card.style.transform = `perspective(1000px) rotateX(${-y * 0.02}deg) rotateY(${x * 0.02}deg) translateY(-2px)`;
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-            });
-        });
-
-        /* -----------------------------------------------------------
-           3. Back to Top Button
-        ----------------------------------------------------------- */
+        /* 2. Scroll Trigger for Back-to-Top Button */
         const backToTopBtn = document.getElementById('backToTopBtn');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
@@ -882,9 +808,7 @@
             }
         });
 
-        /* -----------------------------------------------------------
-           4. Kinetic Background Canvas (Moving Cloud Nodes & 3D Cube)
-        ----------------------------------------------------------- */
+        /* 3. Subtle Kinetic Canvas Animation */
         const canvas = document.getElementById('networkCanvas');
         const ctx = canvas.getContext('2d');
 
@@ -925,7 +849,6 @@
         function drawAnimatedScene() {
             ctx.clearRect(0, 0, width, height);
 
-            // Connect nodes
             ctx.lineWidth = 1;
             for (let i = 0; i < nodeCount; i++) {
                 for (let j = i + 1; j < nodeCount; j++) {
@@ -944,7 +867,6 @@
                 }
             }
 
-            // Move and render nodes
             nodes.forEach(node => {
                 node.x += node.vx;
                 node.y += node.vy;
@@ -958,7 +880,6 @@
                 ctx.fill();
             });
 
-            // Rotating 3D wireframe cube
             cubeAngle += 0.005;
             const s = cubeSize;
             const vertices = [
