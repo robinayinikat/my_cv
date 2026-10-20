@@ -3,26 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Architect & Systems Engineer | Portfolio</title>
+    <title>IT Architect & Systems Engineer | Portfolio Showcase</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
 
         :root {
-            /* Warm, Eye-Soothing Cream & Almond Palette (No Pure White) */
-            --bg-base: #f3eee7;
-            --surface: #faf7f2;
-            --surface-subtle: #eee7de;
-            --surface-accent: #e5ded4;
-            --accent: #2e5a88;
-            --accent-glow: #3b82f6;
-            --text-heading: #1f2937;
-            --text-body: #374151;
-            --text-muted: #6b7280;
-            --border: #dfd7cc;
-            --border-highlight: #b0a394;
-            --radius-lg: 18px;
+            --h-brand-primary: #673de6;
+            --h-brand-hover: #5025d1;
+            --h-brand-tint: #ede8ff;
+            --h-hero-bg: #0c0d14;
+            --h-bg-neutral-50: #f8f9fa;
+            --h-bg-neutral-100: #f0f2f5;
+            --h-border: #e2e4e8;
+            --h-fg-text: #1a1a24;
+            --h-fg-muted: #5f6368;
             --radius-md: 12px;
-            --shadow-card: 0 10px 25px -4px rgba(60, 50, 40, 0.07);
+            --radius-lg: 16px;
+            --shadow-subtle: 0 4px 16px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.12);
         }
 
         * {
@@ -37,118 +35,234 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-base);
-            color: var(--text-body);
-            line-height: 1.65;
+            background-color: var(--h-bg-neutral-50);
+            color: var(--h-fg-text);
+            line-height: 1.6;
             overflow-x: hidden;
-            position: relative;
         }
 
-        /* Subtle Background Canvas */
-        #networkCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.7;
+        /* Top Announcement Banner */
+        .top-announcement {
+            background-color: var(--h-brand-primary);
+            color: #ffffff;
+            font-size: 0.84rem;
+            font-weight: 600;
+            padding: 0.55rem 1rem;
+            text-align: center;
+            letter-spacing: 0.3px;
         }
 
-        /* Top Navigation Bar */
-        .nav-wrapper {
+        /* Main Navigation Bar */
+        .top-nav {
             position: sticky;
             top: 0;
             z-index: 1000;
+            background: #ffffff;
+            border-bottom: 1px solid var(--h-border);
+            padding: 0.85rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--h-fg-text);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+        }
+
+        .brand-badge {
+            background: var(--h-brand-tint);
+            color: var(--h-brand-primary);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .btn-nav {
+            padding: 0.55rem 1.25rem;
+            border-radius: 30px;
+            font-size: 0.86rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .btn-nav-primary {
+            background: var(--h-brand-primary);
+            color: #ffffff;
+        }
+
+        .btn-nav-primary:hover {
+            background: var(--h-brand-hover);
+        }
+
+        .btn-nav-outline {
+            border: 1px solid var(--h-border);
+            color: var(--h-fg-text);
+            background: #ffffff;
+        }
+
+        .btn-nav-outline:hover {
+            background: var(--h-bg-neutral-100);
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            background: var(--h-hero-bg);
+            color: #ffffff;
+            padding: 5rem 1.5rem 4.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-banner h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-banner p {
+            color: #b3b7c2;
+            font-size: 1.15rem;
+            max-width: 720px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* Search Input */
+        .search-container {
+            max-width: 620px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 1rem 1.2rem 1rem 3.2rem;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            background: #ffffff;
+            color: var(--h-fg-text);
+            border-color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #8b92a2;
+            font-size: 1.1rem;
+        }
+
+        /* Category Tabs Navigation */
+        .tab-menu-bar {
+            background: #ffffff;
+            border-bottom: 1px solid var(--h-border);
+            padding: 0 1.5rem;
             display: flex;
             justify-content: center;
-            background: rgba(243, 238, 231, 0.92);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid var(--border);
-            padding: 0.85rem 1rem;
+            position: sticky;
+            top: 59px;
+            z-index: 900;
         }
 
         .tab-deck {
             display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            justify-content: center;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scrollbar-width: none;
         }
+        .tab-deck::-webkit-scrollbar { display: none; }
 
         .tab-btn {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            padding: 9px 20px;
-            border: 1px solid transparent;
-            border-radius: 8px;
-            background: transparent;
-            color: var(--text-muted);
+            background: none;
+            border: none;
+            padding: 1.1rem 0.6rem;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--h-fg-muted);
             cursor: pointer;
-            outline: none;
-            transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+            position: relative;
+            white-space: nowrap;
+            transition: color 0.25s;
         }
 
         .tab-btn:hover {
-            color: var(--text-heading);
-            background-color: var(--surface-subtle);
-            border-color: var(--border);
+            color: var(--h-brand-primary);
         }
 
         .tab-btn.active {
-            color: #ffffff;
-            background-color: var(--text-heading);
-            border-color: var(--text-heading);
+            color: var(--h-brand-primary);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--h-brand-primary);
+            border-radius: 3px 3px 0 0;
         }
 
         /* Main Container */
-        .container {
-            max-width: 1200px;
-            margin: 2.5rem auto 4rem;
+        .main-container {
+            max-width: 1240px;
+            margin: 3.5rem auto 5rem;
             padding: 0 1.5rem;
-            position: relative;
-            z-index: 2;
         }
 
-        /* Warm Surface Cards */
-        .card {
-            background: var(--surface);
-            border: 1px solid var(--border);
+        /* Profile Showcase Card */
+        .profile-hero-card {
+            background: #ffffff;
+            border: 1px solid var(--h-border);
             border-radius: var(--radius-lg);
             padding: 2.5rem;
-            box-shadow: var(--shadow-card);
-        }
-
-        /* Hero Overview */
-        .hero {
             display: grid;
-            grid-template-columns: 260px 1fr;
-            gap: 3.5rem;
+            grid-template-columns: 240px 1fr;
+            gap: 3rem;
             align-items: center;
-            margin-bottom: 2.5rem;
-        }
-
-        /* Profile Picture Frame (480x580 px recommended) */
-        .profile-container {
-            display: flex;
-            justify-content: center;
+            box-shadow: var(--shadow-subtle);
+            margin-bottom: 3.5rem;
         }
 
         .profile-frame {
             width: 240px;
             height: 290px;
-            background: var(--surface-subtle);
-            border-radius: 18px;
-            border: 2px solid var(--border);
-            box-shadow: 0 8px 20px rgba(60, 50, 40, 0.08);
-            position: relative;
+            background: var(--h-bg-neutral-100);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--h-border);
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            text-align: center;
         }
 
         .profile-frame img {
@@ -158,773 +272,663 @@
         }
 
         .profile-placeholder {
-            padding: 1.5rem;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.82rem;
-            line-height: 1.5;
+            padding: 1.2rem;
+            color: var(--h-fg-muted);
+            font-size: 0.85rem;
         }
 
-        .profile-placeholder strong {
-            display: block;
-            color: var(--text-heading);
-            font-size: 1.05rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .hero-meta h1 {
+        .profile-info h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.8rem;
+            font-size: 2rem;
             font-weight: 700;
-            color: var(--text-heading);
-            line-height: 1.15;
-            margin-bottom: 0.5rem;
-            letter-spacing: -1px;
+            margin-bottom: 0.4rem;
         }
 
-        .hero-meta h1 span {
-            color: var(--accent);
-            display: block;
-            font-size: 1.6rem;
-            font-weight: 600;
-            letter-spacing: normal;
-        }
-
-        .hero-meta p {
+        .profile-role {
+            color: var(--h-brand-primary);
+            font-weight: 700;
             font-size: 1.05rem;
-            color: var(--text-body);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        .metric-badges {
+        .profile-summary {
+            color: var(--h-fg-muted);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            margin-bottom: 1.8rem;
+        }
+
+        .stats-row {
             display: flex;
             gap: 1.2rem;
             flex-wrap: wrap;
         }
 
-        .metric-pill {
-            background: var(--surface-subtle);
-            border: 1px solid var(--border);
-            padding: 0.6rem 1.2rem;
-            border-radius: var(--radius-md);
-            font-size: 0.85rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+        .stat-pill {
+            background: var(--h-bg-neutral-100);
+            border: 1px solid var(--h-border);
+            border-radius: 8px;
+            padding: 0.6rem 1.1rem;
+            font-size: 0.88rem;
         }
 
-        .metric-pill strong {
+        .stat-pill strong {
+            color: var(--h-fg-text);
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.15rem;
-            color: var(--text-heading);
+            font-size: 1.1rem;
+            margin-right: 0.3rem;
         }
 
-        /* -------------------------------------------------------------
-           Active View Panes with Slide-In Keyframe Animation
-        ------------------------------------------------------------- */
-        .view-pane {
+        /* Lateral Slide-In View Panels */
+        .view-panel {
             display: none;
             opacity: 0;
         }
 
-        .view-pane.active-view {
+        .view-panel.active-panel {
             display: block;
-            animation: slideInRight 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: slideInLateral 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        @keyframes slideInRight {
-            0% {
+        @keyframes slideInLateral {
+            from {
                 opacity: 0;
-                transform: translateX(60px);
+                transform: translateX(45px);
             }
-            100% {
+            to {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
 
-        /* Section Layouts */
-        .section-header {
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 0.8rem;
-            margin-bottom: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-        }
-
-        .section-header h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.6rem;
-            color: var(--text-heading);
-        }
-
-        .section-header span {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--text-heading), transparent);
-            top: 0;
-            bottom: 0;
-            left: 0;
-        }
-
-        .timeline-item {
-            padding-left: 2.8rem;
-            position: relative;
-            margin-bottom: 3.5rem;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            width: 14px;
-            height: 14px;
-            background: var(--surface);
-            border: 3px solid var(--text-heading);
-            border-radius: 50%;
-            left: -6px;
-            top: 6px;
-            transition: all 0.3s ease;
-        }
-
-        .timeline-item:hover::before {
-            background: var(--accent);
-            border-color: var(--accent);
-        }
-
-        .job-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-heading);
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .job-meta {
-            color: var(--accent);
-            font-size: 0.92rem;
-            margin-bottom: 1.2rem;
-            font-weight: 700;
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.6rem;
-        }
-
-        .bullet-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .bullet-list li {
-            position: relative;
-            padding-left: 1.5rem;
-            font-size: 0.96rem;
-            color: var(--text-body);
-        }
-
-        .bullet-list li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: 800;
-        }
-
-        /* Inner Cards Grid */
-        .cards-grid {
+        /* Grid Cards (Hostinger Showcase Style) */
+        .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
             gap: 2rem;
         }
 
-        .inner-box {
-            background: var(--surface-subtle);
-            border: 1px solid var(--border);
-            padding: 2rem;
-            border-radius: var(--radius-md);
-            transition: border-color 0.25s ease, background 0.25s ease;
+        .catalog-card {
+            background: #ffffff;
+            border: 1px solid var(--h-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-subtle);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
 
-        .inner-box:hover {
-            border-color: var(--border-highlight);
-            background: var(--surface);
+        .catalog-card:hover {
+            transform: translateY(-4px);
+            border-color: #cbd0d6;
+            box-shadow: var(--shadow-hover);
         }
 
-        .inner-box h3 {
+        .card-header-tag {
+            padding: 1.5rem 1.8rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tag-badge {
+            background: var(--h-brand-tint);
+            color: var(--h-brand-primary);
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 6px;
+            text-transform: uppercase;
+        }
+
+        .period-tag {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--h-fg-muted);
+        }
+
+        .card-body {
+            padding: 0 1.8rem 1.8rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.25rem;
-            color: var(--text-heading);
-            margin-bottom: 1.2rem;
-            border-left: 3px solid var(--accent);
-            padding-left: 0.75rem;
+            font-weight: 700;
+            color: var(--h-fg-text);
+            margin-bottom: 0.3rem;
         }
 
-        .inner-box ul {
+        .card-subtext {
+            color: var(--h-brand-primary);
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+
+        .card-list {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 0.7rem;
+            font-size: 0.9rem;
+            color: var(--h-fg-muted);
         }
 
-        .inner-box li {
+        .card-list li {
             position: relative;
             padding-left: 1.2rem;
-            font-size: 0.95rem;
         }
 
-        .inner-box li::before {
-            content: "•";
+        .card-list li::before {
+            content: '•';
+            color: var(--h-brand-primary);
             position: absolute;
             left: 0;
-            color: var(--accent);
-            font-size: 1.2rem;
-            line-height: 1;
+            font-weight: 800;
+        }
+
+        /* FAQ Section (Hostinger Style Accordion) */
+        .faq-section {
+            background: #ffffff;
+            border-top: 1px solid var(--h-border);
+            padding: 5rem 1.5rem;
+            margin-top: 5rem;
+        }
+
+        .faq-container {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .faq-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--h-border);
+            padding: 1.4rem 0;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--h-fg-text);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .faq-icon {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--h-fg-muted);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding-top 0.35s ease;
+            font-size: 0.95rem;
+            color: var(--h-fg-muted);
+            line-height: 1.7;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+            padding-top: 1rem;
         }
 
         /* Footer */
         footer {
-            background: var(--surface);
-            padding: 3rem 0;
-            border-top: 1px solid var(--border);
+            background: var(--h-bg-neutral-100);
+            border-top: 1px solid var(--h-border);
+            padding: 3rem 1.5rem;
             text-align: center;
-            position: relative;
-            z-index: 10;
+            font-size: 0.88rem;
+            color: var(--h-fg-muted);
         }
 
-        .footer-contacts {
+        .footer-links {
             display: flex;
             justify-content: center;
-            align-items: center;
             gap: 2rem;
-            flex-wrap: wrap;
             margin-bottom: 1rem;
+            flex-wrap: wrap;
         }
 
-        .footer-contacts a {
-            color: var(--text-heading);
+        .footer-links a {
+            color: var(--h-fg-text);
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             transition: color 0.2s;
         }
 
-        .footer-contacts a:hover {
-            color: var(--accent);
+        .footer-links a:hover {
+            color: var(--h-brand-primary);
         }
 
-        .copyright-text {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        /* Back to Top Button */
-        #backToTopBtn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--text-heading);
-            color: #ffffff;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 8px 20px rgba(60, 50, 40, 0.2);
-            font-size: 1.1rem;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            z-index: 1001;
-        }
-
-        #backToTopBtn.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        #backToTopBtn:hover {
-            transform: translateY(-3px);
-            background: var(--accent);
-        }
-
-        @media (max-width: 900px) {
-            .hero {
+        @media (max-width: 860px) {
+            .profile-hero-card {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-            .profile-container {
+            .profile-frame {
                 margin: 0 auto;
             }
-            .metric-badges {
+            .stats-row {
                 justify-content: center;
             }
-            .hero-meta h1 {
-                font-size: 2.3rem;
-            }
-            .tab-btn {
-                padding: 7px 14px;
-                font-size: 0.78rem;
+            .catalog-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Subtle Moving Background Network & Wireframe Cube -->
-    <canvas id="networkCanvas"></canvas>
+    <!-- Top Announcement Bar -->
+    <div class="top-announcement">
+        Enterprise IT Infrastructure • Cloud Operations • System Automation
+    </div>
 
-    <!-- Top Navigation Tabs (Slides Details In Upon Click) -->
-    <nav class="nav-wrapper">
+    <!-- Header Navigation -->
+    <header class="top-nav">
+        <a href="#" class="brand-logo">
+            <span>Portfolio</span>
+            <span class="brand-badge">IT Architect</span>
+        </a>
+        <div class="nav-actions">
+            <a href="tel:+919876543210" class="btn-nav btn-nav-outline">+91 98765 43210</a>
+            <a href="mailto:your.email@domain.com" class="btn-nav btn-nav-primary">Contact Email</a>
+        </div>
+    </header>
+
+    <!-- Hero Section with Search -->
+    <section class="hero-banner">
+        <h1>Enterprise Systems & Cloud Solutions</h1>
+        <p>15+ years of designing high-availability IT infrastructure, automated DevOps pipelines, and multi-cloud architectures across international markets.</p>
+        
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="catalogSearch" class="search-box" placeholder="Search skills, cloud platforms, tools, or experience..." onkeyup="filterCards()">
+        </div>
+    </section>
+
+    <!-- Lateral Slide Navigation Tabs -->
+    <nav class="tab-menu-bar">
         <div class="tab-deck">
-            <button class="tab-btn active" onclick="switchTab('experience', this)">Experience</button>
-            <button class="tab-btn" onclick="switchTab('competencies', this)">Competencies</button>
-            <button class="tab-btn" onclick="switchTab('capabilities', this)">Capabilities</button>
-            <button class="tab-btn" onclick="switchTab('education', this)">Education & Credentials</button>
-            <button class="tab-btn" onclick="switchTab('details', this)">Personal Details</button>
+            <button class="tab-btn active" onclick="showCategory('all', this)">All Highlights</button>
+            <button class="tab-btn" onclick="showCategory('experience', this)">Work Experience</button>
+            <button class="tab-btn" onclick="showCategory('competencies', this)">Core Competencies</button>
+            <button class="tab-btn" onclick="showCategory('capabilities', this)">Capabilities</button>
+            <button class="tab-btn" onclick="showCategory('credentials', this)">Education & Certifications</button>
+            <button class="tab-btn" onclick="showCategory('details', this)">Personal Details</button>
         </div>
     </nav>
 
-    <!-- Floating Back to Top Button -->
-    <button id="backToTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to top">↑</button>
+    <div class="main-container">
 
-    <div class="container">
-
-        <!-- Hero Overview Section -->
-        <header class="card hero">
-            <div class="profile-container">
-                <div class="profile-frame">
-                    <!-- UNCOMMENT BELOW AND SET SRC TO YOUR IMAGE FILE (Recommended: 480x580px) -->
-                    <!-- <img src="profile.jpg" alt="Profile Picture"> -->
-                    
-                    <div class="profile-placeholder">
-                        <strong>Profile Photo</strong>
-                        Recommended: 480 × 580 px<br>Uncomment the &lt;img&gt; tag in HTML
-                    </div>
+        <!-- Candidate Profile Hero Card -->
+        <div class="profile-hero-card">
+            <div class="profile-frame">
+                <!-- Recommended: 480 × 580 px portrait photo -->
+                <!-- <img src="profile.jpg" alt="Profile Picture"> -->
+                <div class="profile-placeholder">
+                    <strong>Photo Frame</strong><br>
+                    Recommended: 480 × 580 px<br>
+                    Uncomment &lt;img&gt; in HTML
                 </div>
             </div>
 
-            <div class="hero-meta">
-                <h1>IT Architect <span>& Systems Engineer</span></h1>
-                <p>Experienced IT Engineer with over 15 years of expertise in designing, implementing, and managing robust IT infrastructure to support business operations[cite: 1, 2]. Highly skilled in system administration, network management, and cloud computing, with a strong track record of optimizing system performance, ensuring high availability, and driving digital transformation initiatives[cite: 1, 2].</p>
+            <div class="profile-info">
+                <h2>IT Architect & Systems Engineer</h2>
+                <div class="profile-role">Bangalore, India</div>
+                <p class="profile-summary">
+                    Experienced IT Engineer with over 15 years of expertise in designing, implementing, and managing robust IT infrastructure to support business operations. Highly skilled in system administration, network management, and cloud computing, with a strong track record of optimizing system performance, ensuring high availability, and driving digital transformation initiatives.
+                </p>
+                <div class="stats-row">
+                    <div class="stat-pill"><strong>15+</strong> Years of Experience</div>
+                    <div class="stat-pill"><strong>3000+</strong> Managed Servers</div>
+                    <div class="stat-pill"><strong>4</strong> Global Deployment Regions</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PANELS (SLIDE-IN) ================= -->
+
+        <!-- PANEL: ALL & WORK EXPERIENCE -->
+        <div id="panel-experience" class="view-panel active-panel">
+            <div class="catalog-grid">
                 
-                <div class="metric-badges">
-                    <div class="metric-pill">
-                        <strong>15+</strong> Years Professional Experience[cite: 1, 2]
+                <!-- Role 1 -->
+                <div class="catalog-card filterable" data-tags="architect staging vmware aws ansible ai automation">
+                    <div class="card-header-tag">
+                        <span class="tag-badge">Current Role</span>
+                        <span class="period-tag">June 2022 - Present</span>
                     </div>
-                    <div class="metric-pill">
-                        <strong>3000+</strong> Infrastructure Servers Managed[cite: 1, 2]
-                    </div>
-                    <div class="metric-pill">
-                        <strong>4</strong> Regional Deployment Markets[cite: 1, 2]
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- ================= TAB 1: PROFESSIONAL EXPERIENCE (SLIDES IN) ================= -->
-        <div id="pane-experience" class="view-pane active-view">
-            <div class="card">
-                <div class="section-header">
-                    <h2>Professional Experience</h2>
-                    <span>Career Track Record</span>
-                </div>
-
-                <div class="timeline">
-                    <!-- Role 1 -->
-                    <div class="timeline-item">
-                        <div class="job-title">IT Architect</div>
-                        <div class="job-meta">
-                            <span>Bangalore, India[cite: 1, 2]</span>
-                            <span>June 2022 - Current[cite: 1, 2]</span>
-                        </div>
-                        <ul class="bullet-list">
-                            <li>Manage and maintain staging infrastructure comprising over 3000 servers deployed across VMware, AWS, and on-premises environments[cite: 1, 2].</li>
-                            <li>Perform regular security patching and OS package upgrades to ensure systems remain secure, up-to-date, and compliant with organizational policies and industry standards[cite: 1, 2].</li>
-                            <li>Monitor server performance and availability, troubleshoot issues, and implement solutions to optimize system reliability and efficiency[cite: 1, 2].</li>
-                            <li>Coordinate with cross-functional teams to support deployment, testing, and maintenance activities in staging and production environments[cite: 1, 2].</li>
-                            <li>Develop and maintain documentation for infrastructure management, patching processes, and upgrade procedures[cite: 1, 2].</li>
-                            <li>Ensure adherence to best practices in system administration, security, and performance tuning across all platforms[cite: 1, 2].</li>
-                            <li>Creating ansible playbooks using AI for automated installations of packages to the servers[cite: 1, 2].</li>
-                        </ul>
-                    </div>
-
-                    <!-- Role 2 -->
-                    <div class="timeline-item">
-                        <div class="job-title">Lead – IT</div>
-                        <div class="job-meta">
-                            <span>Bangalore, India[cite: 1, 2]</span>
-                            <span>January 2020 - June 2022[cite: 1, 2]</span>
-                        </div>
-                        <ul class="bullet-list">
-                            <li>Manage and maintain staging infrastructure comprising over 600+ servers for company, deployed and running on VMware[cite: 1, 2].</li>
-                            <li>Deploy and configure servers on AWS and GCP, leveraging knowledge of cloud platforms to meet infrastructure needs[cite: 1, 2].</li>
-                            <li>Plan and implement Virtual Desktop Infrastructure (VDI) on-premises, enabling seamless remote work for users[cite: 1, 2].</li>
-                            <li>Provide support and troubleshooting for servers, storage, and network devices, coordinating with vendors and internal teams to ensure minimal downtime[cite: 1, 2].</li>
-                            <li>Deploy and manage monitoring and visualization tools like Prometheus, Grafana, and remote access solutions such as Apache Guacamole[cite: 1, 2].</li>
-                            <li>Mentor, guide, and support team members in managing and optimizing staging infrastructure operations[cite: 1, 2].</li>
-                            <li>Lead the implementation of OpenStack on-premises using existing hardware to modernize and enhance infrastructure capabilities[cite: 1, 2].</li>
-                        </ul>
-                    </div>
-
-                    <!-- Role 3 -->
-                    <div class="timeline-item">
-                        <div class="job-title">Sr. Systems Engineer</div>
-                        <div class="job-meta">
-                            <span>Bangalore & Navi Mumbai, India[cite: 1, 2]</span>
-                            <span>January 2010 - December 2019[cite: 1, 2]</span>
-                        </div>
-                        <ul class="bullet-list">
-                            <li>Manage and implement Mobile Money platforms for clients in regions including Burundi, Uganda, Zimbabwe, and Kenya, ensuring successful onsite deployments[cite: 1, 2].</li>
-                            <li>Oversee Datacenter operations at DAKC, Navi Mumbai, including facilities management for power, cabling, cooling, and compliance with audit standards[cite: 1, 2].</li>
-                            <li>Deploy and configure Nagios monitoring tools to track server and infrastructure performance effectively[cite: 1, 2].</li>
-                            <li>Deploy servers on AWS and GCP, utilizing cloud platform knowledge to meet infrastructure needs[cite: 1, 2].</li>
-                            <li>Plan and execute deployment and disaster recovery (DR) projects, managing the delivery of infrastructure requirements[cite: 1, 2].</li>
-                            <li>Provide support and troubleshooting for servers, storage, and network devices, coordinating with vendors, clients, and internal teams to resolve issues promptly[cite: 1, 2].</li>
-                            <li>Install and configure Linux servers, including system hardening to ensure security and compliance[cite: 1, 2].</li>
-                            <li>Conduct internal and external ISMS audits, including infrastructure assessment, inventory verification, and compliance with physical and operational standards[cite: 1, 2].</li>
-                            <li>Prepare and deliver day-to-day reports, ensuring adherence to audit and compliance requirements[cite: 1, 2].</li>
+                    <div class="card-body">
+                        <h3 class="card-title">IT Architect</h3>
+                        <div class="card-subtext">Bangalore, India</div>
+                        <ul class="card-list">
+                            <li>Manage and maintain staging infrastructure comprising over 3000 servers deployed across VMware, AWS, and on-premises environments.</li>
+                            <li>Perform regular security patching and OS package upgrades to ensure systems remain secure, up-to-date, and compliant with organizational policies.</li>
+                            <li>Monitor server performance and availability, troubleshoot issues, and implement solutions to optimize system reliability and efficiency.</li>
+                            <li>Coordinate with cross-functional teams to support deployment, testing, and maintenance activities.</li>
+                            <li>Develop and maintain technical documentation for infrastructure management and patching procedures.</li>
+                            <li>Ensure adherence to best practices in system administration, security, and performance tuning across platforms.</li>
+                            <li>Author automated Ansible playbooks using AI for automated installations of packages to the servers.</li>
                         </ul>
                     </div>
                 </div>
+
+                <!-- Role 2 -->
+                <div class="catalog-card filterable" data-tags="lead vdi openstack prometheus grafana vmware aws gcp">
+                    <div class="card-header-tag">
+                        <span class="tag-badge">Leadership</span>
+                        <span class="period-tag">Jan 2020 - June 2022</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Lead – IT</h3>
+                        <div class="card-subtext">Bangalore, India</div>
+                        <ul class="card-list">
+                            <li>Managed staging infrastructure comprising over 600+ servers deployed on VMware.</li>
+                            <li>Deployed and configured cloud infrastructure on AWS and GCP based on dynamic capacity demands.</li>
+                            <li>Planned and implemented Virtual Desktop Infrastructure (VDI) on-premises for seamless remote workforce enablement.</li>
+                            <li>Provided tier-3 support for servers, storage, and network devices with minimal operational downtime.</li>
+                            <li>Deployed and managed monitoring tools like Prometheus, Grafana, and Apache Guacamole.</li>
+                            <li>Mentored and supported engineering teams in optimizing staging infrastructure workflows.</li>
+                            <li>Led on-premises OpenStack implementation on existing hardware to modernize enterprise systems.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 3 -->
+                <div class="catalog-card filterable" data-tags="senior engineer datacenter mobile money nagios linux audit isms">
+                    <div class="card-header-tag">
+                        <span class="tag-badge">Operations & DR</span>
+                        <span class="period-tag">Jan 2010 - Dec 2019</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Sr. Systems Engineer</h3>
+                        <div class="card-subtext">Bangalore & Navi Mumbai, India</div>
+                        <ul class="card-list">
+                            <li>Managed and deployed Mobile Money platforms internationally across Burundi, Uganda, Zimbabwe, and Kenya.</li>
+                            <li>Supervised datacenter operations at DAKC, Navi Mumbai, covering power, cabling, cooling, and audit standards.</li>
+                            <li>Deployed and configured Nagios monitoring tools to track infrastructure availability.</li>
+                            <li>Configured AWS and GCP environments to meet international project requirements.</li>
+                            <li>Executed disaster recovery (DR) plans and ensured delivery of mission-critical requirements.</li>
+                            <li>Performed Linux server system hardening and regular security audits.</li>
+                            <li>Conducted internal and external ISMS audits for physical and operational standards compliance.</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <!-- ================= TAB 2: CORE COMPETENCIES (SLIDES IN) ================= -->
-        <div id="pane-competencies" class="view-pane">
-            <div class="card">
-                <div class="section-header">
-                    <h2>Core Competencies</h2>
-                    <span>Technical & Operational Mastery</span>
-                </div>
-
-                <div class="cards-grid">
-                    <div class="inner-box">
-                        <h3>Infrastructure & Cloud</h3>
-                        <ul>
-                            <li>IT Infrastructure Management[cite: 1, 2]</li>
-                            <li>Cloud Platforms (AWS, GCP)[cite: 1, 2]</li>
-                            <li>System Administration (Linux, Windows Servers)[cite: 1, 2]</li>
-                            <li>Virtualization (VMware, XCP - NG)[cite: 1, 2]</li>
-                        </ul>
+        <!-- PANEL: CORE COMPETENCIES -->
+        <div id="panel-competencies" class="view-panel">
+            <div class="catalog-grid">
+                
+                <div class="catalog-card filterable" data-tags="cloud platforms aws gcp linux windows virtualization vmware xcp-ng">
+                    <div class="card-header-tag">
+                        <span class="tag-badge">Cloud & Systems</span>
                     </div>
-
-                    <div class="inner-box">
-                        <h3>Monitoring & Security</h3>
-                        <ul>
-                            <li>Monitoring Tools (Nagios, Prometheus, Grafana)[cite: 1, 2]</li>
-                            <li>Security Patching and Compliance[cite: 1, 2]</li>
-                            <li>Technical Documentation on upgrades & patching[cite: 1, 2]</li>
-                            <li>Internal & External ISMS Audits[cite: 1, 2]</li>
-                        </ul>
-                    </div>
-
-                    <div class="inner-box">
-                        <h3>Automation & Creative</h3>
-                        <ul>
-                            <li>Ansible Playbooks Automation using AI[cite: 1, 2]</li>
-                            <li>Team Leadership & Mentoring[cite: 1, 2]</li>
-                            <li>3D Graphics & Models using Blender[cite: 1, 2]</li>
-                            <li>Motion Graphics Production[cite: 1, 2]</li>
+                    <div class="card-body">
+                        <h3 class="card-title">Infrastructure & Cloud Platforms</h3>
+                        <div class="card-subtext">Scalable Computing</div>
+                        <ul class="card-list">
+                            <li>Cloud Platforms: AWS and Google Cloud Platform (GCP)</li>
+                            <li>Virtualization: VMware ESXi, vCenter, and XCP-NG</li>
+                            <li>System Administration: Linux (Red Hat, Ubuntu, Debian) and Windows Server</li>
+                            <li>Infrastructure Lifecycle Management & Hardware Modernization</li>
                         </ul>
                     </div>
                 </div>
+
+                <div class="catalog-card filterable" data-tags="monitoring nagios prometheus grafana security compliance patching isms">
+                    <div class="card-header-tag">
+                        <span class="tag-badge">Security & Operations</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Monitoring & Compliance</h3>
+                        <div class="card-subtext">High Availability</div>
+                        <ul class="card-list">
+                            <li>Telemetry & Monitoring: Prometheus, Grafana, Nagios</li>
+                            <li>Security Patching, OS upgrades, and vulnerability mitigation</li>
+                            <li>Internal and external ISMS audits & compliance standards</li>
+                            <li>Detailed technical documentation on upgrades and operational runbooks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="catalog-card filterable" data-tags="ansible ai automation blender 3d models motion graphics leadership mentoring">
+                    <div class="card-header-tag">
+                        <span class="tag-badge">Automation & 3D</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Automation & Creative Tech</h3>
+                        <div class="card-subtext">Modern Toolsets</div>
+                        <ul class="card-list">
+                            <li>Ansible Playbook Automation assisted by AI models</li>
+                            <li>Team leadership, coaching, and mentoring junior engineers</li>
+                            <li>Cross-functional project orchestration and stakeholder management</li>
+                            <li>3D modeling, asset creation, and motion graphics using Blender</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <!-- ================= TAB 3: FEATURED CAPABILITIES (SLIDES IN) ================= -->
-        <div id="pane-capabilities" class="view-pane">
-            <div class="card">
-                <div class="section-header">
-                    <h2>Featured Capabilities</h2>
-                    <span>Applied Value & Architecture Highlights</span>
-                </div>
-
-                <div class="cards-grid">
-                    <div class="inner-box">
-                        <h3>⚡ AI Infrastructure Automation</h3>
-                        <p>Authored Ansible playbooks with AI assistance to automate package deployment and server configurations across large-scale infrastructures[cite: 1, 2].</p>
-                    </div>
-
-                    <div class="inner-box">
-                        <h3>☁ Hybrid Cloud & OpenStack Modernization</h3>
-                        <p>Bridged on-premises hardware with AWS and GCP, leading OpenStack implementations on existing hardware to boost resource modernization[cite: 1, 2].</p>
-                    </div>
-
-                    <div class="inner-box">
-                        <h3>🌍 Global Platform Deployments</h3>
-                        <p>Managed onsite international deployment of high-availability Mobile Money platforms across Burundi, Uganda, Zimbabwe, and Kenya[cite: 1, 2].</p>
-                    </div>
-
-                    <div class="inner-box">
-                        <h3>🖥 Enterprise Virtual Desktop (VDI)</h3>
-                        <p>Planned and implemented on-premises VDI infrastructure, enabling high-performance and secure remote work operations[cite: 1, 2].</p>
-                    </div>
-
-                    <div class="inner-box">
-                        <h3>🏢 High-Density Datacenter Operations</h3>
-                        <p>Supervised operations at DAKC, Navi Mumbai, encompassing physical power, cabling, cooling facilities, and ISMS audit standards[cite: 1, 2].</p>
-                    </div>
-
-                    <div class="inner-box">
-                        <h3>🎨 3D Visualization & Modeling</h3>
-                        <p>Cross-disciplinary design skill creating structural 3D models and dynamic motion graphics inside Blender to communicate complex systems[cite: 1, 2].</p>
+        <!-- PANEL: CAPABILITIES -->
+        <div id="panel-capabilities" class="view-panel">
+            <div class="catalog-grid">
+                
+                <div class="catalog-card filterable" data-tags="automation ansible ai playbooks">
+                    <div class="card-header-tag"><span class="tag-badge">Automation</span></div>
+                    <div class="card-body">
+                        <h3 class="card-title">AI-Assisted Infrastructure Automation</h3>
+                        <div class="card-subtext">Configuration Management</div>
+                        <p class="profile-summary">Engineered automated provisioning pipelines and Ansible playbooks with AI integration, speeding up package installations across 3000+ staging servers.</p>
                     </div>
                 </div>
+
+                <div class="catalog-card filterable" data-tags="openstack vdi remote work">
+                    <div class="card-header-tag"><span class="tag-badge">Virtualization</span></div>
+                    <div class="card-body">
+                        <h3 class="card-title">On-Premises OpenStack & VDI</h3>
+                        <div class="card-subtext">Resource Modernization</div>
+                        <p class="profile-summary">Successfully converted legacy hardware into a private OpenStack cloud while deploying Virtual Desktop Infrastructure (VDI) to empower secure remote access.</p>
+                    </div>
+                </div>
+
+                <div class="catalog-card filterable" data-tags="mobile money international deployment africa">
+                    <div class="card-header-tag"><span class="tag-badge">International</span></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Global Platform Deployments</h3>
+                        <div class="card-subtext">Mission-Critical Deployments</div>
+                        <p class="profile-summary">Led onsite deployments of critical Mobile Money financial platforms for telecom clients throughout Burundi, Uganda, Zimbabwe, and Kenya.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <!-- ================= TAB 4: EDUCATION & CREDENTIALS (SLIDES IN) ================= -->
-        <div id="pane-education" class="view-pane">
-            <div class="card">
-                <div class="section-header">
-                    <h2>Education & Certifications</h2>
-                    <span>Academic & Professional Credentials</span>
-                </div>
-
-                <div class="cards-grid">
-                    <div class="inner-box">
-                        <h3>Academic Degrees</h3>
-                        <ul>
-                            <li>
-                                <strong>Master Degree of Computer Applications</strong><br>
-                                University of Madras | 2016 - 2018[cite: 1, 2]
-                            </li>
-                            <li>
-                                <strong>Bachelor Degree of Computer Applications</strong><br>
-                                University of Madras | 2001 - 2004[cite: 1, 2]
-                            </li>
-                            <li>
-                                <strong>Diploma in Civil Engineering</strong><br>
-                                Shreeram Polytechnic, Navi Mumbai | 1991 - 1995[cite: 1, 2]
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="inner-box">
-                        <h3>Industry Certifications</h3>
-                        <ul>
-                            <li>
-                                <strong>Certified Internal Auditor</strong><br>
-                                Audit standards, risk mitigation, and compliance.
-                            </li>
-                            <li>
-                                <strong>Diploma in Redhat Linux</strong><br>
-                                Enterprise system administration and hardening.
-                            </li>
-                            <li>
-                                <strong>ITIL Foundations V3 Certified</strong><br>
-                                ITSM lifecycle and incident management.
-                            </li>
+        <!-- PANEL: CREDENTIALS -->
+        <div id="panel-credentials" class="view-panel">
+            <div class="catalog-grid">
+                
+                <div class="catalog-card filterable" data-tags="education degree mca bca civil engineering university of madras">
+                    <div class="card-header-tag"><span class="tag-badge">Education</span></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Academic Background</h3>
+                        <div class="card-subtext">Degrees & Diplomas</div>
+                        <ul class="card-list">
+                            <li><strong>Master of Computer Applications (MCA)</strong><br>University of Madras | 2016 - 2018</li>
+                            <li><strong>Bachelor of Computer Applications (BCA)</strong><br>University of Madras | 2001 - 2004</li>
+                            <li><strong>Diploma in Civil Engineering</strong><br>Shreeram Polytechnic, Navi Mumbai | 1991 - 1995</li>
                         </ul>
                     </div>
                 </div>
+
+                <div class="catalog-card filterable" data-tags="certifications redhat linux itil internal auditor">
+                    <div class="card-header-tag"><span class="tag-badge">Certifications</span></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Professional Certifications</h3>
+                        <div class="card-subtext">Validated Skills</div>
+                        <ul class="card-list">
+                            <li><strong>Certified Internal Auditor</strong><br>Quality assurance, risk evaluation, and compliance.</li>
+                            <li><strong>Diploma in Red Hat Linux</strong><br>Enterprise-grade server setup and OS hardening.</li>
+                            <li><strong>ITIL Foundations V3 Certified</strong><br>ITSM service management and incident operations.</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <!-- ================= TAB 5: PERSONAL DETAILS (SLIDES IN) ================= -->
-        <div id="pane-details" class="view-pane">
-            <div class="card">
-                <div class="section-header">
-                    <h2>Personal Details</h2>
-                    <span>Candidate Profile Information</span>
-                </div>
-
-                <div class="cards-grid">
-                    <div class="inner-box">
-                        <h3>Location & Status</h3>
-                        <ul>
-                            <li><strong>Location:</strong> Bangalore, India[cite: 1, 2]</li>
-                            <li><strong>Marital Status:</strong> Married[cite: 1, 2]</li>
-                        </ul>
-                    </div>
-
-                    <div class="inner-box">
-                        <h3>Languages Known</h3>
-                        <ul>
-                            <li>English[cite: 1, 2]</li>
-                            <li>Hindi[cite: 1, 2]</li>
-                            <li>Malayalam[cite: 1, 2]</li>
-                            <li>Marathi[cite: 1, 2]</li>
-                        </ul>
-                    </div>
-
-                    <div class="inner-box">
-                        <h3>References</h3>
-                        <ul>
-                            <li>Available upon request[cite: 1, 2]</li>
+        <!-- PANEL: DETAILS -->
+        <div id="panel-details" class="view-panel">
+            <div class="catalog-grid">
+                
+                <div class="catalog-card filterable" data-tags="personal location marital status languages english hindi marathi malayalam">
+                    <div class="card-header-tag"><span class="tag-badge">Profile</span></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Personal Information</h3>
+                        <div class="card-subtext">Candidate Overview</div>
+                        <ul class="card-list">
+                            <li><strong>Location:</strong> Bangalore, India</li>
+                            <li><strong>Marital Status:</strong> Married</li>
+                            <li><strong>Languages:</strong> English, Hindi, Malayalam, Marathi</li>
+                            <li><strong>References:</strong> Available upon request</li>
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
 
     </div>
 
-    <!-- Contact & Copyright Footer -->
-    <footer>
-        <div class="footer-contacts">
-            <a href="mailto:your.email@domain.com">✉ your.email@domain.com</a>
-            <span style="color: #b0a394;">|</span>
-            <a href="tel:+919876543210">📞 +91 98765 43210</a>
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>What scale of infrastructure have you managed?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    I have managed staging and production infrastructure comprising over 3,000 servers deployed across VMware, AWS, and on-premises datacenters, ensuring 99.9%+ availability and strict compliance.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>What is your experience with cloud migrations?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Extensive experience architecting hybrid systems bridging on-premises bare metal, OpenStack, and public cloud environments like AWS and GCP, optimizing both cost and system responsiveness.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>Are you open to remote or international opportunities?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Yes. I have led on-site international deployments across East and Southern Africa, and have deployed enterprise VDI platforms enabling distributed global teams to operate effectively.
+                </div>
+            </div>
         </div>
-        <p class="copyright-text">&copy; 2026 IT Architect Portfolio. All rights reserved.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="mailto:your.email@domain.com">your.email@domain.com</a>
+            <a href="tel:+919876543210">+91 98765 43210</a>
+            <span>Bangalore, India</span>
+        </div>
+        <div>&copy; 2026 IT Architect & Systems Engineer. All rights reserved.</div>
     </footer>
 
-    <!-- Interactive Scripts: Re-Trigger Slide-In Animation & Canvas -->
+    <!-- Interactive Scripts -->
     <script>
-        /* Lateral Slide-In Tab Transition */
-        function switchTab(paneId, btnElement) {
-            // Update Tab Button UI
+        // Lateral Tab Switching
+        function showCategory(category, buttonElement) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            btnElement.classList.add('active');
+            buttonElement.classList.add('active');
 
-            // Hide all panes
-            const allPanes = document.querySelectorAll('.view-pane');
-            allPanes.forEach(pane => {
-                pane.classList.remove('active-view');
-            });
+            const panels = document.querySelectorAll('.view-panel');
+            panels.forEach(p => p.classList.remove('active-panel'));
 
-            // Target the active pane
-            const activePane = document.getElementById(`pane-${paneId}`);
-            if (activePane) {
-                // Force an element animation reflow so the slide-in triggers smoothly on every click
-                activePane.classList.remove('active-view');
-                void activePane.offsetWidth;
-                activePane.classList.add('active-view');
-            }
-
-            document.getElementById('backToTopBtn').classList.add('visible');
-        }
-
-        /* Scroll Trigger for Back-to-Top Button */
-        const backToTopBtn = document.getElementById('backToTopBtn');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add('visible');
+            if (category === 'all') {
+                panels.forEach(p => p.classList.add('active-panel'));
             } else {
-                backToTopBtn.classList.remove('visible');
-            }
-        });
-
-        /* Background Network Node Canvas */
-        const canvas = document.getElementById('networkCanvas');
-        const ctx = canvas.getContext('2d');
-
-        let width = canvas.width = window.innerWidth;
-        let height = canvas.height = window.innerHeight;
-
-        window.addEventListener('resize', () => {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        });
-
-        const nodes = [];
-        const nodeCount = 30;
-        for (let i = 0; i < nodeCount; i++) {
-            nodes.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                vx: (Math.random() - 0.5) * 0.4,
-                vy: (Math.random() - 0.5) * 0.4,
-                radius: Math.random() * 2 + 1.2
-            });
-        }
-
-        let cubeAngle = 0;
-        const cubeSize = 60;
-
-        function project3D(x, y, z, originX, originY) {
-            const rad = cubeAngle;
-            const rotX = x * Math.cos(rad) + z * Math.sin(rad);
-            const rotZ = -x * Math.sin(rad) + z * Math.cos(rad);
-            const rotY = y * Math.cos(0.4) - rotZ * Math.sin(0.4);
-            return {
-                x: originX + rotX,
-                y: originY + rotY
-            };
-        }
-
-        function drawAnimatedScene() {
-            ctx.clearRect(0, 0, width, height);
-
-            ctx.lineWidth = 1;
-            for (let i = 0; i < nodeCount; i++) {
-                for (let j = i + 1; j < nodeCount; j++) {
-                    const dx = nodes[i].x - nodes[j].x;
-                    const dy = nodes[i].y - nodes[j].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-
-                    if (dist < 140) {
-                        const alpha = (1 - dist / 140) * 0.09;
-                        ctx.strokeStyle = `rgba(46, 90, 136, ${alpha})`;
-                        ctx.beginPath();
-                        ctx.moveTo(nodes[i].x, nodes[i].y);
-                        ctx.lineTo(nodes[j].x, nodes[j].y);
-                        ctx.stroke();
-                    }
+                const target = document.getElementById(`panel-${category}`);
+                if (target) {
+                    target.classList.remove('active-panel');
+                    void target.offsetWidth; // Reflow to trigger CSS animation
+                    target.classList.add('active-panel');
                 }
             }
-
-            nodes.forEach(node => {
-                node.x += node.vx;
-                node.y += node.vy;
-
-                if (node.x < 0 || node.x > width) node.vx *= -1;
-                if (node.y < 0 || node.y > height) node.vy *= -1;
-
-                ctx.fillStyle = 'rgba(46, 90, 136, 0.18)';
-                ctx.beginPath();
-                ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-                ctx.fill();
-            });
-
-            cubeAngle += 0.005;
-            const s = cubeSize;
-            const vertices = [
-                [-s, -s, -s], [s, -s, -s], [s, s, -s], [-s, s, -s],
-                [-s, -s,  s], [s, -s,  s], [s, s,  s], [-s, s,  s]
-            ];
-            const edges = [
-                [0,1],[1,2],[2,3],[3,0],
-                [4,5],[5,6],[6,7],[7,4],
-                [0,4],[1,5],[2,6],[3,7]
-            ];
-
-            const cubeOriginX = width * 0.9;
-            const cubeOriginY = height * 0.75;
-
-            const projected = vertices.map(v => project3D(v[0], v[1], v[2], cubeOriginX, cubeOriginY));
-            ctx.strokeStyle = 'rgba(60, 50, 40, 0.07)';
-            ctx.lineWidth = 1.2;
-
-            edges.forEach(edge => {
-                ctx.beginPath();
-                ctx.moveTo(projected[edge[0]].x, projected[edge[0]].y);
-                ctx.lineTo(projected[edge[1]].x, projected[edge[1]].y);
-                ctx.stroke();
-            });
-
-            requestAnimationFrame(drawAnimatedScene);
         }
 
-        drawAnimatedScene();
+        // Real-Time Search Box Filter
+        function filterCards() {
+            const query = document.getElementById('catalogSearch').value.toLowerCase();
+            const cards = document.querySelectorAll('.catalog-card');
+
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                const tags = card.getAttribute('data-tags') || '';
+                if (text.includes(query) || tags.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Accordion Toggle
+        function toggleFaq(btn) {
+            const item = btn.parentElement;
+            const isOpen = item.classList.contains('open');
+
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+
+            if (!isOpen) {
+                item.classList.add('open');
+            }
+        }
     </script>
 </body>
 </html>
