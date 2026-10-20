@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="nordic">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,75 +7,24 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
-        /* --------------------------------------------------------------------------
-           1. Dynamic Light Color Schemes (Palette Switcher)
-        --------------------------------------------------------------------------- */
-        /* Theme 1: Nordic Slate & Teal (Default) */
-        :root[data-theme="nordic"] {
-            --bg-base: #f4f7f9;
-            --bg-card: rgba(255, 255, 255, 0.85);
-            --bg-card-hover: rgba(255, 255, 255, 0.98);
-            --accent: #0d9488;
-            --accent-glow: #14b8a6;
-            --accent-light: rgba(13, 148, 136, 0.12);
-            --border-subtle: rgba(13, 148, 136, 0.15);
-            --border-highlight: rgba(13, 148, 136, 0.45);
-            --text-heading: #0f172a;
-            --text-body: #334155;
-            --text-muted: #64748b;
-            --svg-opacity: 0.055;
-            --nav-bg: rgba(244, 247, 249, 0.88);
-        }
-
-        /* Theme 2: Warm Sand & Terracotta */
-        :root[data-theme="sand"] {
-            --bg-base: #faf8f5;
-            --bg-card: rgba(255, 255, 255, 0.88);
-            --bg-card-hover: rgba(255, 255, 255, 0.98);
-            --accent: #c2410c;
-            --accent-glow: #ea580c;
-            --accent-light: rgba(194, 65, 12, 0.1);
-            --border-subtle: rgba(194, 65, 12, 0.14);
-            --border-highlight: rgba(194, 65, 12, 0.4);
-            --text-heading: #1c1917;
-            --text-body: #44403c;
-            --text-muted: #78716c;
-            --svg-opacity: 0.05;
-            --nav-bg: rgba(250, 248, 245, 0.88);
-        }
-
-        /* Theme 3: Sage Mist & Forest */
-        :root[data-theme="sage"] {
-            --bg-base: #f3f6f3;
-            --bg-card: rgba(255, 255, 255, 0.86);
-            --bg-card-hover: rgba(255, 255, 255, 0.98);
-            --accent: #2e7d32;
-            --accent-glow: #388e3c;
-            --accent-light: rgba(46, 125, 50, 0.1);
-            --border-subtle: rgba(46, 125, 50, 0.14);
-            --border-highlight: rgba(46, 125, 50, 0.38);
-            --text-heading: #142315;
-            --text-body: #2e3e30;
-            --text-muted: #5d6f5f;
-            --svg-opacity: 0.06;
-            --nav-bg: rgba(243, 246, 243, 0.88);
-        }
-
-        /* Theme 4: Minimal Ice & Cobalt */
-        :root[data-theme="ice"] {
-            --bg-base: #f0f4f9;
-            --bg-card: rgba(255, 255, 255, 0.88);
-            --bg-card-hover: rgba(255, 255, 255, 0.98);
-            --accent: #2563eb;
-            --accent-glow: #3b82f6;
-            --accent-light: rgba(37, 99, 235, 0.1);
-            --border-subtle: rgba(37, 99, 235, 0.14);
-            --border-highlight: rgba(37, 99, 235, 0.4);
-            --text-heading: #0f172a;
-            --text-body: #1e293b;
-            --text-muted: #64748b;
-            --svg-opacity: 0.055;
-            --nav-bg: rgba(240, 244, 249, 0.88);
+        :root {
+            /* Tailored Grey & Monochrome Contrast */
+            --bg-base: #e2e6eb;
+            --bg-card: #ffffff;
+            --bg-card-subtle: #f8fafc;
+            --text-heading: #09090b;   /* Pure deep black */
+            --text-body: #18181b;      /* High-contrast dark charcoal */
+            --text-muted: #52525b;     /* Balanced mid-grey */
+            --accent-black: #09090b;
+            --accent-white: #ffffff;
+            --border-card: #cbd5e1;
+            --border-hover: #94a3b8;
+            --pill-bg: #09090b;
+            --pill-text: #ffffff;
+            --shadow-card: 0 12px 30px rgba(15, 23, 42, 0.08);
+            --shadow-hover: 0 20px 40px rgba(15, 23, 42, 0.14);
+            --svg-opacity: 0.18;       /* Noticeably more visible background art */
+            --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -94,12 +43,11 @@
             color: var(--text-body);
             line-height: 1.7;
             overflow-x: hidden;
-            transition: background-color 0.5s ease, color 0.5s ease;
             position: relative;
         }
 
         /* --------------------------------------------------------------------------
-           2. Ambient Profile-Themed Background Illustrations (Cloud, Server, 3D Cube)
+           1. Prominent Background Artwork (Servers, 3D Cube, Cloud Platform)
         --------------------------------------------------------------------------- */
         .bg-artwork {
             position: fixed;
@@ -115,131 +63,80 @@
         .bg-shape {
             position: absolute;
             fill: none;
-            stroke: var(--accent);
-            stroke-width: 1.5;
+            stroke: #09090b;
+            stroke-width: 2;
             opacity: var(--svg-opacity);
-            transition: stroke 0.5s ease, opacity 0.5s ease;
+            transition: opacity 0.4s ease;
         }
 
-        /* Server rack graphic */
         .shape-servers {
-            top: 8%;
-            right: -60px;
-            width: 480px;
-            height: 480px;
+            top: 6%;
+            right: -40px;
+            width: 460px;
+            height: 460px;
         }
 
-        /* 3D isometric cube graphic (Blender/Graphics) */
         .shape-cube {
-            bottom: 12%;
-            left: -80px;
-            width: 420px;
-            height: 420px;
+            bottom: 10%;
+            left: -60px;
+            width: 440px;
+            height: 440px;
         }
 
-        /* Cloud network node graphic */
         .shape-cloud {
             top: 48%;
-            right: 4%;
-            width: 380px;
-            height: 380px;
+            right: 3%;
+            width: 390px;
+            height: 390px;
         }
 
         /* --------------------------------------------------------------------------
-           3. Glass Navigation & Theme Switcher
+           2. Prominent Floating Navigation Tab Pill
         --------------------------------------------------------------------------- */
         nav {
             position: fixed;
-            top: 0;
+            top: 18px;
             width: 100%;
-            background: var(--nav-bg);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid var(--border-subtle);
             z-index: 1000;
-            padding: 0.9rem 2rem;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.5s ease;
+            justify-content: center;
+            pointer-events: none;
         }
 
-        .nav-links {
+        .nav-pill-container {
+            pointer-events: auto;
+            background: #ffffff;
+            padding: 6px;
+            border-radius: 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.08);
             display: flex;
-            gap: 2rem;
-            margin: 0 auto;
+            gap: 4px;
         }
 
-        nav a {
+        .nav-tab {
             color: var(--text-heading);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* Theme Switcher Widget */
-        .theme-picker {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            padding: 4px 10px;
-            border-radius: 20px;
-        }
-
-        .theme-picker span {
-            font-size: 0.72rem;
-            text-transform: uppercase;
             font-weight: 700;
-            color: var(--text-muted);
-            letter-spacing: 0.5px;
-            margin-right: 2px;
+            font-size: 0.86rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 8px 18px;
+            border-radius: 30px;
+            transition: var(--transition);
         }
 
-        .color-dot {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            cursor: pointer;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-            transition: transform 0.2s;
+        .nav-tab:hover {
+            background-color: #f1f5f9;
         }
 
-        .color-dot:hover {
-            transform: scale(1.25);
+        .nav-tab.active-tab {
+            background-color: var(--pill-bg);
+            color: var(--pill-text);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
-
-        .dot-nordic { background: #0d9488; }
-        .dot-sand   { background: #c2410c; }
-        .dot-sage   { background: #2e7d32; }
-        .dot-ice    { background: #2563eb; }
 
         /* --------------------------------------------------------------------------
-           4. Sliding / In-and-Out Animation Framework
+           3. Layout, Animations & 3D Cards
         --------------------------------------------------------------------------- */
         .container {
             max-width: 1100px;
@@ -250,14 +147,14 @@
         }
 
         section {
-            padding: 7rem 0 3rem;
+            padding: 8rem 0 3.5rem;
         }
 
-        /* Motion utility classes */
+        /* Prominent In-and-Out Slide Animations */
         .reveal-section {
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(60px);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
 
@@ -266,17 +163,16 @@
             transform: translateY(0);
         }
 
-        /* Alternate directional slides for child cards */
         .slide-left {
             opacity: 0;
-            transform: translateX(-40px);
-            transition: opacity 0.75s ease, transform 0.75s ease;
+            transform: translateX(-60px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
         .slide-right {
             opacity: 0;
-            transform: translateX(40px);
-            transition: opacity 0.75s ease, transform 0.75s ease;
+            transform: translateX(60px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
         .reveal-section.revealed .slide-left,
@@ -285,12 +181,9 @@
             transform: translateX(0);
         }
 
-        /* --------------------------------------------------------------------------
-           5. Layout & 3D Interactive Cards
-        --------------------------------------------------------------------------- */
         .section-title {
-            font-size: 2.3rem;
-            font-weight: 700;
+            font-size: 2.4rem;
+            font-weight: 800;
             color: var(--text-heading);
             margin-bottom: 3.5rem;
             text-align: center;
@@ -298,35 +191,25 @@
         }
 
         .section-title span {
-            color: var(--accent);
-            position: relative;
-        }
-
-        .section-title span::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -3px;
-            width: 100%;
-            height: 3px;
-            background: var(--accent);
-            opacity: 0.3;
-            border-radius: 2px;
+            background: #09090b;
+            color: #ffffff;
+            padding: 2px 14px;
+            border-radius: 6px;
+            display: inline-block;
         }
 
         .tilt-card {
             background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
+            border: 1px solid var(--border-card);
             border-radius: 16px;
-            backdrop-filter: blur(12px);
             transform-style: preserve-3d;
             transition: transform 0.2s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+            box-shadow: var(--shadow-card);
         }
 
         .tilt-card:hover {
-            border-color: var(--border-highlight);
-            box-shadow: 0 18px 35px rgba(15, 23, 42, 0.08), 0 0 20px var(--accent-light);
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-hover);
         }
 
         /* Hero */
@@ -334,7 +217,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 5rem;
+            padding-top: 6rem;
         }
 
         .hero-grid {
@@ -355,13 +238,13 @@
         .profile-3d-frame {
             width: 320px;
             height: 420px;
-            background: linear-gradient(145deg, #ffffff, var(--bg-base));
-            border-radius: 18px;
-            border: 1px solid var(--border-highlight);
+            background: #ffffff;
+            border-radius: 20px;
+            border: 2px solid #09090b;
             transform: rotateY(12deg) rotateX(6deg);
             transform-style: preserve-3d;
             transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
-            box-shadow: -15px 15px 35px rgba(15, 23, 42, 0.08);
+            box-shadow: -18px 18px 36px rgba(15, 23, 42, 0.16);
             position: relative;
             display: flex;
             align-items: center;
@@ -373,13 +256,13 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 16px;
+            border-radius: 18px;
             transform: translateZ(25px);
         }
 
         .profile-3d-frame:hover {
             transform: rotateY(0deg) rotateX(0deg) scale(1.02);
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+            box-shadow: 0 25px 50px rgba(15, 23, 42, 0.22);
         }
 
         .profile-placeholder {
@@ -391,15 +274,15 @@
         }
 
         .profile-placeholder span {
-            color: var(--accent);
-            font-weight: 700;
+            color: #09090b;
+            font-weight: 800;
             display: block;
             margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
         }
 
         .hero-content h1 {
-            font-size: 3.4rem;
+            font-size: 3.6rem;
             line-height: 1.15;
             margin-bottom: 1.5rem;
             font-weight: 800;
@@ -408,8 +291,9 @@
         }
 
         .hero-content h1 span {
-            color: var(--accent);
             display: block;
+            color: #52525b;
+            font-weight: 600;
         }
 
         .hero-content p {
@@ -420,24 +304,25 @@
 
         .btn {
             display: inline-block;
-            padding: 0.85rem 2rem;
-            background: var(--accent);
+            padding: 0.9rem 2.2rem;
+            background: #09090b;
             color: #ffffff;
-            border-radius: 8px;
+            border-radius: 30px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 0.85rem;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 18px var(--accent-light);
-            border: none;
+            box-shadow: 0 6px 18px rgba(9, 9, 11, 0.2);
+            border: 1px solid #09090b;
         }
 
         .btn:hover {
+            background: #ffffff;
+            color: #09090b;
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px var(--accent-light);
-            filter: brightness(1.1);
+            box-shadow: 0 10px 24px rgba(9, 9, 11, 0.15);
         }
 
         /* Competencies */
@@ -455,8 +340,8 @@
             color: var(--text-heading);
             margin-bottom: 1.5rem;
             font-size: 1.25rem;
-            font-weight: 700;
-            border-left: 3px solid var(--accent);
+            font-weight: 800;
+            border-left: 4px solid #09090b;
             padding-left: 0.8rem;
         }
 
@@ -468,14 +353,15 @@
             margin-bottom: 0.8rem;
             padding-left: 1.5rem;
             position: relative;
-            font-size: 0.95rem;
+            font-size: 0.96rem;
+            color: var(--text-body);
         }
 
         .competency-card li::before {
             content: "•";
             position: absolute;
             left: 0;
-            color: var(--accent);
+            color: #09090b;
             font-size: 1.3rem;
             line-height: 1;
         }
@@ -489,19 +375,20 @@
 
         .capability-card {
             padding: 2.2rem;
-            border-top: 3px solid var(--accent);
+            border-top: 4px solid #09090b;
         }
 
         .capability-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.22rem;
             margin-bottom: 1rem;
             color: var(--text-heading);
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .capability-card p {
             font-size: 0.95rem;
             line-height: 1.7;
+            color: var(--text-body);
         }
 
         /* Timeline */
@@ -515,7 +402,7 @@
             content: '';
             position: absolute;
             width: 2px;
-            background: linear-gradient(to bottom, var(--accent), transparent);
+            background: #09090b;
             top: 0;
             bottom: 0;
             left: 0;
@@ -532,8 +419,8 @@
             position: absolute;
             width: 14px;
             height: 14px;
-            background: var(--bg-base);
-            border: 2px solid var(--accent);
+            background: #ffffff;
+            border: 3px solid #09090b;
             border-radius: 50%;
             left: -7px;
             top: 6px;
@@ -541,7 +428,7 @@
         }
 
         .timeline-item:hover::before {
-            background: var(--accent);
+            background: #09090b;
             transform: scale(1.3);
         }
 
@@ -551,18 +438,18 @@
 
         .job-title {
             font-size: 1.45rem;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--text-heading);
         }
 
         .job-meta {
-            color: var(--accent);
+            color: #52525b;
             font-size: 0.92rem;
             margin-bottom: 1.5rem;
             font-weight: 700;
             display: flex;
             justify-content: space-between;
-            border-bottom: 1px solid var(--border-subtle);
+            border-bottom: 1px solid #e2e8f0;
             padding-bottom: 0.8rem;
         }
 
@@ -574,15 +461,16 @@
             margin-bottom: 0.85rem;
             padding-left: 1.5rem;
             position: relative;
-            font-size: 0.95rem;
+            font-size: 0.96rem;
             line-height: 1.7;
+            color: var(--text-body);
         }
 
         .timeline-content li::before {
             content: "▹";
             position: absolute;
             left: 0;
-            color: var(--accent);
+            color: #09090b;
             font-weight: 800;
         }
 
@@ -601,8 +489,8 @@
             color: var(--text-heading);
             margin-bottom: 1.5rem;
             font-size: 1.25rem;
-            font-weight: 700;
-            border-bottom: 1px solid var(--border-subtle);
+            font-weight: 800;
+            border-bottom: 2px solid #09090b;
             padding-bottom: 0.6rem;
         }
 
@@ -613,6 +501,7 @@
         .info-card li {
             margin-bottom: 1rem;
             line-height: 1.6;
+            color: var(--text-body);
         }
 
         .info-card strong {
@@ -636,10 +525,7 @@
             font-size: 2rem;
             color: var(--text-heading);
             margin-bottom: 1.5rem;
-        }
-
-        .overview-card h2 span {
-            color: var(--accent);
+            font-weight: 800;
         }
 
         .details-list {
@@ -651,20 +537,22 @@
         }
 
         .details-list li {
-            background: var(--accent-light);
-            border: 1px solid var(--border-subtle);
+            background: #f8fafc;
+            border: 1px solid var(--border-card);
             padding: 1.2rem;
             border-radius: 12px;
             font-size: 0.95rem;
+            color: var(--text-body);
         }
 
         .details-list strong {
             display: block;
-            color: var(--accent);
+            color: #09090b;
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 0.3rem;
+            font-weight: 800;
         }
 
         /* Footer */
@@ -672,7 +560,7 @@
             background: #ffffff;
             padding: 3.5rem 0 2.5rem;
             text-align: center;
-            border-top: 1px solid var(--border-subtle);
+            border-top: 1px solid var(--border-card);
             margin-top: 5rem;
             position: relative;
             z-index: 2;
@@ -691,7 +579,7 @@
             color: var(--text-heading);
             text-decoration: none;
             font-size: 1.05rem;
-            font-weight: 600;
+            font-weight: 700;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
@@ -699,7 +587,7 @@
         }
 
         .footer-contacts a:hover {
-            color: var(--accent);
+            color: #52525b;
         }
 
         .copyright-text {
@@ -712,12 +600,11 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 46px;
-            height: 46px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
-            background: #ffffff;
-            border: 1px solid var(--border-highlight);
-            color: var(--accent);
+            background: #09090b;
+            color: #ffffff;
             font-size: 1.2rem;
             display: flex;
             align-items: center;
@@ -727,7 +614,8 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            border: none;
         }
 
         #backToTopBtn.visible {
@@ -736,9 +624,8 @@
         }
 
         #backToTopBtn:hover {
-            background: var(--accent);
-            color: #ffffff;
             transform: translateY(-4px);
+            background: #27272a;
         }
 
         @media (max-width: 900px) {
@@ -751,7 +638,7 @@
                 margin: 0 auto;
             }
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.6rem;
             }
             .timeline::before {
                 left: 15px;
@@ -767,21 +654,23 @@
                 gap: 0.3rem;
             }
             nav {
-                flex-direction: column;
-                gap: 0.8rem;
-                padding: 1rem;
+                top: 10px;
             }
-            .nav-links {
-                gap: 1.2rem;
+            .nav-pill-container {
                 flex-wrap: wrap;
                 justify-content: center;
+                border-radius: 20px;
+            }
+            .nav-tab {
+                padding: 6px 12px;
+                font-size: 0.78rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Subtle Opaque Background Vector Art -->
+    <!-- Visible Opaque Background Vector Art -->
     <div class="bg-artwork" aria-hidden="true">
         <!-- Servers Outline (Infra / Staging / Systems) -->
         <svg class="bg-shape shape-servers" viewBox="0 0 200 200">
@@ -803,13 +692,11 @@
 
         <!-- 3D Wireframe Cube (Blender / 3D Graphics) -->
         <svg class="bg-shape shape-cube" viewBox="0 0 200 200">
-            <!-- Front Face -->
             <polygon points="50,60 100,30 150,60 100,90" />
             <polygon points="50,60 100,90 100,150 50,120" />
             <polygon points="150,60 100,90 100,150 150,120" />
-            <!-- Interior wireframe lines -->
-            <line x1="50" y1="60" x2="100" y2="150" stroke-dasharray="3" />
-            <line x1="150" y1="60" x2="100" y2="150" stroke-dasharray="3" />
+            <line x1="50" y1="60" x2="100" y2="150" stroke-dasharray="4" />
+            <line x1="150" y1="60" x2="100" y2="150" stroke-dasharray="4" />
         </svg>
 
         <!-- Cloud Platform & Node Network (AWS, GCP, OpenStack) -->
@@ -823,24 +710,15 @@
         </svg>
     </div>
 
-    <!-- Navigation Bar with Live Theme Picker -->
+    <!-- Prominent Floating Nav Pill -->
     <nav>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#competencies">Competencies</a>
-            <a href="#capabilities">Capabilities</a>
-            <a href="#experience">Experience</a>
-            <a href="#education">Education</a>
-            <a href="#overview">Details</a>
-        </div>
-        
-        <!-- Palette Switcher -->
-        <div class="theme-picker" title="Switch Color Palette">
-            <span>Themes</span>
-            <div class="color-dot dot-nordic" onclick="setTheme('nordic')" title="Nordic Slate & Teal"></div>
-            <div class="color-dot dot-sand" onclick="setTheme('sand')" title="Warm Sand & Terracotta"></div>
-            <div class="color-dot dot-sage" onclick="setTheme('sage')" title="Sage Mist & Forest"></div>
-            <div class="color-dot dot-ice" onclick="setTheme('ice')" title="Minimal Ice & Cobalt"></div>
+        <div class="nav-pill-container">
+            <a href="#home" class="nav-tab active-tab">Home</a>
+            <a href="#competencies" class="nav-tab">Competencies</a>
+            <a href="#capabilities" class="nav-tab">Capabilities</a>
+            <a href="#experience" class="nav-tab">Experience</a>
+            <a href="#education" class="nav-tab">Education</a>
+            <a href="#overview" class="nav-tab">Details</a>
         </div>
     </nav>
 
@@ -859,7 +737,7 @@
 
                     <div class="profile-placeholder">
                         <span>Profile Photo</span>
-                        Uncomment the &lt;img&gt; tag in your HTML to display your picture.
+                        Uncomment the &lt;img&gt; tag in index.html to insert your picture.
                     </div>
                 </div>
             </div>
@@ -867,7 +745,7 @@
             <!-- Profile Summary Content -->
             <div class="hero-content">
                 <h1>IT Architect <span>& Systems Engineer</span></h1>
-                <p>Experienced IT Engineer with over 15 years of expertise in designing, implementing, and managing robust IT infrastructure to support business operations. Highly skilled in system administration, network management, and cloud computing, with a strong track record of optimizing system performance, ensuring high availability, and driving digital transformation initiatives.</p>
+                <p>Experienced IT Engineer with over 15 years of expertise in designing, implementing, and managing robust IT infrastructure to support business operations[cite: 2]. Highly skilled in system administration, network management, and cloud computing, with a strong track record of optimizing system performance, ensuring high availability, and driving digital transformation initiatives[cite: 2].</p>
                 <a href="#experience" class="btn">View Experience</a>
             </div>
         </div>
@@ -883,7 +761,7 @@
                 <div class="tilt-card competency-card slide-left">
                     <h3>Infrastructure & Cloud</h3>
                     <ul>
-                        <li>IT Infrastructure Management</li>
+                        <li>IT Infrastructure Management[cite: 2]</li>
                         <li>Cloud Platforms (AWS, GCP)[cite: 2]</li>
                         <li>System Administration (Linux, Windows Servers)[cite: 2]</li>
                         <li>Virtualization (VMware, XCP - NG)[cite: 2]</li>
@@ -1089,7 +967,7 @@
         <div class="container">
             <div class="footer-contacts">
                 <a href="mailto:your.email@domain.com">✉ your.email@domain.com</a>
-                <span style="color: var(--text-muted); opacity: 0.4;">|</span>
+                <span style="color: #a1a1aa; opacity: 0.5;">|</span>
                 <a href="tel:+919876543210">📞 +91 98765 43210</a>
             </div>
             <p class="copyright-text">&copy; 2026 IT Architect Portfolio. All rights reserved.</p>
@@ -1099,24 +977,35 @@
     <!-- Interactive Logic -->
     <script>
         /* -----------------------------------------------------------
-           1. Theme Picker with LocalStorage Memory
+           1. Dynamic Active Tab Pill Highlight on Scroll
         ----------------------------------------------------------- */
-        function setTheme(themeName) {
-            document.documentElement.setAttribute('data-theme', themeName);
-            localStorage.setItem('cv_preferred_theme', themeName);
-        }
+        const navTabs = document.querySelectorAll('.nav-tab');
+        const trackedSections = document.querySelectorAll('header, section');
 
-        // Restore saved theme on page load
-        const savedTheme = localStorage.getItem('cv_preferred_theme') || 'nordic';
-        setTheme(savedTheme);
+        window.addEventListener('scroll', () => {
+            let currentId = '';
+            trackedSections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (window.scrollY >= sectionTop) {
+                    currentId = section.getAttribute('id');
+                }
+            });
+
+            navTabs.forEach(tab => {
+                tab.classList.remove('active-tab');
+                if (tab.getAttribute('href') === `#${currentId}`) {
+                    tab.classList.add('active-tab');
+                }
+            });
+        });
 
         /* -----------------------------------------------------------
-           2. Scroll In-and-Out Reveal Animation (Intersection Observer)
+           2. Scroll In-and-Out Reveal Animation
         ----------------------------------------------------------- */
         const observerOptions = {
             root: null,
-            rootMargin: '0px 0px -100px 0px',
-            threshold: 0.15
+            rootMargin: '0px 0px -80px 0px',
+            threshold: 0.12
         };
 
         const revealObserver = new IntersectionObserver((entries) => {
@@ -1124,7 +1013,6 @@
                 if (entry.isIntersecting) {
                     entry.target.classList.add('revealed');
                 } else {
-                    // Removes class when scrolling away to enable in-and-out sliding effect
                     entry.target.classList.remove('revealed');
                 }
             });
@@ -1154,14 +1042,6 @@
             });
         }
 
-        document.querySelectorAll("nav a").forEach(link => {
-            link.addEventListener("click", () => {
-                setTimeout(() => {
-                    backToTopBtn.classList.add("visible");
-                }, 200);
-            });
-        });
-
         /* -----------------------------------------------------------
            4. 3D Card Hover & Tilt Physics
         ----------------------------------------------------------- */
@@ -1179,7 +1059,7 @@
                 const rotateX = ((y - centerY) / centerY) * -5;
                 const rotateY = ((x - centerX) / centerX) * 5;
 
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
             });
 
             card.addEventListener('mouseleave', () => {
