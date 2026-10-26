@@ -95,8 +95,8 @@
     .slide-mode .back-to-top{display:none}
     @media(max-width:700px){.slide-mode .slide-back{top:145px;left:6%;padding:8px 14px}.slide-mode main>section.slide-current{padding:80px 0 55px;min-height:calc(100vh - 120px)}}
 
-    /* >>> ADDED: Dual-Pose B&W Animated Frame Styles <<< */
-    .dual-pose-container {
+    /* Cyber/Holographic Animated Transformation Styles */
+    .cyber-transform-frame {
       width: 200px;
       height: 240px;
       border-radius: 14px;
@@ -105,71 +105,118 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) translateZ(60px);
-      background: #141414;
+      background: #0f172a;
       border: 3px solid var(--blue);
       box-shadow: 0 0 25px rgba(7, 137, 249, 0.35);
       z-index: 2;
       cursor: pointer;
     }
 
-    .pose-layer {
+    .cyber-base-img {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      filter: grayscale(100%) contrast(115%);
-      transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s ease;
+      filter: grayscale(100%) contrast(110%);
+      transition: transform 0.4s ease;
     }
 
-    .pose-standing {
-      z-index: 1;
-      animation: fadeStanding 7s infinite ease-in-out;
+    .cyber-wireframe-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(100%) invert(100%) contrast(300%) brightness(90%);
+      mix-blend-mode: screen;
+      opacity: 0;
+      animation: morphToVector 8s ease-in-out infinite;
     }
 
-    .pose-folded {
-      z-index: 2;
-      animation: fadeFolded 7s infinite ease-in-out;
+    .cyber-grid-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(7, 137, 249, 0.15) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(7, 137, 249, 0.15) 1px, transparent 1px);
+      background-size: 16px 16px;
+      pointer-events: none;
+      opacity: 0;
+      animation: gridPulse 8s ease-in-out infinite;
     }
 
-    @keyframes fadeStanding {
-      0%, 45%   { opacity: 1; }
-      50%, 95%  { opacity: 0; }
-      100%      { opacity: 1; }
+    .cyber-scanline {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #00f2fe, #0789f9, transparent);
+      box-shadow: 0 0 14px #00f2fe, 0 0 6px #0789f9;
+      z-index: 5;
+      top: -10px;
+      animation: laserScan 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      pointer-events: none;
     }
 
-    @keyframes fadeFolded {
-      0%, 45%   { opacity: 0; }
-      50%, 95%  { opacity: 1; }
-      100%      { opacity: 0; }
+    @keyframes morphToVector {
+      0%, 35% {
+        opacity: 0;
+        transform: scale(1);
+        filter: grayscale(100%) invert(100%) contrast(300%) brightness(90%);
+      }
+      42% {
+        opacity: 0.8;
+        transform: scale(1.03) translateX(2px);
+      }
+      45%, 75% {
+        opacity: 0.95;
+        transform: scale(1.02);
+      }
+      85%, 100% {
+        opacity: 0;
+        transform: scale(1);
+      }
     }
 
-    .dual-pose-container:hover .pose-standing {
-      opacity: 0 !important;
-      animation-play-state: paused;
+    @keyframes gridPulse {
+      0%, 35% { opacity: 0; }
+      50%, 75% { opacity: 0.7; }
+      90%, 100% { opacity: 0; }
     }
 
-    .dual-pose-container:hover .pose-folded {
+    @keyframes laserScan {
+      0% { top: -8px; opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { top: 245px; opacity: 0; }
+    }
+
+    .cyber-transform-frame:hover .cyber-wireframe-layer {
       opacity: 1 !important;
       animation-play-state: paused;
-      transform: scale(1.03);
     }
 
-    .pose-indicator {
+    .cyber-transform-frame:hover .cyber-grid-overlay {
+      opacity: 0.8 !important;
+      animation-play-state: paused;
+    }
+
+    .transform-badge {
       position: absolute;
       bottom: 8px;
       right: 8px;
-      z-index: 5;
+      z-index: 6;
       background: rgba(0, 0, 0, 0.75);
       color: var(--blue);
-      font-size: 9px;
+      font-size: 8px;
       font-weight: 700;
       padding: 2px 7px;
       border-radius: 12px;
       border: 1px solid rgba(7, 137, 249, 0.4);
-      pointer-events: none;
       letter-spacing: 0.5px;
+      pointer-events: none;
     }
   </style>
 </head>
@@ -179,7 +226,6 @@
       <a class="brand" href="#top" aria-label="Back to top">
         <span>ROBIN <span>AYINIKAT</span></span>
       </a>
-      <!-- Rounded Pill Navigation Links -->
       <nav aria-label="Main navigation">
         <a href="#about" class="active">Home</a>
         <a href="#expertise">Expertise</a>
@@ -194,48 +240,22 @@
       
       <!-- Home / About Section -->
       <section class="hero" id="about">
-        <div class="visual" aria-label="Profile photo area with animated dual-pose portraits">
+        <div class="visual" aria-label="Profile photo area with animated cyber transformation">
           
-          <!-- >>> ADDED: Dual-Pose Animated Photo Container (REPLACES static profile.jpg & profile-placeholder) <<< -->
-          <div class="dual-pose-container">
-            <!-- POSE 1: Standing Straight (Replace SVG with: -->
-            <img src="standing.jpg" class="pose-layer pose-standing" alt="Standing Straight">
-            <!--<svg class="pose-layer pose-standing" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg"> -->
-              <defs>
-                <radialGradient id="grad1" cx="50%" cy="40%" r="60%">
-                  <stop offset="0%" stop-color="#3a3a3a"/>
-                  <stop offset="100%" stop-color="#141414"/>
-                </radialGradient>
-              </defs>
-              <rect width="200" height="240" fill="url(#grad1)"/>
-              <circle cx="100" cy="78" r="34" fill="#d0d0d0"/>
-              <rect x="91" y="110" width="18" height="22" fill="#bcbcbc"/>
-              <path d="M45,138 Q100,122 155,138 L168,240 L32,240 Z" fill="#222222"/>
-              <polygon points="100,154 85,128 115,128" fill="#e8e8e8"/>
-              <polygon points="100,165 96,240 104,240" fill="#111111"/>
-            </svg>
+          <!-- Animated Cyber Transformation Container -->
+          <div class="cyber-transform-frame">
+            <!-- Layer 1: Base Photo -->
+            <img src="profile.jpg" class="cyber-base-img" alt="Profile photo" onerror="this.src='standing.jpg'">
 
-            <!-- POSE 2: Turned Left with Folded Arms (Replace SVG with:  -->
-            <img src="folded.jpg" class="pose-layer pose-folded" alt="Folded Arms">
-            <!-- <svg class="pose-layer pose-folded" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">  -->
-              <defs>
-                <radialGradient id="grad2" cx="40%" cy="40%" r="60%">
-                  <stop offset="0%" stop-color="#424242"/>
-                  <stop offset="100%" stop-color="#101010"/>
-                </radialGradient>
-              </defs>
-              <rect width="200" height="240" fill="url(#grad2)"/>
-              <ellipse cx="94" cy="76" rx="31" ry="34" fill="#dcdcdc"/>
-              <path d="M85,108 L104,110 L101,130 L82,126 Z" fill="#c4c4c4"/>
-              <path d="M38,136 Q92,124 150,144 L165,240 L30,240 Z" fill="#202020"/>
-              <path d="M46,168 C62,154 135,152 152,176 C144,198 100,202 82,200 C60,198 48,185 46,168 Z" fill="#2d2d2d" stroke="#111" stroke-width="2"/>
-              <path d="M52,174 C75,188 128,185 146,170" fill="none" stroke="#555555" stroke-width="3" stroke-linecap="round"/>
-              <polygon points="92,126 102,152 86,146" fill="#e8e8e8"/>
-            </svg>
+            <!-- Layer 2: Transformative Vector Wireframe -->
+            <img src="profile.jpg" class="cyber-wireframe-layer" alt="Vector Wireframe Transform" onerror="this.src='standing.jpg'">
 
-            <span class="pose-indicator">LIVE POSE</span>
+            <!-- Layer 3: Matrix Grid & Scanning Laser -->
+            <div class="cyber-grid-overlay"></div>
+            <div class="cyber-scanline"></div>
+
+            <span class="transform-badge">SYS::ACTIVE</span>
           </div>
-          <!-- >>> END ADDED <<< -->
 
           <div class="server-stack">
             <div class="server"><span class="server-icon"></span><span class="server-lines"><i></i><i></i></span></div>
@@ -246,7 +266,7 @@
           <span class="visual-label">Systems · Cloud · Reliability</span>
         </div>
         <div class="hero-copy">
-          <div class="eyebrow">IT Architect · Bangalore</div>
+          <div class="eyebrow">IT architect · Bangalore</div>
           <h1>Building reliable systems for business.</h1>
           <p class="role">IT Infrastructure &amp; Cloud Operations</p>
           <p>Experienced IT Professional with 15+ years designing, implementing, and managing resilient infrastructure. I bring together systems administration, cloud platforms, security, and operational discipline to keep critical services performing.</p>
@@ -285,7 +305,7 @@
         </div>
         <div class="work-grid">
           <article class="work-card"><span class="work-number">01 / SCALE</span><div class="work-art"><div class="mini-rack"><i></i><i></i><i></i></div><div class="cloud-orbit"></div></div><h3>Multi-platform staging estate</h3><p>Managing 3,000+ staging servers across VMware, AWS, and on-premises infrastructure, with focus on patching, performance, and availability.</p></article>
-          <article class="work-card"><span class="work-number">02 / MODERNIZATION</span><div class="work-art"><div class="cloud-orbit"></div><div class="mini-rack"><i></i><i></i><i></i></div></div><h3>Cloud &amp; private platforms</h3><p>Hands-on deployments across AWS and GCP, plus on-premises VDI planning and deployment also OpenStack implementation using existing hardware.</p></article>
+          <article class="work-card"><span class="work-number">02 / MODERNIZATION</span><div class="work-art"><div class="cloud-orbit"></div><div class="mini-rack"><i></i><i></i><i></i></div></div><h3>Cloud &amp; private platforms</h3><p>Hands-on deployments across AWS and GCP, plus on-premises VDI planning and an OpenStack implementation using existing hardware.</p></article>
           <article class="work-card"><span class="work-number">03 / GLOBAL DELIVERY</span><div class="work-art"><div class="globe"></div></div><h3>Resilient services &amp; data centers</h3><p>Mobile money platform deployments across four countries, data center operations, disaster recovery, monitoring, and audit readiness.</p></article>
         </div>
       </section>
@@ -297,10 +317,10 @@
           <p>Progressive responsibility in infrastructure architecture, team leadership, and enterprise operations.</p>
         </div>
         <div class="experience">
-          <article class="job"><div class="job-top"><h3>IT Architect</h3><span class="date">June 2022 — Present</span></div><p class="place">Harman Connected Services - A WIPRO subsidiary, Bangalore</p><ul><li>Manage staging infrastructure of 3,000+ servers across VMware, AWS, and on-premises environments.</li><li>Coordinate regular security patching and OS package upgrades to meet security and compliance requirements.</li><li>Monitor performance and availability, troubleshoot incidents, and improve system reliability.</li><li>Partner with cross-functional teams on deployment, testing, and maintenance in staging and production.</li><li>Maintain infrastructure, patching, and upgrade documentation.</li><li>Create AI-assisted Ansible playbooks for automated installaion of packages.</li></ul></article>
-          <article class="job"><div class="job-top"><h3>Lead – IT</h3><span class="date">January 2020 — June 2022</span></div><p class="place">Wibmo Inc., - A PayU subsidiary, Bangalore</p><ul><li>Managed VMware staging infrastructure of more than 600 servers.</li><li>Deployed and configured AWS and GCP servers; planned and implemented on-premises VDI.</li><li>Supported servers, storage, and network devices, coordinating with vendors and internal teams to minimize downtime.</li><li>Deployed Prometheus and Grafana monitoring and Apache Guacamole remote access.</li><li>Mentored team members and led an on-premises OpenStack implementation using existing hardware.</li></ul></article>
-          <article class="job"><div class="job-top"><h3>Senior Systems Engineer</h3><span class="date">January 2010 — December 2019</span></div><p class="place">OBOPAY Mobile Technologies, Bangalore</p><ul><li>Managed and Deployed mobile money platform deployments for clients in Burundi, Uganda, Zimbabwe, and Kenya.</li><li>Oversaw data center facilities including power, cabling, cooling, and audit compliance.</li><li>Deployed Nagios monitoring and cloud servers on AWS and GCP; delivered deployment and disaster recovery projects.</li><li>Installed and hardened Linux servers; supported server, storage, and network environments.</li><li>Conducted internal and external ISMS audits, infrastructure assessments, inventory verification, and compliance reporting.</li></ul></article>
-          <article class="job"><div class="job-top"><h3>Network Administrator</h3><span class="date">November 2006 — January 2010</span></div><p class="place">Nextfocus Inc., Mumbai</p><ul><li>Troubleshoot problems &amp; maintain desktops in a heterogeneous environment (Windows XP/2000/2003/2008, Linux Machines).</li><li>Streamlined purchase process and improved vendor relations resulting in better pricing and quick delivery of IT procurements.</li><li>Monitored and managed ISP and Service vendor SLAs critical to business, worked with local ISPs on getting new Internet Links at lesser cost with the local carriers for higher bandwidth including last mile redundancy.</li></ul></article>
+          <article class="job"><div class="job-top"><h3>IT Architect</h3><span class="date">June 2022 — Present</span></div><p class="place">Bangalore</p><ul><li>Manage staging infrastructure of 3,000+ servers across VMware, AWS, and on-premises environments.</li><li>Coordinate regular security patching and OS package upgrades to meet security and compliance requirements.</li><li>Monitor performance and availability, troubleshoot incidents, and improve system reliability.</li><li>Partner with cross-functional teams on deployment, testing, and maintenance in staging and production.</li><li>Maintain infrastructure, patching, and upgrade documentation.</li><li>Create AI-assisted Ansible playbooks for package installation automation.</li></ul></article>
+          <article class="job"><div class="job-top"><h3>Lead – IT</h3><span class="date">January 2020 — June 2022</span></div><p class="place">Bangalore</p><ul><li>Managed VMware staging infrastructure of more than 600 servers.</li><li>Deployed and configured AWS and GCP servers; planned and implemented on-premises VDI.</li><li>Supported servers, storage, and network devices, coordinating with vendors and internal teams to minimize downtime.</li><li>Deployed Prometheus and Grafana monitoring and Apache Guacamole remote access.</li><li>Mentored team members and led an on-premises OpenStack implementation using existing hardware.</li></ul></article>
+          <article class="job"><div class="job-top"><h3>Senior Systems Engineer</h3><span class="date">January 2010 — December 2019</span></div><p class="place">Bangalore</p><ul><li>Managed mobile money platform deployments for clients in Burundi, Uganda, Zimbabwe, and Kenya.</li><li>Oversaw data center facilities including power, cabling, cooling, and audit compliance.</li><li>Deployed Nagios monitoring and cloud servers on AWS and GCP; delivered deployment and disaster recovery projects.</li><li>Installed and hardened Linux servers; supported server, storage, and network environments.</li><li>Conducted internal and external ISMS audits, infrastructure assessments, inventory verification, and compliance reporting.</li></ul></article>
+          <article class="job"><div class="job-top"><h3>Network Administrator</h3><span class="date">November 2006 — January 2010</span></div><p class="place">Mumbai</p><ul><li>Troubleshoot problems &amp; maintain desktops in a heterogeneous environment (Windows XP/2000/2003/2008, Linux Machines).</li><li>Streamlined purchase process and improved vendor relations resulting in better pricing and quick delivery of IT procurements.</li><li>Monitored and managed ISP and Service vendor SLAs critical to business, worked with local ISPs on getting new Internet Links at lesser cost with the local carriers for higher bandwidth including last mile redundancy.</li></ul></article>
         </div>
       </section>
 
@@ -322,7 +342,7 @@
             <h3>Certifications</h3>
             <div class="list">
               <div class="list-item"><strong>Certificate of Completion for CLAUDE CODE IN ACTION</strong></div>
-              <div class="list-item"><strong>Certificate of Completion for Build with GEMINI</strong></div>			  
+              <div class="list-item"><strong>Certificate of Completion for Build with GEMINI</strong></div>
               <div class="list-item"><strong>Certified Internal Auditor</strong></div>
               <div class="list-item"><strong>Diploma in Red Hat Linux</strong></div>
               <div class="list-item"><strong>ITIL Foundation V3 Certified</strong></div>
@@ -367,7 +387,6 @@
   <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top" onclick="window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})">↑</button>
 
   <script>
-    // 3D Tilt effect on the profile frame
     const stage=document.querySelector('.visual');
     if(stage && matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
       stage.addEventListener('pointermove',event=>{
@@ -382,7 +401,6 @@
     const navLinks=[...document.querySelectorAll('nav a[href^="#"]')];
     const sections=navLinks.map(link=>document.querySelector(link.getAttribute('href'))).filter(Boolean);
 
-    // Scroll spy for full view
     if('IntersectionObserver' in window){
       const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
         if(!document.body.classList.contains('slide-mode') && entry.isIntersecting){
@@ -414,12 +432,10 @@
       }
     };
 
-    // Clicking tabs switches between slide view and home
     navLinks.forEach(link=>link.addEventListener('click',event=>{
       const id=link.hash.slice(1);
       event.preventDefault();
       if(id === 'about'){
-        // Home tab: exit slide mode and scroll home
         history.pushState(null, '', '#about');
         setSlide(null);
       } else {
@@ -435,7 +451,6 @@
       if(event.key==='Escape' && document.body.classList.contains('slide-mode')) history.back();
     });
 
-    // 3D Card Hover on Work Highlights
     if(matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
       document.querySelectorAll('.work-card').forEach(card=>{
         card.addEventListener('pointermove',event=>{
@@ -448,7 +463,6 @@
       });
     }
 
-    // Back to top appearance
     const topButton=document.querySelector('.back-to-top');
     const updateTopButton=()=>topButton.classList.toggle('visible',window.scrollY>420);
     window.addEventListener('scroll',updateTopButton,{passive:true});
