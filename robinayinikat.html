@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f6f8">
   <meta name="description" content="IT infrastructure architect with 15+ years of experience across enterprise systems, cloud platforms, and data center operations.">
-  <title>IT ADMIN | Portfolio</title>
+  <title>Robin Ayinikat | Portfolio</title>
   <style>
     :root{--ink:#202635;--muted:#687184;--blue:#5268df;--mint:#dff2ed;--line:#e8eaf0;--paper:#fff;--bg:#f4f5f8;--shadow:0 22px 70px #26324b12}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}.shell{max-width:1120px;margin:auto;padding:28px 24px 40px}.site{overflow:hidden;background:var(--paper);border-radius:22px;box-shadow:var(--shadow)}
@@ -95,8 +95,8 @@
     .slide-mode .back-to-top{display:none}
     @media(max-width:700px){.slide-mode .slide-back{top:145px;left:6%;padding:8px 14px}.slide-mode main>section.slide-current{padding:80px 0 55px;min-height:calc(100vh - 120px)}}
 
-    /* Animated Profile Portrait Frame Styles */
-    .animated-profile-frame {
+    /* Cyber/Holographic Animated Transformation Styles */
+    .cyber-transform-frame {
       width: 200px;
       height: 240px;
       border-radius: 14px;
@@ -105,27 +105,370 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) translateZ(60px);
-      background: #141414;
+      background: #0f172a;
       border: 3px solid var(--blue);
       box-shadow: 0 0 25px rgba(7, 137, 249, 0.35);
       z-index: 2;
+      cursor: pointer;
     }
 
-    .animated-profile-frame img,
-    .animated-profile-frame video {
+    .cyber-base-img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      filter: grayscale(100%) contrast(115%);
+      filter: grayscale(100%) contrast(110%);
       transition: transform 0.4s ease;
     }
 
-    .animated-profile-frame:hover img,
-    .animated-profile-frame:hover video {
-      transform: scale(1.04);
+    .cyber-wireframe-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(100%) invert(100%) contrast(300%) brightness(90%);
+      mix-blend-mode: screen;
+      opacity: 0;
+      animation: morphToVector 8s ease-in-out infinite;
+    }
+
+    .cyber-grid-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(7, 137, 249, 0.15) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(7, 137, 249, 0.15) 1px, transparent 1px);
+      background-size: 16px 16px;
+      pointer-events: none;
+      opacity: 0;
+      animation: gridPulse 8s ease-in-out infinite;
+    }
+
+    .cyber-scanline {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #00f2fe, #0789f9, transparent);
+      box-shadow: 0 0 14px #00f2fe, 0 0 6px #0789f9;
+      z-index: 5;
+      top: -10px;
+      animation: laserScan 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      pointer-events: none;
+    }
+
+    @keyframes morphToVector {
+      0%, 35% {
+        opacity: 0;
+        transform: scale(1);
+        filter: grayscale(100%) invert(100%) contrast(300%) brightness(90%);
+      }
+      42% {
+        opacity: 0.8;
+        transform: scale(1.03) translateX(2px);
+      }
+      45%, 75% {
+        opacity: 0.95;
+        transform: scale(1.02);
+      }
+      85%, 100% {
+        opacity: 0;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes gridPulse {
+      0%, 35% { opacity: 0; }
+      50%, 75% { opacity: 0.7; }
+      90%, 100% { opacity: 0; }
+    }
+
+    @keyframes laserScan {
+      0% { top: -8px; opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { top: 245px; opacity: 0; }
+    }
+
+    .cyber-transform-frame:hover .cyber-wireframe-layer {
+      opacity: 1 !important;
+      animation-play-state: paused;
+    }
+
+    .cyber-transform-frame:hover .cyber-grid-overlay {
+      opacity: 0.8 !important;
+      animation-play-state: paused;
+    }
+
+    .transform-badge {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      z-index: 6;
+      background: rgba(0, 0, 0, 0.75);
+      color: var(--blue);
+      font-size: 8px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 12px;
+      border: 1px solid rgba(7, 137, 249, 0.4);
+      letter-spacing: 0.5px;
+      pointer-events: none;
     }
   </style>
+</head>
+<body>
+  <div class="shell"><div class="site">
+    <header>
+      <a class="brand" href="#top" aria-label="Back to top">
+        <span>Robin <span>Ayinikat</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#about" class="active">Home</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#work">Highlights</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#personal">Personal</a>
+      </nav>
+    </header>
+    <main id="top">
+      <button class="slide-back" id="slide-back" type="button" aria-label="Go back to the previous view">← &nbsp; Back</button>
+      
+      <!-- Home / About Section -->
+      <section class="hero" id="about">
+        <div class="visual" aria-label="Profile photo area with animated cyber transformation">
+          
+          <!-- Animated Cyber Transformation Container -->
+          <div class="cyber-transform-frame">
+            <!-- Layer 1: Base Photo -->
+            <img src="profile.jpg" class="cyber-base-img" alt="Profile photo" onerror="this.src='standing.jpg'">
+
+            <!-- Layer 2: Transformative Vector Wireframe -->
+            <img src="profile.jpg" class="cyber-wireframe-layer" alt="Vector Wireframe Transform" onerror="this.src='standing.jpg'">
+
+            <!-- Layer 3: Matrix Grid & Scanning Laser -->
+            <div class="cyber-grid-overlay"></div>
+            <div class="cyber-scanline"></div>
+
+            <span class="transform-badge">SYS::ACTIVE</span>
+          </div>
+
+          <div class="server-stack">
+            <div class="server"><span class="server-icon"></span><span class="server-lines"><i></i><i></i></span></div>
+            <div class="server"><span class="server-icon"></span><span class="server-lines"><i></i><i></i></span></div>
+            <div class="server"><span class="server-icon"></span><span class="server-lines"><i></i><i></i></span></div>
+          </div>
+          <div class="orbit">⌘</div>
+          <span class="visual-label">Systems · Cloud · Reliability</span>
+        </div>
+        <div class="hero-copy">
+          <div class="eyebrow">IT architect · Bangalore</div>
+          <h1>Building reliable systems for business.</h1>
+          <p class="role">IT Infrastructure &amp; Cloud Operations</p>
+          <p>Experienced IT Professional with 15+ years designing, implementing, and managing resilient infrastructure. I bring together systems administration, cloud platforms, security, and operational discipline to keep critical services performing.</p>
+          <div class="actions">
+            <button class="button primary" onclick="window.print()">↓ &nbsp;Download CV</button>
+            <a class="button" href="#work">View highlights &nbsp;→</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="stats" aria-label="Career highlights">
+        <div class="stat"><strong>15+ years</strong><span>in IT infrastructure</span></div>
+        <div class="stat"><strong>3,000+</strong><span>servers supported in staging</span></div>
+        <div class="stat"><strong>4 countries</strong><span>mobile money deployments</span></div>
+      </div>
+
+      <!-- Expertise Section -->
+      <section id="expertise">
+        <div class="section-head">
+          <div><div class="eyebrow">Capabilities</div><h2>What I Do</h2></div>
+          <p>Practical engineering across infrastructure lifecycle, platform reliability, and team operations.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="icon">▤</div><div><h3>Infrastructure &amp; systems</h3><p>Design and administration of large server environments, operating systems, storage, and network services.</p><div class="tags"><span class="tag">Linux</span><span class="tag">Windows Server</span><span class="tag">VMware</span><span class="tag">XCP-ng</span></div></div></article>
+          <article class="card"><div class="icon">☁</div><div><h3>Cloud &amp; virtualization</h3><p>Deploy and operate cloud and private-cloud platforms to support changing business needs.</p><div class="tags"><span class="tag">AWS</span><span class="tag">GCP</span><span class="tag">OpenStack</span><span class="tag">VDI</span></div></div></article>
+          <article class="card"><div class="icon">⌁</div><div><h3>Monitoring &amp; reliability</h3><p>Improve visibility, availability, and performance with actionable monitoring and troubleshooting.</p><div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Nagios</span></div></div></article>
+          <article class="card"><div class="icon">✓</div><div><h3>Security &amp; operations</h3><p>Security patching, OS upgrades, system hardening, compliance, and clear operational documentation.</p><div class="tags"><span class="tag">Patching</span><span class="tag">ISMS</span><span class="tag">Documentation</span><span class="tag">Ansible</span></div></div></article>
+        </div>
+      </section>
+
+      <!-- Highlights Section -->
+      <section id="work">
+        <div class="section-head">
+          <div><div class="eyebrow">Selected highlights</div><h2>Infrastructure in action</h2></div>
+          <p>Work themes drawn from the platforms, operations, and deployments in my career.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card"><span class="work-number">01 / SCALE</span><div class="work-art"><div class="mini-rack"><i></i><i></i><i></i></div><div class="cloud-orbit"></div></div><h3>Multi-platform staging estate</h3><p>Managing 3,000+ staging servers across VMware, AWS, and on-premises infrastructure, with focus on patching, performance, and availability.</p></article>
+          <article class="work-card"><span class="work-number">02 / MODERNIZATION</span><div class="work-art"><div class="cloud-orbit"></div><div class="mini-rack"><i></i><i></i><i></i></div></div><h3>Cloud &amp; private platforms</h3><p>Hands-on deployments across AWS and GCP, plus on-premises VDI planning and an OpenStack implementation using existing hardware.</p></article>
+          <article class="work-card"><span class="work-number">03 / GLOBAL DELIVERY</span><div class="work-art"><div class="globe"></div></div><h3>Resilient services &amp; data centers</h3><p>Mobile money platform deployments across four countries, data center operations, disaster recovery, monitoring, and audit readiness.</p></article>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience">
+        <div class="section-head">
+          <div><div class="eyebrow">Career</div><h2>Professional experience</h2></div>
+          <p>Progressive responsibility in infrastructure architecture, team leadership, and enterprise operations.</p>
+        </div>
+        <div class="experience">
+          <article class="job"><div class="job-top"><h3>IT Architect</h3><span class="date">June 2022 — Present</span></div><p class="place">Bangalore</p><ul><li>Manage staging infrastructure of 3,000+ servers across VMware, AWS, and on-premises environments.</li><li>Coordinate regular security patching and OS package upgrades to meet security and compliance requirements.</li><li>Monitor performance and availability, troubleshoot incidents, and improve system reliability.</li><li>Partner with cross-functional teams on deployment, testing, and maintenance in staging and production.</li><li>Maintain infrastructure, patching, and upgrade documentation.</li><li>Create AI-assisted Ansible playbooks for package installation automation.</li></ul></article>
+          <article class="job"><div class="job-top"><h3>Lead – IT</h3><span class="date">January 2020 — June 2022</span></div><p class="place">Bangalore</p><ul><li>Managed VMware staging infrastructure of more than 600 servers.</li><li>Deployed and configured AWS and GCP servers; planned and implemented on-premises VDI.</li><li>Supported servers, storage, and network devices, coordinating with vendors and internal teams to minimize downtime.</li><li>Deployed Prometheus and Grafana monitoring and Apache Guacamole remote access.</li><li>Mentored team members and led an on-premises OpenStack implementation using existing hardware.</li></ul></article>
+          <article class="job"><div class="job-top"><h3>Senior Systems Engineer</h3><span class="date">January 2010 — December 2019</span></div><p class="place">Bangalore</p><ul><li>Managed mobile money platform deployments for clients in Burundi, Uganda, Zimbabwe, and Kenya.</li><li>Oversaw data center facilities including power, cabling, cooling, and audit compliance.</li><li>Deployed Nagios monitoring and cloud servers on AWS and GCP; delivered deployment and disaster recovery projects.</li><li>Installed and hardened Linux servers; supported server, storage, and network environments.</li><li>Conducted internal and external ISMS audits, infrastructure assessments, inventory verification, and compliance reporting.</li></ul></article>
+          <article class="job"><div class="job-top"><h3>Network Administrator</h3><span class="date">November 2006 — January 2010</span></div><p class="place">Mumbai</p><ul><li>Troubleshoot problems &amp; maintain desktops in a heterogeneous environment (Windows XP/2000/2003/2008, Linux Machines).</li><li>Streamlined purchase process and improved vendor relations resulting in better pricing and quick delivery of IT procurements.</li><li>Monitored and managed ISP and Service vendor SLAs critical to business, worked with local ISPs on getting new Internet Links at lesser cost with the local carriers for higher bandwidth including last mile redundancy.</li></ul></article>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education">
+        <div class="section-head">
+          <div><div class="eyebrow">Credentials</div><h2>Education &amp; Certifications</h2></div>
+        </div>
+        <div class="columns">
+          <div>
+            <h3>Education</h3>
+            <div class="list">
+              <div class="list-item"><strong>Master of Computer Applications</strong><span>University of Madras · 2016–2018</span></div>
+              <div class="list-item"><strong>Bachelor of Computer Applications</strong><span>University of Madras · 2001–2004</span></div>
+              <div class="list-item"><strong>Diploma in Civil Engineering</strong><span>Shreeram Polytechnic, Navi Mumbai · 1991–1995</span></div>
+            </div>
+          </div>
+          <div>
+            <h3>Certifications</h3>
+            <div class="list">
+              <div class="list-item"><strong>Certificate of Completion for CLAUDE CODE IN ACTION</strong></div>
+              <div class="list-item"><strong>Certificate of Completion for Build with GEMINI</strong></div>
+              <div class="list-item"><strong>Certified Internal Auditor</strong></div>
+              <div class="list-item"><strong>Diploma in Red Hat Linux</strong></div>
+              <div class="list-item"><strong>ITIL Foundation V3 Certified</strong></div>
+            </div>
+            <div class="creative" style="margin-top:20px">
+              <div class="icon">✳</div>
+              <p><strong>Creative practice</strong>3D modeling in Blender and motion graphics.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Personal Section -->
+      <section id="personal">
+        <div class="section-head">
+          <div><div class="eyebrow">Personal</div><h2>Personal details &amp; references</h2></div>
+        </div>
+        <div class="columns">
+          <div>
+            <h3>Personal details</h3>
+            <div class="list">
+              <div class="list-item"><strong>Marital status</strong><span>Married</span></div>
+              <div class="list-item"><strong>Languages</strong><span>English, Hindi, Malayalam, Marathi</span></div>
+            </div>
+          </div>
+          <div>
+            <h3>References</h3>
+            <div class="creative">
+              <div class="icon">“</div>
+              <p><strong>Available upon request</strong>Professional references can be provided when requested.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="foot">
+      <span><strong>Robin Ayinikat</strong> · Bangalore</span>
+      <span><strong>Email</strong> · robin.ayinikat@gmail.com &nbsp;&nbsp; <strong>Mobile</strong> · 98330 049835</span>
+    </footer>
+  </div></div>
+
+  <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top" onclick="window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})">↑</button>
+
+  <script>
+    const stage=document.querySelector('.visual');
+    if(stage && matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+      stage.addEventListener('pointermove',event=>{
+        const box=stage.getBoundingClientRect();
+        const x=(event.clientX-box.left)/box.width-.5;
+        const y=(event.clientY-box.top)/box.height-.5;
+        stage.style.transform=`rotateY(${x*7}deg) rotateX(${-y*7}deg)`;
+      });
+      stage.addEventListener('pointerleave',()=>stage.style.transform='');
+    }
+
+    const navLinks=[...document.querySelectorAll('nav a[href^="#"]')];
+    const sections=navLinks.map(link=>document.querySelector(link.getAttribute('href'))).filter(Boolean);
+
+    if('IntersectionObserver' in window){
+      const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+        if(!document.body.classList.contains('slide-mode') && entry.isIntersecting){
+          navLinks.forEach(link=>link.classList.toggle('active',link.hash===`#${entry.target.id}`));
+        }
+      }),{rootMargin:'-25% 0px -60% 0px'});
+      sections.forEach(section=>observer.observe(section));
+    }
+
+    let savedScrollY=0;
+    const setSlide=(id,saveScroll=false)=>{
+      const isSlide = Boolean(id) && id !== 'about';
+      document.body.classList.toggle('slide-mode', isSlide);
+      document.querySelectorAll('main>section').forEach(section=>{
+        section.classList.toggle('slide-current', isSlide && section.id === id);
+      });
+      navLinks.forEach(link=>{
+        if(!isSlide && link.hash === '#about') {
+          link.classList.add('active');
+        } else {
+          link.classList.toggle('active', isSlide && link.hash === `#${id}`);
+        }
+      });
+      if(isSlide){
+        if(saveScroll) savedScrollY = window.scrollY;
+        window.scrollTo({top:0, behavior:'auto'});
+      } else {
+        window.scrollTo({top:0, behavior:'smooth'});
+      }
+    };
+
+    navLinks.forEach(link=>link.addEventListener('click',event=>{
+      const id=link.hash.slice(1);
+      event.preventDefault();
+      if(id === 'about'){
+        history.pushState(null, '', '#about');
+        setSlide(null);
+      } else {
+        if(!document.getElementById(id)) return;
+        history.pushState({portfolioSlide:id}, '', `#${id}`);
+        setSlide(id, !document.body.classList.contains('slide-mode'));
+      }
+    }));
+
+    document.getElementById('slide-back').addEventListener('click',()=>history.back());
+    window.addEventListener('popstate',event=>setSlide(event.state?.portfolioSlide||null));
+    document.addEventListener('keydown',event=>{
+      if(event.key==='Escape' && document.body.classList.contains('slide-mode')) history.back();
+    });
+
+    if(matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.querySelectorAll('.work-card').forEach(card=>{
+        card.addEventListener('pointermove',event=>{
+          const box=card.getBoundingClientRect();
+          const x=(event.clientX-box.left)/box.width-.5;
+          const y=(event.clientY-box.top)/box.height-.5;
+          card.style.transform=`rotateY(${x*6}deg) rotateX(${-y*5}deg) translateY(-3px)`;
+        });
+        card.addEventListener('pointerleave',()=>card.style.transform='');
+      });
+    }
+
+    const topButton=document.querySelector('.back-to-top');
+    const updateTopButton=()=>topButton.classList.toggle('visible',window.scrollY>420);
+    window.addEventListener('scroll',updateTopButton,{passive:true});
+    updateTopButton();
+  </script>
+</body>
 </head>
 <body>
   <div class="shell"><div class="site">
