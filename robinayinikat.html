@@ -17,14 +17,20 @@
     nav a:hover{color:var(--blue);background:#f1f4fb;border-color:var(--line)}
     nav a.active{color:#fff!important;background:var(--blue)!important;border-color:var(--blue)!important;box-shadow:0 4px 12px rgba(82,104,223,0.25)}
 
-    main{padding:0 7%}.hero{display:grid;grid-template-columns:1fr 1fr;gap:8%;align-items:center;padding:70px 0 58px}.visual{position:relative;min-height:390px;border-radius:22px;background:linear-gradient(145deg,#e5eafa,#dceeea);overflow:hidden;display:grid;place-items:center}.visual:before,.visual:after{content:"";position:absolute;border:1px solid #fff9;border-radius:50%;width:350px;height:350px}.visual:after{width:260px;height:260px}.visual-label{position:absolute;left:25px;bottom:22px;color:#42516b;font-size:11px;letter-spacing:.16em;text-transform:uppercase}.server-stack{position:relative;z-index:1;width:190px;display:grid;gap:12px;transform:perspective(800px) rotateY(-12deg) rotateX(5deg)}.server{height:74px;border-radius:13px;background:#fff;box-shadow:0 15px 25px #39476a20;padding:16px 18px;display:flex;align-items:center;gap:14px}.server-icon{width:34px;height:34px;border-radius:10px;background:#edf0ff;position:relative}.server-icon:before,.server-icon:after{content:"";position:absolute;left:9px;width:16px;height:4px;border-radius:4px;background:#6379e4}.server-icon:before{top:10px}.server-icon:after{top:19px;background:#9abeb4}.server-lines{flex:1}.server-lines i{display:block;height:5px;border-radius:5px;background:#e9ebf2;margin:5px 0}.server-lines i:first-child{width:72%}.server-lines i:last-child{width:48%}.orbit{position:absolute;right:16%;top:17%;width:65px;height:65px;border-radius:18px;background:#fff;box-shadow:0 12px 35px #39476a1c;display:grid;place-items:center;color:var(--blue);font-size:24px}.eyebrow{color:var(--blue);font-weight:700;letter-spacing:.15em;text-transform:uppercase;font-size:12px}.hero h1{font-size:clamp(38px,5vw,58px);line-height:1.08;letter-spacing:-.055em;margin:15px 0 9px}.role{font-size:16px;font-weight:600;color:#616c82;margin:0 0 21px}.hero p{color:var(--muted);margin:0;max-width:520px}.actions{display:flex;gap:12px;margin-top:27px;flex-wrap:wrap}.button{border:1px solid var(--line);border-radius:9px;padding:11px 18px;font-weight:650;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:9px}.button.primary{background:var(--blue);border-color:var(--blue);color:#fff}.button:hover{transform:translateY(-1px)}
+    main{padding:0 7%}.hero{display:grid;grid-template-columns:1fr 1fr;gap:8%;align-items:center;padding:70px 0 58px}
+    .visual{position:relative;min-height:390px;border-radius:20px;background:linear-gradient(145deg,#e5eafa,#dceeea);overflow:hidden;display:grid;place-items:center}
+    .visual:before,.visual:after{content:"";position:absolute;border:1px solid #fff9;border-radius:50%;width:350px;height:350px}.visual:after{width:260px;height:260px}.visual-label{position:absolute;left:25px;bottom:22px;color:#42516b;font-size:11px;letter-spacing:.16em;text-transform:uppercase}.server-stack{position:relative;z-index:1;width:190px;display:grid;gap:12px;transform:perspective(800px) rotateY(-12deg) rotateX(5deg)}.server{height:74px;border-radius:13px;background:#fff;box-shadow:0 15px 25px #39476a20;padding:16px 18px;display:flex;align-items:center;gap:14px}.server-icon{width:34px;height:34px;border-radius:10px;background:#edf0ff;position:relative}.server-icon:before,.server-icon:after{content:"";position:absolute;left:9px;width:16px;height:4px;border-radius:4px;background:#6379e4}.server-icon:before{top:10px}.server-icon:after{top:19px;background:#9abeb4}.server-lines{flex:1}.server-lines i{display:block;height:5px;border-radius:5px;background:#e9ebf2;margin:5px 0}.server-lines i:first-child{width:72%}.server-lines i:last-child{width:48%}.orbit{position:absolute;right:16%;top:17%;width:65px;height:65px;border-radius:18px;background:#fff;box-shadow:0 12px 35px #39476a1c;display:grid;place-items:center;color:var(--blue);font-size:24px}.eyebrow{color:var(--blue);font-weight:700;letter-spacing:.15em;text-transform:uppercase;font-size:12px}
+    
+    /* Reduced headline by 2 points (~3px) */
+    .hero h1{font-size:clamp(39px,4.7vw,59px);line-height:1.08;letter-spacing:-.055em;margin:15px 0 9px}
+    .role{font-size:16px;font-weight:600;color:#616c82;margin:0 0 21px}.hero p{color:var(--muted);margin:0;max-width:520px}.actions{display:flex;gap:12px;margin-top:27px;flex-wrap:wrap}.button{border:1px solid var(--line);border-radius:9px;padding:11px 18px;font-weight:650;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:9px}.button.primary{background:var(--blue);border-color:var(--blue);color:#fff}.button:hover{transform:translateY(-1px)}
     .stats{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line);padding:22px 0;margin-bottom:58px}.stat{padding:0 25px;border-right:1px solid var(--line)}.stat:first-child{padding-left:0}.stat:last-child{border:0}.stat strong{font-size:23px;display:block;letter-spacing:-.04em}.stat span{font-size:13px;color:var(--muted)}section{padding:0 0 68px;scroll-margin-top:30px}.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:25px}.section-head h2{font-size:29px;line-height:1.2;letter-spacing:-.04em;margin:5px 0 0}.section-head p{color:var(--muted);font-size:14px;margin:0;max-width:430px}
     .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.card{border:1px solid var(--line);border-radius:15px;padding:22px;display:flex;gap:17px;min-height:155px}.icon{width:43px;height:43px;flex:none;border-radius:13px;background:#eef0ff;color:var(--blue);display:grid;place-items:center;font-size:20px}.card h3{font-size:16px;margin:0 0 5px;letter-spacing:-.02em}.card p{font-size:13px;color:var(--muted);margin:0}.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.tag{padding:5px 10px;border-radius:20px;background:#f1f3f8;color:#5e687a;font-size:12px}
     .experience{border-left:1px solid #dfe3ed;margin-left:8px;padding-left:28px}.job{position:relative;padding:0 0 27px}.job:last-child{padding-bottom:0}.job:before{content:"";position:absolute;left:-34px;top:8px;width:11px;height:11px;border:3px solid #fff;border-radius:50%;background:var(--blue);box-shadow:0 0 0 1px #ccd2e4}.job-top{display:flex;justify-content:space-between;gap:15px;align-items:baseline}.job h3{font-size:17px;margin:0}.date{color:var(--blue);font-size:13px;font-weight:650;white-space:nowrap}.job .place{color:var(--muted);font-size:13px;margin:2px 0 9px}.job ul{margin:0;padding-left:18px;color:#606a7b;font-size:14px}.job li{padding:2px 0}
     .columns{display:grid;grid-template-columns:1fr 1fr;gap:40px}.list{display:grid;gap:12px}.list-item{border-bottom:1px solid var(--line);padding:0 0 13px}.list-item:last-child{border:0}.list-item strong{display:block;font-size:14px}.list-item span{font-size:13px;color:var(--muted)}.creative{padding:25px;border-radius:16px;background:#eff5f3;display:flex;gap:18px;align-items:center}.creative .icon{background:#dcece7;color:#317a6c}.creative p{margin:0;color:#596b68;font-size:14px}.creative strong{display:block;color:var(--ink);margin-bottom:4px}.foot{border-top:1px solid var(--line);padding:24px 7%;display:flex;justify-content:space-between;color:var(--muted);font-size:13px}.foot strong{color:var(--ink)}
     
-    @media(max-width:760px){.shell{padding:0}.site{border-radius:0}header{padding:0 6%;height:auto;padding-block:14px}nav{gap:8px;font-size:12px}.hero{grid-template-columns:1fr;padding:38px 0 35px;gap:30px}.visual{min-height:290px;grid-row:2}.hero-copy{grid-row:1}.hero h1{font-size:42px}.stats{margin-bottom:42px}.stat{padding:0 13px}.stat strong{font-size:19px}.stat span{font-size:11px}.cards{grid-template-columns:1fr}.columns{grid-template-columns:1fr;gap:28px}.section-head{display:block}.section-head p{margin-top:10px}.job-top{display:block}.date{display:block}.foot{padding-inline:6%}}
-    @media(max-width:440px){header{align-items:center;gap:12px;flex-direction:column}nav{width:100%;justify-content:center}.brand{font-size:14px}.hero h1{font-size:37px}.visual{min-height:250px}.stats{grid-template-columns:1fr;gap:13px}.stat,.stat:first-child{padding:0;border:0}.stat strong{display:inline-block;margin-right:8px}.stat span{font-size:12px}main{padding:0 6%}}
+    @media(max-width:760px){.shell{padding:0}.site{border-radius:0}header{padding:0 6%;height:auto;padding-block:14px}nav{gap:8px;font-size:12px}.hero{grid-template-columns:1fr;padding:38px 0 35px;gap:30px}.visual{min-height:290px;grid-row:2}.hero-copy{grid-row:1}.hero h1{font-size:40px}.stats{margin-bottom:42px}.stat{padding:0 13px}.stat strong{font-size:19px}.stat span{font-size:11px}.cards{grid-template-columns:1fr}.columns{grid-template-columns:1fr;gap:28px}.section-head{display:block}.section-head p{margin-top:10px}.job-top{display:block}.date{display:block}.foot{padding-inline:6%}}
+    @media(max-width:440px){header{align-items:center;gap:12px;flex-direction:column}nav{width:100%;justify-content:center}.brand{font-size:14px}.hero h1{font-size:35px}.visual{min-height:250px}.stats{grid-template-columns:1fr;gap:13px}.stat,.stat:first-child{padding:0;border:0}.stat strong{display:inline-block;margin-right:8px}.stat span{font-size:12px}main{padding:0 6%}}
 
     /* Dimensional motion layer */
     body{background:radial-gradient(ellipse at 15% 15%,#e7eaff 0,transparent 32%),radial-gradient(ellipse at 90% 70%,#dff2ed 0,transparent 30%),#f4f5f8}
@@ -51,14 +57,20 @@
     nav a.active{background:var(--blue)!important;color:#fff!important;border-color:var(--blue)!important;box-shadow:0 2px 10px rgba(7,137,249,0.35)}
     main{max-width:1500px;margin:0 auto;padding:0 50px}
     .hero{grid-template-columns:5fr 7fr;gap:0;align-items:center;padding:20px 0 62px;min-height:550px}
-    .visual{grid-column:1;grid-row:1;min-height:500px;border-radius:0;background:linear-gradient(140deg,#d8e8ed,#7995a4);box-shadow:none}
+    
+    /* Rounded Visual Background Block */
+    .visual{grid-column:1;grid-row:1;min-height:500px;border-radius:20px;background:linear-gradient(140deg,#d8e8ed,#7995a4);box-shadow:none}
     .visual:before,.visual:after{border-color:#fff5}.visual:before{width:420px;height:420px}.visual:after{width:320px;height:320px}
     .server-stack{position:absolute;z-index:2;right:3%;bottom:15%;transform:perspective(600px) rotateY(-18deg) rotateX(6deg) scale(.65)}
     .server{height:43px;padding:7px 9px;border-radius:8px;gap:8px}.server-icon{width:23px;height:23px;border-radius:6px;background:#e5f7fb}.server-icon:before{background:#04b4e0;left:5px;width:12px;height:3px;top:6px}.server-icon:after{background:#93d9e7;left:5px;width:12px;height:3px;top:13px}.server-lines i{height:3px;margin:4px 0}
     .orbit{z-index:2;right:9%;top:9%;width:54px;height:54px;background:#292929;color:var(--blue);box-shadow:0 12px 35px #0006}
     .visual-label{z-index:3;left:18px;bottom:16px;padding:5px 10px;border-radius:4px;background:#222d;color:#c9d9df;letter-spacing:.1em}
-    .hero-copy{position:relative;z-index:4;grid-column:1 / 3;grid-row:1;margin-left:43%;padding:58px 6% 58px 7%;background:#303030;box-shadow:0 20px 50px #0003;transform:translateY(10px)}
-    .hero-copy .eyebrow{color:#aaa;font-size:14px;letter-spacing:0;text-transform:none}.hero h1{font-size:clamp(42px,5vw,62px);letter-spacing:-.035em;margin:12px 0}.role{color:#ddd}.hero p{color:#c4c4c4}.hero-copy>p:not(.role){max-width:620px}
+    
+    /* Rounded Hero Copy Card Background Block & 2-point font reduction */
+    .hero-copy{position:relative;z-index:4;grid-column:1 / 3;grid-row:1;margin-left:43%;padding:58px 6% 58px 7%;background:#303030;box-shadow:0 20px 50px #0003;transform:translateY(10px);border-radius:20px}
+    .hero-copy .eyebrow{color:#aaa;font-size:14px;letter-spacing:0;text-transform:none}
+    .hero-copy h1{font-size:clamp(39px,4.7vw,59px);letter-spacing:-.035em;margin:12px 0}
+    .role{color:#ddd}.hero p{color:#c4c4c4}.hero-copy>p:not(.role){max-width:620px}
     .button{border-radius:30px;padding:10px 25px;color:#eee;background:transparent}.button.primary{background:transparent;border:2px solid var(--blue);color:#fff}.button.primary:hover{background:var(--blue)}.button:not(.primary):hover{border-color:var(--blue);color:var(--blue)}
     .stats{border:0;gap:18px;margin:0 0 55px;padding:0}.stat,.stat:first-child{border:1px solid #383838;background:#292929;padding:19px 22px;border-radius:4px}.stat:last-child{border:1px solid #383838}.stat strong{color:#f5f5f5}.stat span{color:#aaa}
     section{padding-bottom:58px}.section-head{display:block;margin-bottom:27px}.section-head h2{font-size:23px;letter-spacing:-.02em;display:inline-block;position:relative;padding-bottom:8px}.section-head h2:after{content:"";position:absolute;left:0;bottom:0;width:31px;height:2px;background:var(--blue)}.section-head p{margin-top:11px;color:#aaa}
@@ -79,7 +91,7 @@
     .list-item{border-color:#3e3e3e}.list-item strong{color:#eee}.list-item span{color:#aaa}.creative{background:#2a3438}.creative p{color:#bac5c5}.creative p strong{color:#f1f1f1}.creative .icon{color:#7ed0bd!important}.foot{border-color:#3c3c3c;color:#aaa}.foot strong{color:#eee}
     
     @media(max-width:900px){header{padding:0 28px}main{padding:0 28px}.hero{grid-template-columns:5fr 7fr;min-height:460px}.visual{min-height:410px}.hero-copy{margin-left:35%;padding:42px 5% 42px 8%}}
-    @media(max-width:700px){header{height:auto;min-height:90px;padding:19px 6%;flex-wrap:wrap}nav{width:100%;order:3;gap:8px;justify-content:flex-start;overflow-x:auto;padding-bottom:5px}main{padding:0 6%}.hero{display:flex;flex-direction:column;align-items:stretch;padding-top:15px;gap:0}.visual{min-height:330px;width:87%;margin:0 auto -26px}.hero-copy{margin:0;padding:44px 8% 36px;transform:none}.hero h1{font-size:42px}.stats{grid-template-columns:1fr;gap:10px;margin-bottom:40px}.stat,.stat:first-child{padding:12px 15px}.stat strong{display:inline-block;margin-right:8px;font-size:19px}.cards,.columns{grid-template-columns:1fr}.card{min-height:0}.work-grid{grid-template-columns:1fr}.section-head p{max-width:none}}
+    @media(max-width:700px){header{height:auto;min-height:90px;padding:19px 6%;flex-wrap:wrap}nav{width:100%;order:3;gap:8px;justify-content:flex-start;overflow-x:auto;padding-bottom:5px}main{padding:0 6%}.hero{display:flex;flex-direction:column;align-items:stretch;padding-top:15px;gap:0}.visual{min-height:330px;width:87%;margin:0 auto -26px}.hero-copy{margin:0;padding:44px 8% 36px;transform:none}.hero h1{font-size:40px}.stats{grid-template-columns:1fr;gap:10px;margin-bottom:40px}.stat,.stat:first-child{padding:12px 15px}.stat strong{display:inline-block;margin-right:8px;font-size:19px}.cards,.columns{grid-template-columns:1fr}.card{min-height:0}.work-grid{grid-template-columns:1fr}.section-head p{max-width:none}}
 
     .back-to-top{position:fixed;right:28px;bottom:28px;z-index:20;width:48px;height:48px;border:1px solid #ffffff24;border-radius:50%;display:grid;place-items:center;background:#0789f9;color:#fff;font-size:23px;line-height:1;box-shadow:0 8px 24px #0005;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .2s,transform .2s,visibility .2s;cursor:pointer}
     .back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}.back-to-top:hover,.back-to-top:focus-visible{background:#0878d8;outline:2px solid #fff;outline-offset:3px}
@@ -95,130 +107,513 @@
     .slide-mode .back-to-top{display:none}
     @media(max-width:700px){.slide-mode .slide-back{top:145px;left:6%;padding:8px 14px}.slide-mode main>section.slide-current{padding:80px 0 55px;min-height:calc(100vh - 120px)}}
 
-    /* Cyber/Holographic Animated Transformation Styles */
-    .cyber-transform-frame {
-      width: 200px;
-      height: 240px;
-      border-radius: 14px;
+    /* Portrait Image Frame (+3% size: 206px x 247px) with rounded corners and no floating tags */
+    .cinematic-avatar-frame {
+      width: 206px;
+      height: 247px;
+      border-radius: 16px;
       overflow: hidden;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) translateZ(60px);
-      background: #0f172a;
+      background: #0d1117;
       border: 3px solid var(--blue);
-      box-shadow: 0 0 25px rgba(7, 137, 249, 0.35);
+      box-shadow: 0 0 30px rgba(7, 137, 249, 0.4), inset 0 0 15px rgba(0,0,0,0.8);
       z-index: 2;
       cursor: pointer;
     }
 
-    .cyber-base-img {
-      position: absolute;
-      inset: 0;
+    .cinematic-avatar-frame img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      filter: grayscale(100%) contrast(110%);
-      transition: transform 0.4s ease;
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .cyber-wireframe-layer {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: grayscale(100%) invert(100%) contrast(300%) brightness(90%);
-      mix-blend-mode: screen;
-      opacity: 0;
-      animation: morphToVector 8s ease-in-out infinite;
-    }
-
-    .cyber-grid-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(rgba(7, 137, 249, 0.15) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(7, 137, 249, 0.15) 1px, transparent 1px);
-      background-size: 16px 16px;
-      pointer-events: none;
-      opacity: 0;
-      animation: gridPulse 8s ease-in-out infinite;
-    }
-
-    .cyber-scanline {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, #00f2fe, #0789f9, transparent);
-      box-shadow: 0 0 14px #00f2fe, 0 0 6px #0789f9;
-      z-index: 5;
-      top: -10px;
-      animation: laserScan 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-      pointer-events: none;
-    }
-
-    @keyframes morphToVector {
-      0%, 35% {
-        opacity: 0;
-        transform: scale(1);
-        filter: grayscale(100%) invert(100%) contrast(300%) brightness(90%);
-      }
-      42% {
-        opacity: 0.8;
-        transform: scale(1.03) translateX(2px);
-      }
-      45%, 75% {
-        opacity: 0.95;
-        transform: scale(1.02);
-      }
-      85%, 100% {
-        opacity: 0;
-        transform: scale(1);
-      }
-    }
-
-    @keyframes gridPulse {
-      0%, 35% { opacity: 0; }
-      50%, 75% { opacity: 0.7; }
-      90%, 100% { opacity: 0; }
-    }
-
-    @keyframes laserScan {
-      0% { top: -8px; opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { top: 245px; opacity: 0; }
-    }
-
-    .cyber-transform-frame:hover .cyber-wireframe-layer {
-      opacity: 1 !important;
-      animation-play-state: paused;
-    }
-
-    .cyber-transform-frame:hover .cyber-grid-overlay {
-      opacity: 0.8 !important;
-      animation-play-state: paused;
-    }
-
-    .transform-badge {
-      position: absolute;
-      bottom: 8px;
-      right: 8px;
-      z-index: 6;
-      background: rgba(0, 0, 0, 0.75);
-      color: var(--blue);
-      font-size: 8px;
-      font-weight: 700;
-      padding: 2px 7px;
-      border-radius: 12px;
-      border: 1px solid rgba(7, 137, 249, 0.4);
-      letter-spacing: 0.5px;
-      pointer-events: none;
+    .cinematic-avatar-frame:hover img {
+      transform: scale(1.04);
     }
   </style>
+</head>
+<body>
+  <div class="shell"><div class="site">
+    <header>
+      <a class="brand" href="#top" aria-label="Back to top">
+        <span>Robin <span>Ayinikat</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#about" class="active">Home</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#work">Highlights</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#personal">Personal</a>
+      </nav>
+    </header>
+    <main id="top">
+      <button class="slide-back" id="slide-back" type="button" aria-label="Go back to the previous view">← &nbsp; Back</button>
+      
+      <!-- Home / About Section -->
+      <section class="hero" id="about">
+        <div class="visual" aria-label="Profile area with portrait photo">
+          
+          <!-- Portrait Picture Container (+3% enlarged, clean with no floating badge) -->
+          <div class="cinematic-avatar-frame">
+            <img src="profile.jpg" alt="Robin Ayinikat Portrait" onerror="this.onerror=null;this.src='standing.jpg';">
+          </div>
+
+          <div class="server-stack">
+            <div class="server"><span class="server-icon"></span><span class="server-lines"><i></i><i></i></span></div>
+            <div class="server"><span class="server-icon"></span><span class="server-lines"><i></i><i></i></span></div>
+            <div class="server"><span class="server-icon"></span><span class="server-lines"><i></i><i></i></span></div>
+          </div>
+          <div class="orbit">⌘</div>
+          <span class="visual-label">Systems · Cloud · Reliability</span>
+        </div>
+        <div class="hero-copy">
+          <div class="eyebrow">IT architect · Bangalore[cite: 1]</div>
+          <h1>Building reliable systems for business.[cite: 1]</h1>
+          <p class="role">IT Infrastructure &amp; Cloud Operations[cite: 1]</p>
+          <p>Experienced IT Professional with 15+ years designing, implementing, and managing resilient infrastructure. I bring together systems administration, cloud platforms, security, and operational discipline to keep critical services performing.[cite: 1]</p>
+          <div class="actions">
+            <button class="button primary" onclick="window.print()">↓ &nbsp;Download CV[cite: 1]</button>
+            <a class="button" href="#work">View highlights &nbsp;→[cite: 1]</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="stats" aria-label="Career highlights">
+        <div class="stat"><strong>15+ years</strong><span>in IT infrastructure[cite: 1]</span></div>
+        <div class="stat"><strong>3,000+</strong><span>servers supported in staging[cite: 1]</span></div>
+        <div class="stat"><strong>4 countries</strong><span>mobile money deployments[cite: 1]</span></div>
+      </div>
+
+      <!-- Expertise Section -->
+      <section id="expertise">
+        <div class="section-head">
+          <div><div class="eyebrow">Capabilities[cite: 1]</div><h2>What I Do[cite: 1]</h2></div>
+          <p>Practical engineering across infrastructure lifecycle, platform reliability, and team operations.[cite: 1]</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="icon">▤[cite: 1]</div><div><h3>Infrastructure &amp; systems[cite: 1]</h3><p>Design and administration of large server environments, operating systems, storage, and network services.[cite: 1]</p><div class="tags"><span class="tag">Linux[cite: 1]</span><span class="tag">Windows Server[cite: 1]</span><span class="tag">VMware[cite: 1]</span><span class="tag">XCP-ng[cite: 1]</span></div></div></article>
+          <article class="card"><div class="icon">☁[cite: 1]</div><div><h3>Cloud &amp; virtualization[cite: 1]</h3><p>Deploy and operate cloud and private-cloud platforms to support changing business needs.[cite: 1]</p><div class="tags"><span class="tag">AWS[cite: 1]</span><span class="tag">GCP[cite: 1]</span><span class="tag">OpenStack[cite: 1]</span><span class="tag">VDI[cite: 1]</span></div></div></article>
+          <article class="card"><div class="icon">⌁[cite: 1]</div><div><h3>Monitoring &amp; reliability[cite: 1]</h3><p>Improve visibility, availability, and performance with actionable monitoring and troubleshooting.[cite: 1]</p><div class="tags"><span class="tag">Prometheus[cite: 1]</span><span class="tag">Grafana[cite: 1]</span><span class="tag">Nagios[cite: 1]</span></div></div></article>
+          <article class="card"><div class="icon">✓[cite: 1]</div><div><h3>Security &amp; operations[cite: 1]</h3><p>Security patching, OS upgrades, system hardening, compliance, and clear operational documentation.[cite: 1]</p><div class="tags"><span class="tag">Patching[cite: 1]</span><span class="tag">ISMS[cite: 1]</span><span class="tag">Documentation[cite: 1]</span><span class="tag">Ansible[cite: 1]</span></div></div></article>
+        </div>
+      </section>
+
+      <!-- Highlights Section -->
+      <section id="work">
+        <div class="section-head">
+          <div><div class="eyebrow">Selected highlights[cite: 1]</div><h2>Infrastructure in action[cite: 1]</h2></div>
+          <p>Work themes drawn from the platforms, operations, and deployments in my career.[cite: 1]</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card"><span class="work-number">01 / SCALE[cite: 1]</span><div class="work-art"><div class="mini-rack"><i></i><i></i><i></i>[cite: 1]</div><div class="cloud-orbit"></div></div><h3>Multi-platform staging estate[cite: 1]</h3><p>Managing 3,000+ staging servers across VMware, AWS, and on-premises infrastructure, with focus on patching, performance, and availability.[cite: 1]</p></article>
+          <article class="work-card"><span class="work-number">02 / MODERNIZATION[cite: 1]</span><div class="work-art"><div class="cloud-orbit"></div><div class="mini-rack"><i></i><i></i><i></i>[cite: 1]</div></div><h3>Cloud &amp; private platforms[cite: 1]</h3><p>Hands-on deployments across AWS and GCP, plus on-premises VDI planning and an OpenStack implementation using existing hardware.[cite: 1]</p></article>
+          <article class="work-card"><span class="work-number">03 / GLOBAL DELIVERY[cite: 1]</span><div class="work-art"><div class="globe"></div></div><h3>Resilient services &amp; data centers[cite: 1]</h3><p>Mobile money platform deployments across four countries, data center operations, disaster recovery, monitoring, and audit readiness.[cite: 1]</p></article>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience">
+        <div class="section-head">
+          <div><div class="eyebrow">Career[cite: 1]</div><h2>Professional experience[cite: 1]</h2></div>
+          <p>Progressive responsibility in infrastructure architecture, team leadership, and enterprise operations.[cite: 1]</p>
+        </div>
+        <div class="experience">
+          <article class="job"><div class="job-top"><h3>IT Architect[cite: 1]</h3><span class="date">June 2022 — Present[cite: 1]</span></div><p class="place">Bangalore[cite: 1]</p><ul><li>Manage staging infrastructure of 3,000+ servers across VMware, AWS, and on-premises environments.[cite: 1]</li><li>Coordinate regular security patching and OS package upgrades to meet security and compliance requirements.[cite: 1]</li><li>Monitor performance and availability, troubleshoot incidents, and improve system reliability.[cite: 1]</li><li>Partner with cross-functional teams on deployment, testing, and maintenance in staging and production.[cite: 1]</li><li>Maintain infrastructure, patching, and upgrade documentation.[cite: 1]</li><li>Create AI-assisted Ansible playbooks for package installation automation.[cite: 1]</li></ul></article>
+          <article class="job"><div class="job-top"><h3>Lead – IT[cite: 1]</h3><span class="date">January 2020 — June 2022[cite: 1]</span></div><p class="place">Bangalore[cite: 1]</p><ul><li>Managed VMware staging infrastructure of more than 600 servers.[cite: 1]</li><li>Deployed and configured AWS and GCP servers; planned and implemented on-premises VDI.[cite: 1]</li><li>Supported servers, storage, and network devices, coordinating with vendors and internal teams to minimize downtime.[cite: 1]</li><li>Deployed Prometheus and Grafana monitoring and Apache Guacamole remote access.[cite: 1]</li><li>Mentored team members and led an on-premises OpenStack implementation using existing hardware.[cite: 1]</li></ul></article>
+          <article class="job"><div class="job-top"><h3>Senior Systems Engineer[cite: 1]</h3><span class="date">January 2010 — December 2019[cite: 1]</span></div><p class="place">Bangalore[cite: 1]</p><ul><li>Managed mobile money platform deployments for clients in Burundi, Uganda, Zimbabwe, and Kenya.[cite: 1]</li><li>Oversaw data center facilities including power, cabling, cooling, and audit compliance.[cite: 1]</li><li>Deployed Nagios monitoring and cloud servers on AWS and GCP; delivered deployment and disaster recovery projects.[cite: 1]</li><li>Installed and hardened Linux servers; supported server, storage, and network environments.[cite: 1]</li><li>Conducted internal and external ISMS audits, infrastructure assessments, inventory verification, and compliance reporting.[cite: 1]</li></ul></article>
+          <article class="job"><div class="job-top"><h3>Network Administrator[cite: 1]</h3><span class="date">November 2006 — January 2010[cite: 1]</span></div><p class="place">Mumbai[cite: 1]</p><ul><li>Troubleshoot problems &amp; maintain desktops in a heterogeneous environment (Windows XP/2000/2003/2008, Linux Machines).[cite: 1]</li><li>Streamlined purchase process and improved vendor relations resulting in better pricing and quick delivery of IT procurements.[cite: 1]</li><li>Monitored and managed ISP and Service vendor SLAs critical to business, worked with local ISPs on getting new Internet Links at lesser cost with the local carriers for higher bandwidth including last mile redundancy.[cite: 1]</li></ul></article>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education">
+        <div class="section-head">
+          <div><div class="eyebrow">Credentials[cite: 1]</div><h2>Education &amp; Certifications</h2></div>
+        </div>
+        <div class="columns">
+          <div>
+            <h3>Education[cite: 1]</h3>
+            <div class="list">
+              <div class="list-item"><strong>Master of Computer Applications[cite: 1]</strong><span>University of Madras · 2016–2018[cite: 1]</span></div>
+              <div class="list-item"><strong>Bachelor of Computer Applications[cite: 1]</strong><span>University of Madras · 2001–2004[cite: 1]</span></div>
+              <div class="list-item"><strong>Diploma in Civil Engineering[cite: 1]</strong><span>Shreeram Polytechnic, Navi Mumbai · 1991–1995[cite: 1]</span></div>
+            </div>
+          </div>
+          <div>
+            <h3>Certifications[cite: 1]</h3>
+            <div class="list">
+              <div class="list-item"><strong>Certificate of Completion for CLAUDE CODE IN ACTION[cite: 1]</strong></div>
+              <div class="list-item"><strong>Certificate of Completion for Build with GEMINI[cite: 1]</strong></div>
+              <div class="list-item"><strong>Certified Internal Auditor[cite: 1]</strong></div>
+              <div class="list-item"><strong>Diploma in Red Hat Linux[cite: 1]</strong></div>
+              <div class="list-item"><strong>ITIL Foundation V3 Certified[cite: 1]</strong></div>
+            </div>
+            <div class="creative" style="margin-top:20px">
+              <div class="icon">✳[cite: 1]</div>
+              <p><strong>Creative practice[cite: 1]</strong>3D modeling in Blender and motion graphics.[cite: 1]</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Personal Section -->
+      <section id="personal">
+        <div class="section-head">
+          <div><div class="eyebrow">Personal[cite: 1]</div><h2>Personal details &amp; references[cite: 1]</h2></div>
+        </div>
+        <div class="columns">
+          <div>
+            <h3>Personal details[cite: 1]</h3>
+            <div class="list">
+              <div class="list-item"><strong>Marital status[cite: 1]</strong><span>Married[cite: 1]</span></div>
+              <div class="list-item"><strong>Languages[cite: 1]</strong><span>English, Hindi, Malayalam, Marathi[cite: 1]</span></div>
+            </div>
+          </div>
+          <div>
+            <h3>References[cite: 1]</h3>
+            <div class="creative">
+              <div class="icon">“[cite: 1]</div>
+              <p><strong>Available upon request[cite: 1]</strong>Professional references can be provided when requested.[cite: 1]</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="foot">
+      <span><strong>Robin Ayinikat</strong> · Bangalore[cite: 1]</span>
+      <span><strong>Email</strong> · robin.ayinikat@gmail.com &nbsp;&nbsp; <strong>Mobile</strong> · 98330 049835[cite: 1]</span>
+    </footer>
+  </div></div>
+
+  <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top" onclick="window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})">↑</button>
+
+  <script>
+    const stage=document.querySelector('.visual');
+    if(stage && matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+      stage.addEventListener('pointermove',event=>{
+        const box=stage.getBoundingClientRect();
+        const x=(event.clientX-box.left)/box.width-.5;
+        const y=(event.clientY-box.top)/box.height-.5;
+        stage.style.transform=`rotateY(${x*7}deg) rotateX(${-y*7}deg)`;
+      });
+      stage.addEventListener('pointerleave',()=>stage.style.transform='');
+    }
+
+    const navLinks=[...document.querySelectorAll('nav a[href^="#"]')];
+    const sections=navLinks.map(link=>document.querySelector(link.getAttribute('href'))).filter(Boolean);
+
+    if('IntersectionObserver' in window){
+      const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+        if(!document.body.classList.contains('slide-mode') && entry.isIntersecting){
+          navLinks.forEach(link=>link.classList.toggle('active',link.hash===`#${entry.target.id}`));
+        }
+      }),{rootMargin:'-25% 0px -60% 0px'});
+      sections.forEach(section=>observer.observe(section));
+    }
+
+    let savedScrollY=0;
+    const setSlide=(id,saveScroll=false)=>{
+      const isSlide = Boolean(id) && id !== 'about';
+      document.body.classList.toggle('slide-mode', isSlide);
+      document.querySelectorAll('main>section').forEach(section=>{
+        section.classList.toggle('slide-current', isSlide && section.id === id);
+      });
+      navLinks.forEach(link=>{
+        if(!isSlide && link.hash === '#about') {
+          link.classList.add('active');
+        } else {
+          link.classList.toggle('active', isSlide && link.hash === `#${id}`);
+        }
+      });
+      if(isSlide){
+        if(saveScroll) savedScrollY = window.scrollY;
+        window.scrollTo({top:0, behavior:'auto'});
+      } else {
+        window.scrollTo({top:0, behavior:'smooth'});
+      }
+    };
+
+    navLinks.forEach(link=>link.addEventListener('click',event=>{
+      const id=link.hash.slice(1);
+      event.preventDefault();
+      if(id === 'about'){
+        history.pushState(null, '', '#about');
+        setSlide(null);
+      } else {
+        if(!document.getElementById(id)) return;
+        history.pushState({portfolioSlide:id}, '', `#${id}`);
+        setSlide(id, !document.body.classList.contains('slide-mode'));
+      }
+    }));
+
+    document.getElementById('slide-back').addEventListener('click',()=>history.back());
+    window.addEventListener('popstate',event=>setSlide(event.state?.portfolioSlide||null));
+    document.addEventListener('keydown',event=>{
+      if(event.key==='Escape' && document.body.classList.contains('slide-mode')) history.back();
+    });
+
+    if(matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.querySelectorAll('.work-card').forEach(card=>{
+        card.addEventListener('pointermove',event=>{
+          const box=card.getBoundingClientRect();
+          const x=(event.clientX-box.left)/box.width-.5;
+          const y=(event.clientY-box.top)/box.height-.5;
+          card.style.transform=`rotateY(${x*6}deg) rotateX(${-y*5}deg) translateY(-3px)`;
+        });
+        card.addEventListener('pointerleave',()=>card.style.transform='');
+      });
+    }
+
+    const topButton=document.querySelector('.back-to-top');
+    const updateTopButton=()=>topButton.classList.toggle('visible',window.scrollY>420);
+    window.addEventListener('scroll',updateTopButton,{passive:true});
+    updateTopButton();
+  </script>
+</head>
+<body>
+  <div class="shell"><div class="site">
+    <header>
+      <a class="brand" href="#top" aria-label="Back to top">
+        <span>Robin <span>Ayinikat</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#about" class="active">Home</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#work">Highlights</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#personal">Personal</a>
+      </nav>
+    </header>
+    <main id="top">
+      <button class="slide-back" id="slide-back" type="button" aria-label="Go back to the previous view">← &nbsp; Back</button>
+      
+      <!-- Home / About Section -->
+      <section class="hero" id="about">
+        <div class="visual" aria-label="Profile area with portrait photo">
+          
+          <!-- Portrait Picture Container (+3% enlarged, clean with no floating badge) -->
+          <div class="cinematic-avatar-frame">
+            <img src="profile.jpg" alt="Robin Ayinikat Portrait" onerror="this.onerror=null;this.src='standing.jpg';">
+          </div>
+
+          <div class="server-stack">
+            <div class="server"><span class="server-icon"></span><span class="server-lines"><i></i><i></i></span></div>
+            <div class="server"><span class="server-icon"></span><span class="server-lines"><i></i><i></i></span></div>
+            <div class="server"><span class="server-icon"></span><span class="server-lines"><i></i><i></i></span></div>
+          </div>
+          <div class="orbit">⌘</div>
+          <span class="visual-label">Systems · Cloud · Reliability</span>
+        </div>
+        <div class="hero-copy">
+          <div class="eyebrow">IT architect · Bangalore[cite: 1]</div>
+          <h1>Building reliable systems for business.[cite: 1]</h1>
+          <p class="role">IT Infrastructure &amp; Cloud Operations[cite: 1]</p>
+          <p>Experienced IT Professional with 15+ years designing, implementing, and managing resilient infrastructure. I bring together systems administration, cloud platforms, security, and operational discipline to keep critical services performing.[cite: 1]</p>
+          <div class="actions">
+            <button class="button primary" onclick="window.print()">↓ &nbsp;Download CV[cite: 1]</button>
+            <a class="button" href="#work">View highlights &nbsp;→[cite: 1]</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="stats" aria-label="Career highlights">
+        <div class="stat"><strong>15+ years</strong><span>in IT infrastructure[cite: 1]</span></div>
+        <div class="stat"><strong>3,000+</strong><span>servers supported in staging[cite: 1]</span></div>
+        <div class="stat"><strong>4 countries</strong><span>mobile money deployments[cite: 1]</span></div>
+      </div>
+
+      <!-- Expertise Section -->
+      <section id="expertise">
+        <div class="section-head">
+          <div><div class="eyebrow">Capabilities[cite: 1]</div><h2>What I Do[cite: 1]</h2></div>
+          <p>Practical engineering across infrastructure lifecycle, platform reliability, and team operations.[cite: 1]</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="icon">▤[cite: 1]</div><div><h3>Infrastructure &amp; systems[cite: 1]</h3><p>Design and administration of large server environments, operating systems, storage, and network services.[cite: 1]</p><div class="tags"><span class="tag">Linux[cite: 1]</span><span class="tag">Windows Server[cite: 1]</span><span class="tag">VMware[cite: 1]</span><span class="tag">XCP-ng[cite: 1]</span></div></div></article>
+          <article class="card"><div class="icon">☁[cite: 1]</div><div><h3>Cloud &amp; virtualization[cite: 1]</h3><p>Deploy and operate cloud and private-cloud platforms to support changing business needs.[cite: 1]</p><div class="tags"><span class="tag">AWS[cite: 1]</span><span class="tag">GCP[cite: 1]</span><span class="tag">OpenStack[cite: 1]</span><span class="tag">VDI[cite: 1]</span></div></div></article>
+          <article class="card"><div class="icon">⌁[cite: 1]</div><div><h3>Monitoring &amp; reliability[cite: 1]</h3><p>Improve visibility, availability, and performance with actionable monitoring and troubleshooting.[cite: 1]</p><div class="tags"><span class="tag">Prometheus[cite: 1]</span><span class="tag">Grafana[cite: 1]</span><span class="tag">Nagios[cite: 1]</span></div></div></article>
+          <article class="card"><div class="icon">✓[cite: 1]</div><div><h3>Security &amp; operations[cite: 1]</h3><p>Security patching, OS upgrades, system hardening, compliance, and clear operational documentation.[cite: 1]</p><div class="tags"><span class="tag">Patching[cite: 1]</span><span class="tag">ISMS[cite: 1]</span><span class="tag">Documentation[cite: 1]</span><span class="tag">Ansible[cite: 1]</span></div></div></article>
+        </div>
+      </section>
+
+      <!-- Highlights Section -->
+      <section id="work">
+        <div class="section-head">
+          <div><div class="eyebrow">Selected highlights[cite: 1]</div><h2>Infrastructure in action[cite: 1]</h2></div>
+          <p>Work themes drawn from the platforms, operations, and deployments in my career.[cite: 1]</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card"><span class="work-number">01 / SCALE[cite: 1]</span><div class="work-art"><div class="mini-rack"><i></i><i></i><i></i>[cite: 1]</div><div class="cloud-orbit"></div></div><h3>Multi-platform staging estate[cite: 1]</h3><p>Managing 3,000+ staging servers across VMware, AWS, and on-premises infrastructure, with focus on patching, performance, and availability.[cite: 1]</p></article>
+          <article class="work-card"><span class="work-number">02 / MODERNIZATION[cite: 1]</span><div class="work-art"><div class="cloud-orbit"></div><div class="mini-rack"><i></i><i></i><i></i>[cite: 1]</div></div><h3>Cloud &amp; private platforms[cite: 1]</h3><p>Hands-on deployments across AWS and GCP, plus on-premises VDI planning and an OpenStack implementation using existing hardware.[cite: 1]</p></article>
+          <article class="work-card"><span class="work-number">03 / GLOBAL DELIVERY[cite: 1]</span><div class="work-art"><div class="globe"></div></div><h3>Resilient services &amp; data centers[cite: 1]</h3><p>Mobile money platform deployments across four countries, data center operations, disaster recovery, monitoring, and audit readiness.[cite: 1]</p></article>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience">
+        <div class="section-head">
+          <div><div class="eyebrow">Career[cite: 1]</div><h2>Professional experience[cite: 1]</h2></div>
+          <p>Progressive responsibility in infrastructure architecture, team leadership, and enterprise operations.[cite: 1]</p>
+        </div>
+        <div class="experience">
+          <article class="job"><div class="job-top"><h3>IT Architect[cite: 1]</h3><span class="date">June 2022 — Present[cite: 1]</span></div><p class="place">Bangalore[cite: 1]</p><ul><li>Manage staging infrastructure of 3,000+ servers across VMware, AWS, and on-premises environments.[cite: 1]</li><li>Coordinate regular security patching and OS package upgrades to meet security and compliance requirements.[cite: 1]</li><li>Monitor performance and availability, troubleshoot incidents, and improve system reliability.[cite: 1]</li><li>Partner with cross-functional teams on deployment, testing, and maintenance in staging and production.[cite: 1]</li><li>Maintain infrastructure, patching, and upgrade documentation.[cite: 1]</li><li>Create AI-assisted Ansible playbooks for package installation automation.[cite: 1]</li></ul></article>
+          <article class="job"><div class="job-top"><h3>Lead – IT[cite: 1]</h3><span class="date">January 2020 — June 2022[cite: 1]</span></div><p class="place">Bangalore[cite: 1]</p><ul><li>Managed VMware staging infrastructure of more than 600 servers.[cite: 1]</li><li>Deployed and configured AWS and GCP servers; planned and implemented on-premises VDI.[cite: 1]</li><li>Supported servers, storage, and network devices, coordinating with vendors and internal teams to minimize downtime.[cite: 1]</li><li>Deployed Prometheus and Grafana monitoring and Apache Guacamole remote access.[cite: 1]</li><li>Mentored team members and led an on-premises OpenStack implementation using existing hardware.[cite: 1]</li></ul></article>
+          <article class="job"><div class="job-top"><h3>Senior Systems Engineer[cite: 1]</h3><span class="date">January 2010 — December 2019[cite: 1]</span></div><p class="place">Bangalore[cite: 1]</p><ul><li>Managed mobile money platform deployments for clients in Burundi, Uganda, Zimbabwe, and Kenya.[cite: 1]</li><li>Oversaw data center facilities including power, cabling, cooling, and audit compliance.[cite: 1]</li><li>Deployed Nagios monitoring and cloud servers on AWS and GCP; delivered deployment and disaster recovery projects.[cite: 1]</li><li>Installed and hardened Linux servers; supported server, storage, and network environments.[cite: 1]</li><li>Conducted internal and external ISMS audits, infrastructure assessments, inventory verification, and compliance reporting.[cite: 1]</li></ul></article>
+          <article class="job"><div class="job-top"><h3>Network Administrator[cite: 1]</h3><span class="date">November 2006 — January 2010[cite: 1]</span></div><p class="place">Mumbai[cite: 1]</p><ul><li>Troubleshoot problems &amp; maintain desktops in a heterogeneous environment (Windows XP/2000/2003/2008, Linux Machines).[cite: 1]</li><li>Streamlined purchase process and improved vendor relations resulting in better pricing and quick delivery of IT procurements.[cite: 1]</li><li>Monitored and managed ISP and Service vendor SLAs critical to business, worked with local ISPs on getting new Internet Links at lesser cost with the local carriers for higher bandwidth including last mile redundancy.[cite: 1]</li></ul></article>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education">
+        <div class="section-head">
+          <div><div class="eyebrow">Credentials[cite: 1]</div><h2>Education &amp; Certifications</h2></div>
+        </div>
+        <div class="columns">
+          <div>
+            <h3>Education[cite: 1]</h3>
+            <div class="list">
+              <div class="list-item"><strong>Master of Computer Applications[cite: 1]</strong><span>University of Madras · 2016–2018[cite: 1]</span></div>
+              <div class="list-item"><strong>Bachelor of Computer Applications[cite: 1]</strong><span>University of Madras · 2001–2004[cite: 1]</span></div>
+              <div class="list-item"><strong>Diploma in Civil Engineering[cite: 1]</strong><span>Shreeram Polytechnic, Navi Mumbai · 1991–1995[cite: 1]</span></div>
+            </div>
+          </div>
+          <div>
+            <h3>Certifications[cite: 1]</h3>
+            <div class="list">
+              <div class="list-item"><strong>Certificate of Completion for CLAUDE CODE IN ACTION[cite: 1]</strong></div>
+              <div class="list-item"><strong>Certificate of Completion for Build with GEMINI[cite: 1]</strong></div>
+              <div class="list-item"><strong>Certified Internal Auditor[cite: 1]</strong></div>
+              <div class="list-item"><strong>Diploma in Red Hat Linux[cite: 1]</strong></div>
+              <div class="list-item"><strong>ITIL Foundation V3 Certified[cite: 1]</strong></div>
+            </div>
+            <div class="creative" style="margin-top:20px">
+              <div class="icon">✳[cite: 1]</div>
+              <p><strong>Creative practice[cite: 1]</strong>3D modeling in Blender and motion graphics.[cite: 1]</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Personal Section -->
+      <section id="personal">
+        <div class="section-head">
+          <div><div class="eyebrow">Personal[cite: 1]</div><h2>Personal details &amp; references[cite: 1]</h2></div>
+        </div>
+        <div class="columns">
+          <div>
+            <h3>Personal details[cite: 1]</h3>
+            <div class="list">
+              <div class="list-item"><strong>Marital status[cite: 1]</strong><span>Married[cite: 1]</span></div>
+              <div class="list-item"><strong>Languages[cite: 1]</strong><span>English, Hindi, Malayalam, Marathi[cite: 1]</span></div>
+            </div>
+          </div>
+          <div>
+            <h3>References[cite: 1]</h3>
+            <div class="creative">
+              <div class="icon">“[cite: 1]</div>
+              <p><strong>Available upon request[cite: 1]</strong>Professional references can be provided when requested.[cite: 1]</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="foot">
+      <span><strong>Robin Ayinikat</strong> · Bangalore[cite: 1]</span>
+      <span><strong>Email</strong> · robin.ayinikat@gmail.com &nbsp;&nbsp; <strong>Mobile</strong> · 98330 049835[cite: 1]</span>
+    </footer>
+  </div></div>
+
+  <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top" onclick="window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})">↑</button>
+
+  <script>
+    const stage=document.querySelector('.visual');
+    if(stage && matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+      stage.addEventListener('pointermove',event=>{
+        const box=stage.getBoundingClientRect();
+        const x=(event.clientX-box.left)/box.width-.5;
+        const y=(event.clientY-box.top)/box.height-.5;
+        stage.style.transform=`rotateY(${x*7}deg) rotateX(${-y*7}deg)`;
+      });
+      stage.addEventListener('pointerleave',()=>stage.style.transform='');
+    }
+
+    const navLinks=[...document.querySelectorAll('nav a[href^="#"]')];
+    const sections=navLinks.map(link=>document.querySelector(link.getAttribute('href'))).filter(Boolean);
+
+    if('IntersectionObserver' in window){
+      const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+        if(!document.body.classList.contains('slide-mode') && entry.isIntersecting){
+          navLinks.forEach(link=>link.classList.toggle('active',link.hash===`#${entry.target.id}`));
+        }
+      }),{rootMargin:'-25% 0px -60% 0px'});
+      sections.forEach(section=>observer.observe(section));
+    }
+
+    let savedScrollY=0;
+    const setSlide=(id,saveScroll=false)=>{
+      const isSlide = Boolean(id) && id !== 'about';
+      document.body.classList.toggle('slide-mode', isSlide);
+      document.querySelectorAll('main>section').forEach(section=>{
+        section.classList.toggle('slide-current', isSlide && section.id === id);
+      });
+      navLinks.forEach(link=>{
+        if(!isSlide && link.hash === '#about') {
+          link.classList.add('active');
+        } else {
+          link.classList.toggle('active', isSlide && link.hash === `#${id}`);
+        }
+      });
+      if(isSlide){
+        if(saveScroll) savedScrollY = window.scrollY;
+        window.scrollTo({top:0, behavior:'auto'});
+      } else {
+        window.scrollTo({top:0, behavior:'smooth'});
+      }
+    };
+
+    navLinks.forEach(link=>link.addEventListener('click',event=>{
+      const id=link.hash.slice(1);
+      event.preventDefault();
+      if(id === 'about'){
+        history.pushState(null, '', '#about');
+        setSlide(null);
+      } else {
+        if(!document.getElementById(id)) return;
+        history.pushState({portfolioSlide:id}, '', `#${id}`);
+        setSlide(id, !document.body.classList.contains('slide-mode'));
+      }
+    }));
+
+    document.getElementById('slide-back').addEventListener('click',()=>history.back());
+    window.addEventListener('popstate',event=>setSlide(event.state?.portfolioSlide||null));
+    document.addEventListener('keydown',event=>{
+      if(event.key==='Escape' && document.body.classList.contains('slide-mode')) history.back();
+    });
+
+    if(matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.querySelectorAll('.work-card').forEach(card=>{
+        card.addEventListener('pointermove',event=>{
+          const box=card.getBoundingClientRect();
+          const x=(event.clientX-box.left)/box.width-.5;
+          const y=(event.clientY-box.top)/box.height-.5;
+          card.style.transform=`rotateY(${x*6}deg) rotateX(${-y*5}deg) translateY(-3px)`;
+        });
+        card.addEventListener('pointerleave',()=>card.style.transform='');
+      });
+    }
+
+    const topButton=document.querySelector('.back-to-top');
+    const updateTopButton=()=>topButton.classList.toggle('visible',window.scrollY>420);
+    window.addEventListener('scroll',updateTopButton,{passive:true});
+    updateTopButton();
+  </script>
 </head>
 <body>
   <div class="shell"><div class="site">
