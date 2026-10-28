@@ -107,7 +107,6 @@
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-floating);
-      overflow: hidden;
       position: relative;
     }
 
@@ -133,11 +132,12 @@
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid var(--border-subtle);
-      background: rgba(255, 255, 255, 0.94);
+      background: rgba(250, 247, 242, 0.92);
       backdrop-filter: blur(14px);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
+	  -webkit-backdrop-filter: blur(14px);	
     }
 
     .brand {
@@ -1212,9 +1212,6 @@
 
       <!-- Main Content Area -->
       <main id="top">
-        <button class="slide-back" id="slide-back" type="button" aria-label="Go back to the previous view">← &nbsp; Return to Overview</button>
-        
-        <!-- ================= HERO SECTION ================= -->
         <section class="hero" id="about">
           
           <!-- Visual Column: Calming Portrait Presentation -->
@@ -1611,10 +1608,8 @@
       }
     }));
 
-    document.getElementById('slide-back').addEventListener('click', () => history.back());
     window.addEventListener('popstate', event => setSlide(event.state?.portfolioSlide || null));
     document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && document.body.classList.contains('slide-mode')) history.back();
     });
 
     // Floating Back to Top Button visibility
