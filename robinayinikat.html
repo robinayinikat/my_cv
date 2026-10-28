@@ -3,122 +3,645 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f6f8">
-  <meta name="description" content="IT infrastructure architect with 15+ years of experience across enterprise systems, cloud platforms, and data center operations.">
-  <title>Robin Ayinikat | Portfolio</title>
+  <meta name="theme-color" content="#FAF7F2">
+  <meta name="description" content="Robin Ayinikat - IT Infrastructure Architect with 15+ years of experience across enterprise systems, cloud platforms, and data center operations.">
+  <title>Robin Ayinikat</title>
+  
+  <!-- Calming Therapist-Inspired Typography: Humanist Editorial Serif + Soothing Clean Sans + Precision Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
-    :root{--ink:#202635;--muted:#687184;--blue:#5268df;--mint:#dff2ed;--line:#e8eaf0;--paper:#fff;--bg:#f4f5f8;--shadow:0 22px 70px #26324b12}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}.shell{max-width:1120px;margin:auto;padding:28px 24px 40px}.site{overflow:hidden;background:var(--paper);border-radius:22px;box-shadow:var(--shadow)}
-    header{height:82px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;font-weight:750;letter-spacing:-.03em}.brand-mark{width:39px;height:39px;display:grid;place-items:center;border-radius:13px;background:var(--blue);color:#fff;font-size:13px;letter-spacing:.04em}.brand span:last-child{color:var(--blue)}.menu{display:none}
-    
-    /* Rounded Pill Navigation Tabs */
-    nav{display:flex;gap:10px;align-items:center;color:#646c7e;font-size:13px;flex-wrap:wrap}
-    nav a{padding:8px 16px;border-radius:9999px;border:1px solid transparent;background:transparent;transition:all .2s ease;font-weight:550}
-    nav a:hover{color:var(--blue);background:#f1f4fb;border-color:var(--line)}
-    nav a.active{color:#fff!important;background:var(--blue)!important;border-color:var(--blue)!important;box-shadow:0 4px 12px rgba(82,104,223,0.25)}
-
-    main{padding:0 7%}.hero{display:grid;grid-template-columns:1fr 1fr;gap:8%;align-items:center;padding:70px 0 58px}
-    .visual{position:relative;min-height:390px;border-radius:20px;background:linear-gradient(145deg,#e5eafa,#dceeea);overflow:hidden;display:grid;place-items:center}
-    .visual:before,.visual:after{content:"";position:absolute;border:1px solid #fff9;border-radius:50%;width:350px;height:350px}.visual:after{width:260px;height:260px}.visual-label{position:absolute;left:25px;bottom:22px;color:#42516b;font-size:11px;letter-spacing:.16em;text-transform:uppercase}.server-stack{position:relative;z-index:1;width:190px;display:grid;gap:12px;transform:perspective(800px) rotateY(-12deg) rotateX(5deg)}.server{height:74px;border-radius:13px;background:#fff;box-shadow:0 15px 25px #39476a20;padding:16px 18px;display:flex;align-items:center;gap:14px}.server-icon{width:34px;height:34px;border-radius:10px;background:#edf0ff;position:relative}.server-icon:before,.server-icon:after{content:"";position:absolute;left:9px;width:16px;height:4px;border-radius:4px;background:#6379e4}.server-icon:before{top:10px}.server-icon:after{top:19px;background:#9abeb4}.server-lines{flex:1}.server-lines i{display:block;height:5px;border-radius:5px;background:#e9ebf2;margin:5px 0}.server-lines i:first-child{width:72%}.server-lines i:last-child{width:48%}.orbit{position:absolute;right:16%;top:17%;width:65px;height:65px;border-radius:18px;background:#fff;box-shadow:0 12px 35px #39476a1c;display:grid;place-items:center;color:var(--blue);font-size:24px}.eyebrow{color:var(--blue);font-weight:700;letter-spacing:.15em;text-transform:uppercase;font-size:12px}
-    
-    .hero h1{font-size:clamp(39px,4.7vw,59px);line-height:1.08;letter-spacing:-.055em;margin:15px 0 9px}
-    .role{font-size:16px;font-weight:600;color:#616c82;margin:0 0 21px}.hero p{color:var(--muted);margin:0;max-width:520px}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line);padding:22px 0;margin-bottom:58px}.stat{padding:0 25px;border-right:1px solid var(--line)}.stat:first-child{padding-left:0}.stat:last-child{border:0}.stat strong{font-size:23px;display:block;letter-spacing:-.04em}.stat span{font-size:13px;color:var(--muted)}section{padding:0 0 68px;scroll-margin-top:30px}.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:25px}.section-head h2{font-size:29px;line-height:1.2;letter-spacing:-.04em;margin:5px 0 0}.section-head p{color:var(--muted);font-size:14px;margin:0;max-width:430px}
-    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.card{border:1px solid var(--line);border-radius:15px;padding:22px;display:flex;gap:17px;min-height:155px}.icon{width:43px;height:43px;flex:none;border-radius:13px;background:#eef0ff;color:var(--blue);display:grid;place-items:center;font-size:20px}.card h3{font-size:16px;margin:0 0 5px;letter-spacing:-.02em}.card p{font-size:13px;color:var(--muted);margin:0}.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.tag{padding:5px 10px;border-radius:20px;background:#f1f3f8;color:#5e687a;font-size:12px}
-    .experience{border-left:1px solid #dfe3ed;margin-left:8px;padding-left:28px}.job{position:relative;padding:0 0 27px}.job:last-child{padding-bottom:0}.job:before{content:"";position:absolute;left:-34px;top:8px;width:11px;height:11px;border:3px solid #fff;border-radius:50%;background:var(--blue);box-shadow:0 0 0 1px #ccd2e4}.job-top{display:flex;justify-content:space-between;gap:15px;align-items:baseline}.job h3{font-size:17px;margin:0}.date{color:var(--blue);font-size:13px;font-weight:650;white-space:nowrap}.job .place{color:var(--muted);font-size:13px;margin:2px 0 9px}.job ul{margin:0;padding-left:18px;color:#606a7b;font-size:14px}.job li{padding:2px 0}
-    .columns{display:grid;grid-template-columns:1fr 1fr;gap:40px}.list{display:grid;gap:12px}.list-item{border-bottom:1px solid var(--line);padding:0 0 13px}.list-item:last-child{border:0}.list-item strong{display:block;font-size:14px}.list-item span{font-size:13px;color:var(--muted)}.creative{padding:25px;border-radius:16px;background:#eff5f3;display:flex;gap:18px;align-items:center}.creative .icon{background:#dcece7;color:#317a6c}.creative p{margin:0;color:#596b68;font-size:14px}.creative strong{display:block;color:var(--ink);margin-bottom:4px}.foot{border-top:1px solid var(--line);padding:24px 7%;display:flex;justify-content:space-between;color:var(--muted);font-size:13px}.foot strong{color:var(--ink)}
-    
-    @media(max-width:760px){.shell{padding:0}.site{border-radius:0}header{padding:0 6%;height:auto;padding-block:14px}nav{gap:8px;font-size:12px}.hero{grid-template-columns:1fr;padding:38px 0 35px;gap:30px}.visual{min-height:290px;grid-row:2}.hero-copy{grid-row:1}.hero h1{font-size:40px}.stats{margin-bottom:42px}.stat{padding:0 13px}.stat strong{font-size:19px}.stat span{font-size:11px}.cards{grid-template-columns:1fr}.columns{grid-template-columns:1fr;gap:28px}.section-head{display:block}.section-head p{margin-top:10px}.job-top{display:block}.date{display:block}.foot{padding-inline:6%}}
-    @media(max-width:440px){header{align-items:center;gap:12px;flex-direction:column}nav{width:100%;justify-content:center}.brand{font-size:14px}.hero h1{font-size:35px}.visual{min-height:250px}.stats{grid-template-columns:1fr;gap:13px}.stat,.stat:first-child{padding:0;border:0}.stat strong{display:inline-block;margin-right:8px}.stat span{font-size:12px}main{padding:0 6%}}
-
-    /* Dimensional motion layer */
-    body{background:radial-gradient(ellipse at 15% 15%,#e7eaff 0,transparent 32%),radial-gradient(ellipse at 90% 70%,#dff2ed 0,transparent 30%),#f4f5f8}
-    .site{transform-style:preserve-3d;animation:site-enter .9s cubic-bezier(.2,.75,.2,1) both}
-    @keyframes site-enter{from{opacity:0;transform:translateY(22px) rotateX(2deg)}to{opacity:1;transform:translateY(0) rotateX(0)}}
-    .visual{perspective:1000px;isolation:isolate;background:radial-gradient(ellipse at 52% 52%,#fff 0,#e8edfc 42%,#dceeea 100%);transform-style:preserve-3d;transition:transform .2s ease-out}
-    .visual:before{animation:orbit 22s linear infinite;transform:translateZ(-20px) rotateX(68deg)}.visual:after{animation:orbit 16s linear infinite reverse;transform:translateZ(-5px) rotateY(65deg)}
-    @keyframes orbit{to{rotate:360deg}}
-    .server-stack{animation:float 5s ease-in-out infinite;transition:transform .15s ease-out;filter:drop-shadow(0 24px 20px #29385b22)}
-    @keyframes float{0%,100%{translate:0 0}50%{translate:0 -11px}}
-    .server{transform:translateZ(24px);transition:transform .25s,box-shadow .25s}.server:nth-child(2){transform:translateZ(42px)}.server:nth-child(3){transform:translateZ(60px)}
-    .orbit{animation:bob 4s ease-in-out infinite;transform:translateZ(100px)}@keyframes bob{0%,100%{translate:0 0;rotate:0}50%{translate:0 -12px;rotate:8deg}}
-    .card{transition:transform .25s,box-shadow .25s}.card:hover{transform:translateY(-5px) rotateX(2deg);box-shadow:0 18px 34px #26324b12}
-    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-    
-    /* Dark Theme Overrides */
-    :root{--ink:#f1f1f1;--muted:#b7b7b7;--blue:#0789f9;--mint:#18354a;--line:#393939;--paper:#222;--bg:#222;--shadow:none}
-    html{background:#222}body{background:#222!important;color:#f1f1f1;font-family:Montserrat,Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
-    .site{max-width:none;min-height:100vh;border-radius:0;background:#222;box-shadow:none;overflow:hidden}
-    header{height:110px;max-width:1500px;margin:0 auto;padding:0 50px;border:0}
-    .brand{color:#f4f4f4}.brand-mark{background:var(--blue);border-radius:50%;font-size:16px}.brand span:last-child,.brand span:last-child span{color:#f4f4f4}
-    nav{color:#aaa}
-    nav a:hover,nav a:focus-visible{color:var(--blue);background:#2a2a2a;border-color:#444}
-    nav a.active{background:var(--blue)!important;color:#fff!important;border-color:var(--blue)!important;box-shadow:0 2px 10px rgba(7,137,249,0.35)}
-    main{max-width:1500px;margin:0 auto;padding:0 50px}
-    .hero{grid-template-columns:5fr 7fr;gap:0;align-items:center;padding:20px 0 62px;min-height:550px}
-    
-    /* Rounded Visual Background Block */
-    .visual{grid-column:1;grid-row:1;min-height:500px;border-radius:20px;background:linear-gradient(140deg,#d8e8ed,#7995a4);box-shadow:none}
-    .visual:before,.visual:after{border-color:#fff5}.visual:before{width:420px;height:420px}.visual:after{width:320px;height:320px}
-    .server-stack{position:absolute;z-index:2;right:3%;bottom:15%;transform:perspective(600px) rotateY(-18deg) rotateX(6deg) scale(.65)}
-    .server{height:43px;padding:7px 9px;border-radius:8px;gap:8px}.server-icon{width:23px;height:23px;border-radius:6px;background:#e5f7fb}.server-icon:before{background:#04b4e0;left:5px;width:12px;height:3px;top:6px}.server-icon:after{background:#93d9e7;left:5px;width:12px;height:3px;top:13px}.server-lines i{height:3px;margin:4px 0}
-    .orbit{z-index:2;right:9%;top:9%;width:54px;height:54px;background:#292929;color:var(--blue);box-shadow:0 12px 35px #0006}
-    .visual-label{z-index:3;left:18px;bottom:16px;padding:5px 10px;border-radius:4px;background:#222d;color:#c9d9df;letter-spacing:.1em}
-    
-    /* Rounded Hero Copy Card Background Block */
-    .hero-copy{position:relative;z-index:4;grid-column:1 / 3;grid-row:1;margin-left:43%;padding:58px 6% 58px 7%;background:#303030;box-shadow:0 20px 50px #0003;transform:translateY(10px);border-radius:20px}
-    .hero-copy .eyebrow{color:#aaa;font-size:14px;letter-spacing:0;text-transform:none}
-    .hero-copy h1{font-size:clamp(39px,4.7vw,59px);letter-spacing:-.035em;margin:12px 0}
-    .role{color:#ddd}.hero p{color:#c4c4c4}.hero-copy>p:not(.role){max-width:620px}
-    .stats{border:0;gap:18px;margin:0 0 55px;padding:0}.stat,.stat:first-child{border:1px solid #383838;background:#292929;padding:19px 22px;border-radius:4px}.stat:last-child{border:1px solid #383838}.stat strong{color:#f5f5f5}.stat span{color:#aaa}
-    section{padding-bottom:58px}.section-head{display:block;margin-bottom:27px}.section-head h2{font-size:23px;letter-spacing:-.02em;display:inline-block;position:relative;padding-bottom:8px}.section-head h2:after{content:"";position:absolute;left:0;bottom:0;width:31px;height:2px;background:var(--blue)}.section-head p{margin-top:11px;color:#aaa}
-    .cards{grid-template-columns:1fr 1fr;gap:7px 34px}.card,.card:hover{background:transparent;border:0;border-radius:0;border-bottom:0;box-shadow:none;padding:17px 0;min-height:130px;transform:none}.icon{width:42px;height:42px;border-radius:0;background:transparent!important;color:var(--blue)!important;font-size:25px}.card h3{font-size:17px;color:#eee}.card p{color:#aaa;font-size:14px}.tag{background:#303030;color:#ccc}.tag:hover{background:#163b58;color:#fff}
-    
-    /* Work Grid Cards */
-    .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;perspective:1100px}
-    .work-card{position:relative;min-height:280px;padding:24px 22px;border:1px solid #3a3a3a;border-radius:4px;background:#2c2c2c;box-shadow:none;overflow:hidden;transform-style:preserve-3d;transition:transform .2s ease,box-shadow .25s}
-    .work-card:hover{box-shadow:0 18px 36px #0004}.work-card h3{position:relative;z-index:1;font-size:17px;line-height:1.3;margin:18px 0 8px;transform:translateZ(24px);color:#f1f1f1}.work-card p{position:relative;z-index:1;color:#aaa;font-size:13px;margin:0;transform:translateZ(18px)}
-    .work-number{position:relative;z-index:2;color:#168ff5;font-size:12px;font-weight:750;letter-spacing:.14em;transform:translateZ(30px)}
-    
     /* ==========================================================
-       UPGRADED 3D WORK ART ICONS
+       Inspired by calm, restorative modern therapy web design
        ========================================================== */
+    :root {
+      /* Warm oat, linen & porcelain wellness canvas */
+      --bg-body: #FAF7F2;
+      --bg-surface: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #F8F5EF;
+      --bg-subtle: #F2ECE3;
+      --bg-accent-soft: #EEF3EE;
+      
+      /* Gentle natural borders */
+      --border-subtle: #E8E2D7;
+      --border-card: #ECE6DB;
+      --border-accent: rgba(46, 64, 51, 0.25);
+      
+      /* Forest ink & serene moss-slate typography */
+      --text-main: #202621;
+      --text-muted: #576159;
+      --text-dim: #7C867E;
+      
+      /* Primary grounding accent: Deep Forest Moss */
+      --accent-moss: #2E4033;
+      --accent-moss-hover: #223026;
+      --accent-moss-light: #E7EFE8;
+      --accent-moss-glow: rgba(46, 64, 51, 0.16);
+
+      /* Warm secondary accent: Terracotta Ochre */
+      --accent-clay: #C27A58;
+      --accent-clay-hover: #AA6545;
+      --accent-clay-soft: #FAF0EB;
+      
+      /* Organic soft radiuses */
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-pill: 9999px;
+      
+      /* Gentle, weightless shadows */
+      --shadow-ambient: 0 4px 20px -2px rgba(32, 38, 33, 0.04);
+      --shadow-floating: 0 16px 40px -10px rgba(32, 38, 33, 0.07);
+      
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      
+      --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      background-image: 
+        radial-gradient(ellipse at 12% 10%, rgba(46, 64, 51, 0.035) 0%, transparent 45%),
+        radial-gradient(ellipse at 88% 85%, rgba(194, 122, 88, 0.035) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 40%, rgba(242, 236, 227, 0.5) 0%, transparent 60%);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Container Shell */
+    .shell {
+      max-width: 1220px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 30px 24px 64px;
+      flex: 1;
+    }
+
+    .site {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-floating);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Calming top accent ribbon */
+    .site::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #6B8871, var(--accent-moss), #3E5443, var(--accent-clay));
+      z-index: 101;
+    }
+
+    /* ==========================================================
+       HEADER & SERENE NAVIGATION
+       ========================================================== */
+    header {
+      height: 88px;
+      padding: 0 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--accent-moss);
+      color: #FAF7F2;
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 500;
+      box-shadow: 0 4px 12px var(--accent-moss-glow);
+    }
+
+    .brand-name {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name span:first-child {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--text-main);
+    }
+
+    .brand-name span:last-child {
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-clay);
+      font-weight: 500;
+    }
+
+    /* Soothing Pill Navigation */
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    nav a {
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      color: var(--text-main);
+      background: var(--bg-subtle);
+      border-color: var(--border-subtle);
+    }
+
+    nav a.active {
+      color: #FFFFFF !important;
+      background: var(--accent-moss) !important;
+      border-color: var(--accent-moss) !important;
+      box-shadow: 0 4px 14px var(--accent-moss-glow);
+      font-weight: 600;
+    }
+
+    /* Main Container */
+    main {
+      padding: 48px 44px 54px;
+      position: relative;
+    }
+
+    /* ==========================================================
+       HERO SECTION: RESTORATIVE & CONFIDENT
+       ========================================================== */
+    .hero {
+      display: grid;
+      grid-template-columns: 330px 1fr;
+      gap: 48px;
+      align-items: center;
+      padding-bottom: 56px;
+    }
+
+    /* Left Soothing Studio Frame */
+    .visual-wrapper {
+      position: relative;
+      background: linear-gradient(145deg, #FBF8F4, #F2ECE3);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 30px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 0 24px rgba(46, 64, 51, 0.03);
+    }
+
+    /* Clean Portrait Container (No floating tabs/badges) */
+    .profile-card-frame {
+      width: 216px;
+      height: 258px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+      background: #E8E2D7;
+      border: 2px solid var(--border-subtle);
+      box-shadow: 0 14px 34px -8px rgba(32, 38, 33, 0.12);
+      transition: var(--transition);
+    }
+
+    .profile-card-frame:hover {
+      border-color: var(--accent-moss);
+      box-shadow: 0 16px 36px var(--accent-moss-glow);
+    }
+
+    .profile-card-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      /* Warm monochrome with gentle depth */
+      filter: grayscale(100%) contrast(108%);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .profile-card-frame:hover img {
+      transform: scale(1.03);
+    }
+
+    .visual-status-pill {
+      margin-top: 20px;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-ambient);
+    }
+
+    .visual-status-pill::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #3B7A49;
+      box-shadow: 0 0 6px rgba(59, 122, 73, 0.6);
+    }
+
+    /* Right Editorial Column */
+    .hero-copy {
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 44px 48px;
+      box-shadow: var(--shadow-ambient);
+      position: relative;
+    }
+
+    .eyebrow {
+      color: var(--accent-moss);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: inline-block;
+      background: var(--accent-moss-light);
+      padding: 3px 12px;
+      border-radius: var(--radius-pill);
+    }
+
+    .hero-copy h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 3.8vw, 48px);
+      font-weight: 600;
+      line-height: 1.18;
+      letter-spacing: -0.015em;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .role {
+      font-size: 1.05rem;
+      color: var(--accent-clay);
+      margin-bottom: 20px;
+    }
+
+    .role strong {
+      font-weight: 700;
+    }
+
+    .hero-bio {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      text-align: justify;
+      margin-bottom: 30px;
+    }
+
+    /* Action Buttons */
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: var(--radius-pill);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent-moss);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px var(--accent-moss-glow);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-moss-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(46, 64, 51, 0.25);
+    }
+
+    .btn-outline {
+      background: var(--bg-subtle);
+      border-color: var(--border-subtle);
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent-moss);
+      background: var(--accent-moss-light);
+      color: var(--accent-moss);
+    }
+
+    /* ==========================================================
+       GROUNDED METRICS STRIP
+       ========================================================== */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-bottom: 56px;
+    }
+
+    .stat-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      box-shadow: var(--shadow-ambient);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .stat-card::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 24px;
+      right: 24px;
+      height: 2px;
+      background: transparent;
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-accent);
+    }
+
+    .stat-card:hover::after {
+      background: var(--accent-moss);
+    }
+
+    .stat-card strong {
+      font-family: var(--font-serif);
+      font-size: 2.3rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-card span {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    /* ==========================================================
+       SECTION HEADINGS
+       ========================================================== */
+    section {
+      padding-bottom: 60px;
+      scroll-margin-top: 110px;
+    }
+
+    .section-head {
+      margin-bottom: 32px;
+    }
+
+    .section-head h2 {
+      font-family: var(--font-serif);
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+      display: inline-block;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .section-head h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 42px;
+      height: 2px;
+      background: var(--accent-moss);
+      border-radius: 1px;
+    }
+
+    .section-head p {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+      margin-top: 10px;
+      max-width: 620px;
+    }
+
+    /* ==========================================================
+       CAPABILITIES / EXPERTISE CARDS
+       ========================================================== */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      display: flex;
+      gap: 20px;
+      box-shadow: var(--shadow-ambient);
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-floating);
+    }
+
+    .icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-moss-light);
+      border: 1px solid rgba(46, 64, 51, 0.18);
+      color: var(--accent-moss);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .tags {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .tag {
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      background: var(--bg-subtle);
+      color: var(--text-muted);
+      font-size: 0.76rem;
+      font-family: var(--font-mono);
+      font-weight: 500;
+      border: 1px solid var(--border-subtle);
+    }
+
+    /* ==========================================================
+       3D WORK HIGHLIGHT ART (Moss Green & Clay Palette)
+       ========================================================== */
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .work-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 26px 24px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-ambient);
+      transition: var(--transition);
+      overflow: hidden;
+    }
+
+    .work-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-floating);
+    }
+
+    .work-number {
+      font-family: var(--font-mono);
+      color: var(--accent-moss);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+
     .work-art {
       height: 110px;
       position: relative;
-      transform-style: preserve-3d;
-      perspective: 600px;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-bottom: 14px;
     }
 
-    /* 01 / SCALE: 3D Dual Server Blade Tower */
+    /* 01 / SCALE: 3D Server Blade Tower */
     .scale-rack {
-      position: relative;
-      width: 76px;
-      height: 84px;
+      width: 82px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      transform: rotateY(-18deg) rotateX(10deg);
+      gap: 7px;
+      transform: rotateY(-18deg) rotateX(8deg);
       animation: floatTower 4.5s ease-in-out infinite;
     }
     .blade-unit {
-      height: 22px;
+      height: 23px;
       border-radius: 5px;
-      background: linear-gradient(135deg, #333a42, #1c2229);
-      border: 1px solid #455468;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+      background: linear-gradient(135deg, #FFFFFF, #EAE4D9);
+      border: 1px solid #D5CCC0;
+      box-shadow: 0 4px 10px rgba(32, 38, 33, 0.08);
       display: flex;
       align-items: center;
-      padding: 0 7px;
-      position: relative;
+      padding: 0 8px;
     }
     .blade-vent {
       flex: 1;
       height: 4px;
-      background: repeating-linear-gradient(90deg, #101419, #101419 3px, #2a3440 3px, #2a3440 5px);
+      background: repeating-linear-gradient(90deg, #96A398, #96A398 3px, #E6E0D6 3px, #E6E0D6 5px);
       border-radius: 2px;
       margin-right: 8px;
     }
@@ -130,65 +653,68 @@
       width: 4px;
       height: 4px;
       border-radius: 50%;
-      background: #00ffcc;
-      box-shadow: 0 0 6px #00ffcc;
+      background: #3B7A49;
+      box-shadow: 0 0 5px #3B7A49;
     }
     .blade-leds i:last-child {
-      background: #0789f9;
-      box-shadow: 0 0 6px #0789f9;
+      background: var(--accent-clay);
+      box-shadow: 0 0 5px var(--accent-clay);
       animation: blinkLed 1.2s infinite alternate;
     }
     @keyframes blinkLed { 0% { opacity: 0.3; } 100% { opacity: 1; } }
-    @keyframes floatTower { 0%, 100% { transform: rotateY(-18deg) rotateX(10deg) translateY(0); } 50% { transform: rotateY(-18deg) rotateX(10deg) translateY(-8px); } }
+    @keyframes floatTower { 
+      0%, 100% { transform: rotateY(-18deg) rotateX(8deg) translateY(0); } 
+      50% { transform: rotateY(-18deg) rotateX(8deg) translateY(-6px); } 
+    }
 
-    /* 02 / MODERNIZATION: Hybrid Cloud Infrastructure & Synced Nodes */
+    /* 02 / MODERNIZATION: Hybrid Cloud Infrastructure */
     .cloud-cluster {
       position: relative;
-      width: 90px;
-      height: 70px;
+      width: 94px;
+      height: 74px;
       animation: bobCloud 5s ease-in-out infinite;
     }
     .main-cloud {
       position: absolute;
       left: 12px;
       top: 18px;
-      width: 66px;
-      height: 26px;
-      background: linear-gradient(135deg, #1b3d54, #0b2233);
-      border: 1.5px solid #0789f9;
+      width: 70px;
+      height: 28px;
+      background: linear-gradient(135deg, #FAF7F2, #E2ECE3);
+      border: 1.5px solid var(--accent-moss);
       border-radius: 20px;
-      box-shadow: 0 0 16px rgba(7, 137, 249, 0.4);
+      box-shadow: 0 4px 14px var(--accent-moss-glow);
     }
     .main-cloud:before {
       content: "";
       position: absolute;
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       background: inherit;
       border: inherit;
       border-right: 0;
       border-bottom: 0;
       border-radius: 50%;
-      top: -14px;
+      top: -15px;
       left: 10px;
     }
     .main-cloud:after {
       content: "";
       position: absolute;
-      width: 22px;
-      height: 22px;
+      width: 24px;
+      height: 24px;
       background: inherit;
       border: inherit;
       border-left: 0;
       border-bottom: 0;
       border-radius: 50%;
-      top: -10px;
+      top: -11px;
       right: 12px;
     }
     .cloud-sync-ring {
       position: absolute;
       inset: -6px;
-      border: 1px dashed rgba(7, 137, 249, 0.5);
+      border: 1px dashed rgba(46, 64, 51, 0.45);
       border-radius: 50%;
       transform: rotateX(70deg);
       animation: spinRing 8s linear infinite;
@@ -200,10 +726,10 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: #00f2fe;
-      box-shadow: 0 0 8px #00f2fe;
+      background: var(--accent-moss);
+      box-shadow: 0 0 6px var(--accent-moss);
     }
-    @keyframes bobCloud { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+    @keyframes bobCloud { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
     @keyframes spinRing { to { transform: rotateX(70deg) rotateZ(360deg); } }
 
     /* 03 / GLOBAL DELIVERY: Realistic 3D Earth Globe */
@@ -213,12 +739,12 @@
       height: 80px;
       border-radius: 50%;
       background: 
-        radial-gradient(circle at 32% 28%, rgba(255,255,255,0.4) 0%, transparent 25%),
-        radial-gradient(circle at 50% 50%, #0d4b75 0%, #072a44 65%, #02121e 100%);
+        radial-gradient(circle at 32% 28%, rgba(255,255,255,0.7) 0%, transparent 28%),
+        radial-gradient(circle at 50% 50%, #295B6F 0%, #1A4050 65%, #0E2934 100%);
       box-shadow: 
-        inset -12px -12px 20px rgba(0, 0, 0, 0.85),
-        inset 6px 6px 12px rgba(90, 200, 255, 0.35),
-        0 0 24px rgba(7, 137, 249, 0.35);
+        inset -8px -8px 16px rgba(14, 41, 52, 0.5),
+        inset 6px 6px 12px rgba(255, 255, 255, 0.4),
+        0 8px 22px rgba(26, 64, 80, 0.2);
       overflow: hidden;
       animation: earthSpinFloat 6s ease-in-out infinite;
     }
@@ -226,32 +752,31 @@
       position: absolute;
       inset: 0;
       border-radius: 50%;
-      opacity: 0.82;
+      opacity: 0.92;
       background: 
-        radial-gradient(ellipse at 40% 35%, #2a7e58 14%, transparent 18%),
-        radial-gradient(ellipse at 65% 55%, #226947 16%, transparent 22%),
-        radial-gradient(ellipse at 30% 68%, #1f5a3e 12%, transparent 16%),
-        radial-gradient(ellipse at 78% 28%, #287752 10%, transparent 15%);
-      filter: drop-shadow(0 0 2px rgba(40,120,80,0.5));
+        radial-gradient(ellipse at 40% 35%, #4C7D55 14%, transparent 18%),
+        radial-gradient(ellipse at 65% 55%, #36633E 16%, transparent 22%),
+        radial-gradient(ellipse at 30% 68%, #2A5031 12%, transparent 16%),
+        radial-gradient(ellipse at 78% 28%, #4C7D55 10%, transparent 15%);
     }
     .earth-grid {
       position: absolute;
       inset: 0;
       border-radius: 50%;
-      border: 1px solid rgba(135, 206, 250, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.35);
     }
     .earth-grid:before {
       content: "";
       position: absolute;
-      inset: 0 22px;
-      border: 1px solid rgba(135, 206, 250, 0.22);
+      inset: 0 20px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: 50%;
     }
     .earth-grid:after {
       content: "";
       position: absolute;
-      inset: 22px 0;
-      border: 1px solid rgba(135, 206, 250, 0.22);
+      inset: 20px 0;
+      border: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: 50%;
       border-left: 0;
       border-right: 0;
@@ -260,7 +785,7 @@
       position: absolute;
       width: 104px;
       height: 104px;
-      border: 1.5px solid rgba(7, 137, 249, 0.4);
+      border: 1.5px solid rgba(46, 64, 51, 0.45);
       border-radius: 50%;
       transform: rotateX(72deg) rotateY(-18deg);
       animation: signalRotate 10s linear infinite;
@@ -272,335 +797,830 @@
       left: 50%;
       width: 7px;
       height: 7px;
-      background: #00ffcc;
+      background: var(--accent-moss);
       border-radius: 50%;
-      box-shadow: 0 0 10px #00ffcc;
+      box-shadow: 0 0 8px var(--accent-moss);
     }
     @keyframes earthSpinFloat {
       0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-7px) rotate(4deg); }
+      50% { transform: translateY(-6px) rotate(4deg); }
     }
     @keyframes signalRotate {
       to { transform: rotateX(72deg) rotateY(-18deg) rotateZ(360deg); }
     }
 
-    .eyebrow,.date{color:#168ff5}.experience{border-color:#454545}.job:before{background:var(--blue);box-shadow:0 0 0 1px #555}.job h3{color:#eee}.job .place,.job ul{color:#aaa}
-    .list-item{border-color:#3e3e3e}.list-item strong{color:#eee}.list-item span{color:#aaa}.creative{background:#2a3438}.creative p{color:#bac5c5}.creative p strong{color:#f1f1f1}.creative .icon{color:#7ed0bd!important}.foot{border-color:#3c3c3c;color:#aaa}.foot strong{color:#eee}
-    
-    @media(max-width:900px){header{padding:0 28px}main{padding:0 28px}.hero{grid-template-columns:5fr 7fr;min-height:460px}.visual{min-height:410px}.hero-copy{margin-left:35%;padding:42px 5% 42px 8%}}
-    @media(max-width:700px){header{height:auto;min-height:90px;padding:19px 6%;flex-wrap:wrap}nav{width:100%;order:3;gap:8px;justify-content:flex-start;overflow-x:auto;padding-bottom:5px}main{padding:0 6%}.hero{display:flex;flex-direction:column;align-items:stretch;padding-top:15px;gap:0}.visual{min-height:330px;width:87%;margin:0 auto -26px}.hero-copy{margin:0;padding:44px 8% 36px;transform:none}.hero h1{font-size:40px}.stats{grid-template-columns:1fr;gap:10px;margin-bottom:40px}.stat,.stat:first-child{padding:12px 15px}.stat strong{display:inline-block;margin-right:8px;font-size:19px}.cards,.columns{grid-template-columns:1fr}.card{min-height:0}.work-grid{grid-template-columns:1fr}.section-head p{max-width:none}}
+    .work-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
 
-    .back-to-top{position:fixed;right:28px;bottom:28px;z-index:20;width:48px;height:48px;border:1px solid #ffffff24;border-radius:50%;display:grid;place-items:center;background:#0789f9;color:#fff;font-size:23px;line-height:1;box-shadow:0 8px 24px #0005;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .2s,transform .2s,visibility .2s;cursor:pointer}
-    .back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}.back-to-top:hover,.back-to-top:focus-visible{background:#0878d8;outline:2px solid #fff;outline-offset:3px}
-    @media(max-width:700px){.back-to-top{right:16px;bottom:16px;width:44px;height:44px}}
+    .work-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
 
-    /* Slide Mode Styles */
-    .slide-back{display:none}
-    .slide-mode .slide-back{display:inline-flex;position:fixed;z-index:16;top:124px;left:max(28px,calc((100vw - 1500px)/2 + 50px));align-items:center;gap:9px;padding:9px 17px;border:1px solid #555;border-radius:24px;background:#303030;color:#eee;font:600 14px system-ui,sans-serif;cursor:pointer;box-shadow:0 8px 24px #0003}
-    .slide-mode .slide-back:hover,.slide-mode .slide-back:focus-visible{border-color:#0789f9;color:#fff;outline:2px solid #0789f9;outline-offset:2px}
-    .slide-mode main>.stats,.slide-mode main>section:not(.slide-current){display:none}
-    .slide-mode main>section.slide-current{display:block;min-height:calc(100vh - 110px);padding:86px 22px 70px;animation:slide-in .42s cubic-bezier(.2,.75,.2,1) both}
-    @keyframes slide-in{from{opacity:0;transform:translateX(38px) scale(.99)}to{opacity:1;transform:translateX(0) scale(1)}}
-    .slide-mode .back-to-top{display:none}
-    @media(max-width:700px){.slide-mode .slide-back{top:145px;left:6%;padding:8px 14px}.slide-mode main>section.slide-current{padding:80px 0 55px;min-height:calc(100vh - 120px)}}
+    /* ==========================================================
+       CAREER EXPERIENCE TIMELINE
+       ========================================================= */
+    .experience {
+      border-left: 2px solid var(--border-subtle);
+      margin-left: 10px;
+      padding-left: 32px;
+    }
 
-    /* Portrait Image Frame (+3% size: 206px x 247px) with black & white filter */
-    .cinematic-avatar-frame {
-      width: 206px;
-      height: 247px;
-      border-radius: 16px;
-      overflow: hidden;
+    .job {
+      position: relative;
+      padding-bottom: 38px;
+    }
+
+    .job:last-child {
+      padding-bottom: 0;
+    }
+
+    .job::before {
+      content: "";
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) translateZ(60px);
-      background: #0d1117;
-      border: 3px solid var(--blue);
-      box-shadow: 0 0 30px rgba(7, 137, 249, 0.4), inset 0 0 15px rgba(0,0,0,0.8);
-      z-index: 2;
-      cursor: pointer;
+      left: -39px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border: 2px solid #FFFFFF;
+      border-radius: 50%;
+      background: var(--accent-moss);
+      box-shadow: 0 0 0 2px var(--border-accent);
     }
 
-    .cinematic-avatar-frame img {
-      width: 100%;
-      height: 90%;
-      object-fit: cover;
+    .job-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .job h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .date {
+      color: var(--accent-moss);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: var(--accent-moss-light);
+      padding: 3px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(46, 64, 51, 0.15);
+    }
+
+    .job .place {
+      color: var(--text-dim);
+      font-size: 0.88rem;
+      margin: 4px 0 12px;
+      font-style: italic;
+    }
+
+    .job ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text-muted);
+      font-size: 0.94rem;
+    }
+
+    .job li {
+      padding: 3px 0;
+    }
+
+    /* ==========================================================
+       EDUCATION & CREDENTIALS COLUMNS
+       ========================================================== */
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .column-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      box-shadow: var(--shadow-ambient);
+    }
+
+    .column-box h3 {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 12px;
+    }
+
+    .list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .list-item {
+      border-bottom: 1px solid #F3EEE5;
+      padding-bottom: 14px;
+    }
+
+    .list-item:last-child {
+      border: 0;
+      padding-bottom: 0;
+    }
+
+    .list-item strong {
       display: block;
-      filter: grayscale(100%) contrast(115%);
-      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      font-size: 0.96rem;
+      color: var(--text-main);
+      font-weight: 600;
     }
 
-    .cinematic-avatar-frame:hover img {
-      transform: scale(1.04);
+    .list-item span {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .creative {
+      margin-top: 22px;
+      padding: 20px 22px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-accent-soft);
+      border: 1px solid #D9E4DA;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .creative .icon-leaf {
+      color: var(--accent-moss);
+      font-size: 22px;
+    }
+
+    .creative p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .creative strong {
+      display: block;
+      color: var(--text-main);
+      margin-bottom: 2px;
+    }
+
+    /* ==========================================================
+       SLIDE / TAB VIEW MODE
+       ========================================================== */
+    .slide-back {
+      display: none;
+    }
+
+    .slide-mode .slide-back {
+      display: inline-flex;
+      position: fixed;
+      z-index: 120;
+      top: 102px;
+      left: max(24px, calc((100vw - 1220px)/2 + 24px));
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      color: var(--accent-moss);
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: var(--shadow-floating);
+    }
+
+    .slide-mode .slide-back:hover {
+      border-color: var(--accent-moss-hover);
+      background: var(--accent-moss-light);
+    }
+
+    .slide-mode main > .stats,
+    .slide-mode main > section:not(.slide-current) {
+      display: none;
+    }
+
+    .slide-mode main > section.slide-current {
+      display: block;
+      min-height: calc(100vh - 220px);
+      padding: 72px 0 40px;
+      animation: slideIn 0.35s ease forwards;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==========================================================
+       FOOTER
+       ========================================================== */
+    .foot {
+      border-top: 1px solid var(--border-subtle);
+      padding: 28px 44px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      background: #F7F3EB;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .foot strong {
+      color: var(--text-main);
+    }
+
+    /* Back To Top Floating Action Button */
+    .back-to-top {
+      position: fixed;
+      right: 28px;
+      bottom: 28px;
+      z-index: 90;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 50%;
+      background: #FFFFFF;
+      color: var(--accent-moss);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-floating);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: var(--transition);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--accent-moss);
+      color: #FFFFFF;
+      border-color: var(--accent-moss);
+    }
+
+    /* ==========================================================
+       RESPONSIVE MOBILE BREAKPOINTS
+       ========================================================== */
+    @media (max-width: 992px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+      .visual-wrapper {
+        padding: 32px;
+      }
+      .hero-copy {
+        padding: 34px;
+      }
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+      .columns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .shell {
+        padding: 12px 10px 34px;
+      }
+      .site {
+        border-radius: var(--radius-sm);
+      }
+      header {
+        height: auto;
+        padding: 16px 20px;
+        flex-direction: column;
+        gap: 14px;
+        align-items: flex-start;
+      }
+      nav {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 6px;
+        scrollbar-width: none;
+      }
+      nav::-webkit-scrollbar {
+        display: none;
+      }
+      main {
+        padding: 28px 20px;
+      }
+      .hero-copy {
+        padding: 26px 22px;
+      }
+      .hero-copy h1 {
+        font-size: 32px;
+      }
+      .stats {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .foot {
+        padding: 22px;
+        flex-direction: column;
+      }
+      .slide-mode .slide-back {
+        top: 136px;
+        left: 20px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .shell, .site {
+        max-width: none;
+        padding: 0;
+        box-shadow: none;
+        border: none;
+        background: #fff;
+      }
+      header, .hero-actions, .back-to-top, .slide-back, nav {
+        display: none !important;
+      }
+      .hero {
+        grid-template-columns: 200px 1fr;
+        gap: 20px;
+      }
+      .hero-copy, .visual-wrapper, .stat-card, .card, .work-card, .column-box {
+        background: #fff !important;
+        border: 1px solid #ccc !important;
+        color: #000 !important;
+        box-shadow: none !important;
+      }
+      .hero-copy h1, .role, .card h3, .work-card h3, .column-box h3, strong {
+        color: #000 !important;
+      }
+      .hero-bio, .card p, .work-card p, .job ul, .list-item span {
+        color: #333 !important;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="shell"><div class="site">
-    <header>
-      <a class="brand" href="#top" aria-label="Back to top">
-        <span>Robin <span>Ayinikat</span></span>
-      </a>
-      <nav aria-label="Main navigation">
-        <a href="#about" class="active">Home</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#work">Highlights</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#personal">Personal</a>
-      </nav>
-    </header>
-    <main id="top">
-      <button class="slide-back" id="slide-back" type="button" aria-label="Go back to the previous view">← &nbsp; Back</button>
+
+  <div class="shell">
+    <div class="site">
       
-      <!-- Home / About Section -->
-      <section class="hero" id="about">
-        <div class="visual" aria-label="Profile area with portrait photo">
+      <!-- Top Sticky Navigation Header -->
+      <header>
+        <a class="brand" href="#top" aria-label="Robin Ayinikat Home">
+          <span class="brand-mark">RA</span>
+          <div class="brand-name">
+            <span>Robin Ayinikat</span>
+            <span>Infrastructure Architect</span>
+          </div>
+        </a>
+        
+        <nav aria-label="Main navigation">
+          <a href="#about" class="active">Overview</a>
+          <a href="#expertise">Capabilities</a>
+          <a href="#work">Highlights</a>
+          <a href="#experience">Career</a>
+          <a href="#education">Credentials</a>
+          <a href="#personal">Details</a>
+        </nav>
+      </header>
+
+      <!-- Main Content Area 
+      <main id="top">
+        <button class="slide-back" id="slide-back" type="button" aria-label="Go back to the previous view">← &nbsp; Return to Overview</button> -->
+        
+        <!-- ================= HERO SECTION ================= -->
+        <section class="hero" id="about">
           
-          <!-- Portrait Picture Container in B&W -->
-          <div class="cinematic-avatar-frame">
-            <img src="profile.jpg" alt="Robin Ayinikat Portrait" onerror="this.onerror=null;this.src='standing.jpg';">
+          <!-- Visual Column: Calming Portrait Presentation -->
+          <div class="visual-wrapper">
+            <div class="profile-card-frame">
+              <img src="profile.jpg" alt="Robin Ayinikat Portrait" onerror="this.onerror=null;this.src='standing.jpg';">
+            </div>
+            <div class="visual-status-pill">
+              Enterprise Systems · Cloud · Resilience
+            </div>
           </div>
 
-          <div class="orbit">⌘</div>
-          <span class="visual-label">Systems · Cloud · Reliability</span>
-        </div>
-        <div class="hero-copy">
-          <div class="eyebrow">IT Architect · Bangalore</div>
-          <h1 style="font-size: clamp(30px, 3.8vw, 44px); line-height: 1.15;">Building reliable systems for business.</h1>
-          <p class="role"><strong>IT Infrastructure &amp; Cloud Operations</strong></p>
-          <p style="text-align: justify;">Experienced IT Professional with 15+ years designing, implementing, and managing resilient infrastructure. I bring together systems administration, cloud platforms, security, and operational discipline to keep critical services performing.</p>
-        </div>
-      </section>
+          <!-- Hero Editorial Column -->
+          <div class="hero-copy">
+            <div class="eyebrow">IT Architect · Bangalore</div>
+            <h1 style="font-size: clamp(30px, 3.8vw, 44px); line-height: 1.15;">Building reliable systems for business.</h1>
+            <p class="role"><strong>IT Infrastructure &amp; Cloud Operations</strong></p>
+            <p class="hero-bio">Experienced IT Professional with 15+ years designing, implementing, and managing resilient infrastructure. I bring together systems administration, cloud platforms, security, and operational discipline to keep critical services performing.</p>
+            
+            <!-- Download CV & Contact Actions -->
+            <div class="hero-actions">
+              <button class="btn btn-primary" onclick="window.print()" title="Print or save as PDF">
+                ↓ &nbsp; Download CV
+              </button>
+              <a class="btn btn-outline" href="mailto:robin.ayinikat@gmail.com" title="Send Email">
+                ✉ &nbsp; Get in Touch
+              </a>
+            </div>
+          </div>
+        </section>
 
-      <div class="stats" aria-label="Career highlights">
-        <div class="stat"><strong>15+ years</strong><span>in IT infrastructure</span></div>
-        <div class="stat"><strong>3,000+</strong><span>servers supported in staging and production</span></div>
-        <div class="stat"><strong>4 countries</strong><span>mobile money deployments</span></div>
-      </div>
+        <!-- ================= METRICS STRIP ================= -->
+        <div class="stats" aria-label="Career highlights">
+          <div class="stat-card">
+            <strong>15+ yrs</strong>
+            <span>Enterprise infrastructure lifecycle</span>
+          </div>
+          <div class="stat-card">
+            <strong>3,000+</strong>
+            <span>Servers managed in staging & production</span>
+          </div>
+          <div class="stat-card">
+            <strong>4 nations</strong>
+            <span>Mobile Money platform deployments delivered</span>
+          </div>
+        </div>
 
-      <!-- Expertise Section -->
-      <section id="expertise">
-        <div class="section-head">
-          <div><div class="eyebrow">Capabilities</div><h2>What I Do</h2></div>
-          <p>Practical engineering across infrastructure lifecycle, platform reliability, and team operations.</p>
-        </div>
-        <div class="cards">
-          <article class="card"><div class="icon">▤</div><div><h3>Infrastructure &amp; systems</h3><p>Design and administration of large server environments, operating systems, storage, and network services.</p><div class="tags"><span class="tag">Linux</span><span class="tag">Windows Server</span><span class="tag">VMware</span><span class="tag">XCP-ng</span></div></div></article>
-          <article class="card"><div class="icon">☁</div><div><h3>Cloud &amp; virtualization</h3><p>Deploy and operate cloud and private-cloud platforms to support changing business needs.</p><div class="tags"><span class="tag">AWS</span><span class="tag">GCP</span><span class="tag">OpenStack</span><span class="tag">VDI</span></div></div></article>
-          <article class="card"><div class="icon">⌁</div><div><h3>Monitoring &amp; reliability</h3><p>Improve visibility, availability, and performance with actionable monitoring and troubleshooting.</p><div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Nagios</span></div></div></article>
-          <article class="card"><div class="icon">✓</div><div><h3>Security &amp; operations</h3><p>Security patching, OS upgrades, system hardening, compliance, and clear operational documentation.</p><div class="tags"><span class="tag">Patching</span><span class="tag">ISMS</span><span class="tag">Documentation</span><span class="tag">Ansible</span></div></div></article>
-        </div>
-      </section>
+        <!-- ================= EXPERTISE SECTION ================= -->
+        <section id="expertise">
+          <div class="section-head">
+            <div class="eyebrow">Capabilities</div>
+            <h2>What I Do</h2>
+            <p>Practical engineering across infrastructure lifecycle, platform reliability and team operations.</p>
+          </div>
+          <div class="cards-grid">
+            <article class="card">
+              <div class="icon-box">▤</div>
+              <div>
+                <h3>Infrastructure &amp; Systems</h3>
+                <p style="text-align: justify;">Architectural design and administration of high-density server environments, enterprise Linux distributions, virtualization tiers, and network fabrics.</p>
+                <div class="tags">
+                  <span class="tag">Linux (Ubuntu, RHEL, SUSE)</span>
+                  <span class="tag">VMware ESXi</span>
+                  <span class="tag">XCP-ng</span>
+                </div>
+              </div>
+            </article>
 
-      <!-- Highlights Section with Upgraded Icons -->
-      <section id="work">
-        <div class="section-head">
-          <div><div class="eyebrow">Selected highlights</div><h2>Infrastructure in action</h2></div>
-          <p>Work themes drawn from the platforms, operations, and deployments in my career.</p>
-        </div>
-        <div class="work-grid">
-          
-          <!-- 01 / SCALE -->
-          <article class="work-card">
-            <span class="work-number">01 / SCALE</span>
-            <div class="work-art">
-              <div class="scale-rack">
-                <div class="blade-unit"><span class="blade-vent"></span><span class="blade-leds"><i></i><i></i></span></div>
-                <div class="blade-unit"><span class="blade-vent"></span><span class="blade-leds"><i></i><i></i></span></div>
-                <div class="blade-unit"><span class="blade-vent"></span><span class="blade-leds"><i></i><i></i></span></div>
+            <article class="card">
+              <div class="icon-box">☁</div>
+              <div>
+                <h3>Cloud &amp; Virtualization</h3>
+                <p style="text-align: justify;">Deploy and orchestrate hybrid and private-cloud platforms to support dynamic business agility, remote development environments, and VDI workloads.</p>
+                <div class="tags">
+                  <span class="tag">AWS</span>
+                  <span class="tag">GCP</span>
+                  <span class="tag">OpenStack</span>
+                  <span class="tag">VDI</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="icon-box">⌁</div>
+              <div>
+                <h3>Monitoring &amp; Platform Reliability</h3>
+                <p style="text-align: justify;">Elevate visibility, availability, and MTTR performance with proactive telemetry, unified dashboard metrics, and deep incident root-cause resolution.</p>
+                <div class="tags">
+                  <span class="tag">Prometheus</span>
+                  <span class="tag">Grafana</span>
+                  <span class="tag">Nagios</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="icon-box">✓</div>
+              <div>
+                <h3>Security &amp; Operations</h3>
+                <p style="text-align: justify;">Rigorous security patching cadence, OS hardening, Audit readiness, configuration automation, and comprehensive operational playbooks.</p>
+                <div class="tags">
+                  <span class="tag">Patching</span>
+                  <span class="tag">ISMS / Audit</span>
+                  <span class="tag">Ansible AI</span>
+                  <span class="tag">SLA Governance</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- ================= WORK HIGHLIGHTS SECTION ================= -->
+        <section id="work">
+          <div class="section-head">
+            <div class="eyebrow">Selected Highlights</div>
+            <h2>Infrastructure in Action</h2>
+            <p>Core operational milestones and technical achievements drawn from platform deployments across my career.</p>
+          </div>
+          <div class="work-grid">
+            
+            <!-- 01 / SCALE -->
+            <article class="work-card">
+              <span class="work-number">01 / SCALE</span>
+              <div class="work-art">
+                <div class="scale-rack">
+                  <div class="blade-unit"><span class="blade-vent"></span><span class="blade-leds"><i></i><i></i></span></div>
+                  <div class="blade-unit"><span class="blade-vent"></span><span class="blade-leds"><i></i><i></i></span></div>
+                  <div class="blade-unit"><span class="blade-vent"></span><span class="blade-leds"><i></i><i></i></span></div>
+                </div>
+              </div>
+              <h3>Multi-Platform Staging Estate</h3>
+              <p>Managing 3,000+ staging servers across VMware, AWS, and on-premises infrastructure, with continuous focus on patching, performance, and availability.</p>
+            </article>
+
+            <!-- 02 / MODERNIZATION -->
+            <article class="work-card">
+              <span class="work-number">02 / MODERNIZATION</span>
+              <div class="work-art">
+                <div class="cloud-cluster">
+                  <div class="main-cloud"></div>
+                  <div class="cloud-sync-ring"><span class="sync-orb"></span></div>
+                </div>
+              </div>
+              <h3>Cloud &amp; Private Platforms</h3>
+              <p>Hands-on cloud workload migrations on AWS &amp; GCP, on-premises remote VDI architecture, and private OpenStack deployment utilizing repurposed hardware.</p>
+            </article>
+
+            <!-- 03 / GLOBAL DELIVERY -->
+            <article class="work-card">
+              <span class="work-number">03 / GLOBAL DELIVERY</span>
+              <div class="work-art">
+                <div class="earth-sphere">
+                  <div class="earth-continents"></div>
+                  <div class="earth-grid"></div>
+                </div>
+                <div class="orbit-signal"><span class="satellite-beacon"></span></div>
+              </div>
+              <h3>Resilient Services &amp; Data Centers</h3>
+              <p>Mobile money platform deployments across four countries, data center operations, disaster recovery, monitoring, and audit readiness.</p>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ================= EXPERIENCE TIMELINE ================= -->
+        <section id="experience">
+          <div class="section-head">
+            <div class="eyebrow">Career</div>
+            <h2>Professional Experience</h2>
+            <p>Progressive responsibility across systems architecture, staging governance and engineering operations.</p>
+          </div>
+          <div class="experience">
+            
+            <article class="job">
+              <div class="job-top">
+                <h3>IT Architect</h3>
+                <span class="date">June 2022 — Present</span>
+              </div>
+              <p class="place">Harman Connected Services - A Wipro subsidiary, Bangalore, India</p>
+              <ul>
+                <li>Manage staging infrastructure of 3,000+ servers deployed across VMware, AWS, and bare-metal environments.</li>
+                <li>Coordinate enterprise-wide security patching cycles and operating system upgrades to meet strict audit compliance.</li>
+                <li>Monitor performance and availability, troubleshoot incidents, and improve system reliability.</li>
+                <li>Partner with cross-functional development teams on release deployment, testing verification, and maintenance windows.</li>
+                <li>Maintain infrastructure, patching, and upgrade documentation while creating AI-assisted Ansible playbooks for package installation automation.</li>
+				<li>Creating AI-assisted Ansible playbooks for package installation automation using Jenkins.</li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <div class="job-top">
+                <h3>Lead – IT</h3>
+                <span class="date">January 2020 — June 2022</span>
+              </div>
+              <p class="place">Wibmo Inc., - A PayU Company, Bangalore, India</p>
+              <ul>
+                <li>Managed VMware staging cluster powering more than 600 virtual machines and staging servers.</li>
+                <li>Deployed and configured AWS and GCP servers; planned and implemented on-premises VDI for remote workforce enablement.</li>
+                <li>Supported servers, storage, and network devices, coordinating with vendors and internal teams to minimize downtime.</li>
+                <li>Deployed Prometheus and Grafana monitoring and Apache Guacamole remote access.</li>
+                <li>Mentored team members and led an on-premises OpenStack implementation using existing hardware.</li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <div class="job-top">
+                <h3>Senior Systems Engineer</h3>
+                <span class="date">January 2010 — December 2019</span>
+              </div>
+              <p class="place">OBOPAY Mobile Technologies, Bangalore &amp; Mumbai, India</p>
+              <ul>
+                <li>Managed mobile money platform deployments for clients in Burundi, Uganda, Zimbabwe, and Kenya.</li>
+                <li>Oversaw data center facilities including power, cabling, cooling, and audit compliance at DAKC.</li>
+                <li>Deployed Nagios monitoring and cloud servers on AWS and GCP; delivered deployment and disaster recovery projects.</li>
+                <li>Installed and hardened Linux servers; supported server, storage, and network environments.</li>
+                <li>Conducted internal and external ISMS audits, infrastructure assessments, inventory verification, and compliance reporting.</li>
+              </ul>
+            </article>
+
+            <article class="job">
+              <div class="job-top">
+                <h3>Network Administrator</h3>
+                <span class="date">November 2006 — January 2010</span>
+              </div>
+              <p class="place">Nextfocus Inc., Mumbai, India</p>
+              <ul>
+                <li>Troubleshoot issues &amp; maintain desktops in a heterogeneous environment (Windows XP/2000/2003/2008, Linux Machines).</li>
+                <li>Streamlined purchase process and improved vendor relations resulting in better pricing and quick delivery of IT procurements.</li>
+                <li>Monitored and managed ISP and Service vendor SLAs critical to business, worked with local ISPs on getting new Internet Links at lesser cost with the local carriers for higher bandwidth including last mile redundancy.</li>
+              </ul>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ================= EDUCATION & CREDENTIALS ================= -->
+        <section id="education">
+          <div class="section-head">
+            <div class="eyebrow">Credentials</div>
+            <h2>Education &amp; Certifications</h2>
+          </div>
+          <div class="columns">
+            
+            <div class="column-box">
+              <h3>Education</h3>
+              <div class="list">
+                <div class="list-item">
+                  <strong>Master of Computer Applications</strong>
+                  <span>University of Madras · 2016–2018</span>
+                </div>
+                <div class="list-item">
+                  <strong>Bachelor of Computer Applications</strong>
+                  <span>University of Madras · 2001–2004</span>
+                </div>
+                <div class="list-item">
+                  <strong>Diploma in Civil Engineering</strong>
+                  <span>Shreeram Polytechnic, Navi Mumbai · 1991–1995</span>
+                </div>
               </div>
             </div>
-            <h3>Multi-platform environment estate</h3>
-            <p style="text-align: justify;">Managing 3,000+ composing of staging and production servers across VMware, AWS, and on-premises infrastructure, with focus on patching, performance, and availability.</p>
-          </article>
 
-          <!-- 02 / MODERNIZATION -->
-          <article class="work-card">
-            <span class="work-number">02 / MODERNIZATION</span>
-            <div class="work-art">
-              <div class="cloud-cluster">
-                <div class="main-cloud"></div>
-                <div class="cloud-sync-ring"><span class="sync-orb"></span></div>
+            <div class="column-box">
+              <h3>Certifications</h3>
+              <div class="list">
+                <div class="list-item">
+                  <strong>Certificate of Completion for CLAUDE CODE IN ACTION</strong>
+                </div>
+                <div class="list-item">
+                  <strong>Certificate of Completion for Build with GEMINI</strong>
+                </div>
+                <div class="list-item">
+                  <strong>Certified Internal Auditor</strong>
+                </div>
+                <div class="list-item">
+                  <strong>Diploma in Red Hat Linux</strong>
+                </div>
+                <div class="list-item">
+                  <strong>ITIL Foundation V3 Certified</strong>
+                </div>
+              </div>
+              <div class="creative">
+                <div class="icon-leaf">✳</div>
+                <p><strong>Creative practice:</strong> 3D modeling in Blender and motion graphics.</p>
               </div>
             </div>
-            <h3>Cloud &amp; private platforms</h3>
-            <p style="text-align: justify;">Hands-on deployments across AWS and GCP, plus on-premises VDI planning and an OpenStack implementation using existing hardware.</p>
-          </article>
 
-          <!-- 03 / GLOBAL DELIVERY -->
-          <article class="work-card">
-            <span class="work-number">03 / GLOBAL DELIVERY</span>
-            <div class="work-art">
-              <div class="earth-sphere">
-                <div class="earth-continents"></div>
-                <div class="earth-grid"></div>
+          </div>
+        </section>
+
+        <!-- ================= PERSONAL SECTION ================= -->
+        <section id="personal">
+          <div class="section-head">
+            <div class="eyebrow">Personal</div>
+            <h2>Personal Details &amp; References</h2>
+          </div>
+          <div class="columns">
+            
+            <div class="column-box">
+              <h3>Personal Details</h3>
+              <div class="list">
+                <div class="list-item">
+                  <strong>Marital Status</strong>
+                  <span>Married</span>
+                </div>
+                <div class="list-item">
+                  <strong>Languages</strong>
+                  <span>English, Hindi, Malayalam, Marathi</span>
+                </div>
+                <div class="list-item">
+                  <strong>Current Location</strong>
+                  <span>Bangalore, Karnataka, India</span>
+                </div>
               </div>
-              <div class="orbit-signal"><span class="satellite-beacon"></span></div>
             </div>
-            <h3>Resilient services &amp; data centers</h3>
-            <p style="text-align: justify;">Mobile money platform deployments across four countries, data center operations, disaster recovery, monitoring, and audit readiness.</p>
-          </article>
 
-        </div>
-      </section>
-
-      <!-- Experience Section -->
-      <section id="experience">
-        <div class="section-head">
-          <div><div class="eyebrow">Career</div><h2>Professional experience</h2></div>
-          <p>Progressive responsibility in infrastructure architecture, team leadership, and enterprise operations.</p>
-        </div>
-        <div class="experience">
-          <article class="job"><div class="job-top"><h3>IT Architect</h3><span class="date">June 2022 — Present</span></div><p class="place">Harman Connected Services - A WIPRO subsidiary, Bangalore</p><ul><li>Manage staging infrastructure of 3,000+ servers across VMware, AWS, and on-premises environments.</li><li>Coordinate regular security patching and OS package upgrades to meet security and compliance requirements.</li><li>Monitor performance and availability, troubleshoot incidents, and improve system reliability.</li><li>Partner with cross-functional teams on deployment, testing, and maintenance in staging and production.</li><li>Maintain infrastructure, patching, and upgrade documentation.</li><li>Create AI-assisted Ansible playbooks for package installation automation.</li></ul></article>
-          <article class="job"><div class="job-top"><h3>Lead – IT</h3><span class="date">January 2020 — June 2022</span></div><p class="place">Wibmo Inc., - A PayU subsidiary, Bangalore</p><ul><li>Managed VMware staging infrastructure of more than 600 servers.</li><li>Deployed and configured AWS and GCP servers; planned and implemented on-premises VDI.</li><li>Supported servers, storage, and network devices, coordinating with vendors and internal teams to minimize downtime.</li><li>Deployed Prometheus and Grafana monitoring and Apache Guacamole remote access.</li><li>Mentored team members and led an on-premises OpenStack implementation using existing hardware.</li></ul></article>
-          <article class="job"><div class="job-top"><h3>Senior Systems Engineer</h3><span class="date">January 2010 — December 2019</span></div><p class="place">OBOPAY Mobile Technologies, Bangalore</p><ul><li>Managed mobile money platform deployments for clients in Burundi, Uganda, Zimbabwe, and Kenya.</li><li>Oversaw data center facilities including power, cabling, cooling, and audit compliance.</li><li>Deployed Nagios monitoring and cloud servers on AWS and GCP; delivered deployment and disaster recovery projects.</li><li>Installed and hardened Linux servers; supported server, storage, and network environments.</li><li>Conducted internal and external ISMS audits, infrastructure assessments, inventory verification, and compliance reporting.</li></ul></article>
-          <article class="job"><div class="job-top"><h3>Network Administrator</h3><span class="date">November 2006 — January 2010</span></div><p class="place">Nextfocus Inc., Mumbai</p><ul><li>Troubleshoot problems &amp; maintain desktops in a heterogeneous environment (Windows XP/2000/2003/2008, Linux Machines).</li><li>Streamlined purchase process and improved vendor relations resulting in better pricing and quick delivery of IT procurements.</li><li>Monitored and managed ISP and Service vendor SLAs critical to business, worked with local ISPs on getting new Internet Links at lesser cost with the local carriers for higher bandwidth including last mile redundancy.</li></ul></article>
-        </div>
-      </section>
-
-      <!-- Education Section -->
-      <section id="education">
-        <div class="section-head">
-          <div><div class="eyebrow">Credentials</div><h2>Education &amp; Certifications</h2></div>
-        </div>
-        <div class="columns">
-          <div>
-            <h3>Education</h3>
-            <div class="list">
-              <div class="list-item"><strong>Master of Computer Applications</strong><span>University of Madras · 2016–2018</span></div>
-              <div class="list-item"><strong>Bachelor of Computer Applications</strong><span>University of Madras · 2001–2004</span></div>
-              <div class="list-item"><strong>Diploma in Civil Engineering</strong><span>Shreeram Polytechnic, Navi Mumbai · 1991–1995</span></div>
+            <div class="column-box">
+              <h3>References</h3>
+              <div class="list">
+                <div class="list-item">
+                  <strong>Available upon request</strong>
+                  <span>Professional references can be provided when requested.</span>
+                </div>
+            <!--     <div class="list-item">
+                  <strong>Availability</strong>
+                  <span>Open to Senior Infrastructure Architecture &amp; Cloud Leadership opportunities.</span>
+                </div> -->
+              </div>
             </div>
+
           </div>
-          <div>
-            <h3>Certifications</h3>
-            <div class="list">
-              <div class="list-item"><strong>Certificate of Completion for CLAUDE CODE IN ACTION</strong></div>
-              <div class="list-item"><strong>Certificate of Completion for Build with GEMINI</strong></div>
-              <div class="list-item"><strong>Certified Internal Auditor</strong></div>
-              <div class="list-item"><strong>Diploma in Red Hat Linux</strong></div>
-              <div class="list-item"><strong>ITIL Foundation V3 Certified</strong></div>
-            </div>
-            <div class="creative" style="margin-top:20px">
-              <div class="icon">✳</div>
-              <p><strong>Creative practice</strong>3D modeling in Blender and motion graphics.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Personal Section -->
-      <section id="personal">
-        <div class="section-head">
-          <div><div class="eyebrow">Personal</div><h2>Personal details &amp; references</h2></div>
-        </div>
-        <div class="columns">
-          <div>
-            <h3>Personal details</h3>
-            <div class="list">
-              <div class="list-item"><strong>Marital status</strong><span>Married</span></div>
-              <div class="list-item"><strong>Languages</strong><span>English, Hindi, Malayalam, Marathi</span></div>
-            </div>
-          </div>
-          <div>
-            <h3>References</h3>
-            <div class="creative">
-              <div class="icon">“</div>
-              <p><strong>Available upon request</strong>Professional references can be provided when requested.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="foot">
-      <span><strong>Robin Ayinikat</strong> · Bangalore</span>
-      <span><strong>Email</strong> · robin.ayinikat@gmail.com &nbsp;&nbsp; <strong>Mobile</strong> · 98330 049835</span>
-    </footer>
-  </div></div>
+      </main>
 
-  <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top" onclick="window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})">↑</button>
+      <!-- Footer Bar -->
+      <footer class="foot">
+        <span><strong>Robin Ayinikat</strong> · Bangalore, India</span>
+        <span><strong>Email:</strong> robin.ayinikat@gmail.com &nbsp;|&nbsp; <strong>Phone:</strong> +91 98330 049835</span>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
 
   <script>
-    const stage=document.querySelector('.visual');
-    if(stage && matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
-      stage.addEventListener('pointermove',event=>{
-        const box=stage.getBoundingClientRect();
-        const x=(event.clientX-box.left)/box.width-.5;
-        const y=(event.clientY-box.top)/box.height-.5;
-        stage.style.transform=`rotateY(${x*7}deg) rotateX(${-y*7}deg)`;
-      });
-      stage.addEventListener('pointerleave',()=>stage.style.transform='');
-    }
+    // Navigation active states and tab/slide switching
+    const navLinks = [...document.querySelectorAll('nav a[href^="#"]')];
+    const sections = navLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
 
-    const navLinks=[...document.querySelectorAll('nav a[href^="#"]')];
-    const sections=navLinks.map(link=>document.querySelector(link.getAttribute('href'))).filter(Boolean);
-
-    if('IntersectionObserver' in window){
-      const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
-        if(!document.body.classList.contains('slide-mode') && entry.isIntersecting){
-          navLinks.forEach(link=>link.classList.toggle('active',link.hash===`#${entry.target.id}`));
+    // IntersectionObserver for scroll spy
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (!document.body.classList.contains('slide-mode') && entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.toggle('active', link.hash === `#${entry.target.id}`));
         }
-      }),{rootMargin:'-25% 0px -60% 0px'});
-      sections.forEach(section=>observer.observe(section));
+      }), { rootMargin: '-25% 0px -60% 0px' });
+      sections.forEach(section => observer.observe(section));
     }
 
-    let savedScrollY=0;
-    const setSlide=(id,saveScroll=false)=>{
+    let savedScrollY = 0;
+    const setSlide = (id, saveScroll = false) => {
       const isSlide = Boolean(id) && id !== 'about';
       document.body.classList.toggle('slide-mode', isSlide);
-      document.querySelectorAll('main>section').forEach(section=>{
+      document.querySelectorAll('main > section').forEach(section => {
         section.classList.toggle('slide-current', isSlide && section.id === id);
       });
-      navLinks.forEach(link=>{
-        if(!isSlide && link.hash === '#about') {
+      navLinks.forEach(link => {
+        if (!isSlide && link.hash === '#about') {
           link.classList.add('active');
         } else {
           link.classList.toggle('active', isSlide && link.hash === `#${id}`);
         }
       });
-      if(isSlide){
-        if(saveScroll) savedScrollY = window.scrollY;
-        window.scrollTo({top:0, behavior:'auto'});
+      if (isSlide) {
+        if (saveScroll) savedScrollY = window.scrollY;
+        window.scrollTo({ top: 0, behavior: 'auto' });
       } else {
-        window.scrollTo({top:0, behavior:'smooth'});
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     };
 
-    navLinks.forEach(link=>link.addEventListener('click',event=>{
-      const id=link.hash.slice(1);
+    navLinks.forEach(link => link.addEventListener('click', event => {
+      const id = link.hash.slice(1);
       event.preventDefault();
-      if(id === 'about'){
+      if (id === 'about') {
         history.pushState(null, '', '#about');
         setSlide(null);
       } else {
-        if(!document.getElementById(id)) return;
-        history.pushState({portfolioSlide:id}, '', `#${id}`);
+        if (!document.getElementById(id)) return;
+        history.pushState({ portfolioSlide: id }, '', `#${id}`);
         setSlide(id, !document.body.classList.contains('slide-mode'));
       }
     }));
 
-    document.getElementById('slide-back').addEventListener('click',()=>history.back());
-    window.addEventListener('popstate',event=>setSlide(event.state?.portfolioSlide||null));
-    document.addEventListener('keydown',event=>{
-      if(event.key==='Escape' && document.body.classList.contains('slide-mode')) history.back();
+    document.getElementById('slide-back').addEventListener('click', () => history.back());
+    window.addEventListener('popstate', event => setSlide(event.state?.portfolioSlide || null));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && document.body.classList.contains('slide-mode')) history.back();
     });
 
-    if(matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
-      document.querySelectorAll('.work-card').forEach(card=>{
-        card.addEventListener('pointermove',event=>{
-          const box=card.getBoundingClientRect();
-          const x=(event.clientX-box.left)/box.width-.5;
-          const y=(event.clientY-box.top)/box.height-.5;
-          card.style.transform=`rotateY(${x*6}deg) rotateX(${-y*5}deg) translateY(-3px)`;
-        });
-        card.addEventListener('pointerleave',()=>card.style.transform='');
-      });
-    }
-
-    const topButton=document.querySelector('.back-to-top');
-    const updateTopButton=()=>topButton.classList.toggle('visible',window.scrollY>420);
-    window.addEventListener('scroll',updateTopButton,{passive:true});
+    // Floating Back to Top Button visibility
+    const topButton = document.querySelector('.back-to-top');
+    const updateTopButton = () => topButton.classList.toggle('visible', window.scrollY > 380);
+    window.addEventListener('scroll', updateTopButton, { passive: true });
     updateTopButton();
   </script>
 </body>
