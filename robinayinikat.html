@@ -1183,10 +1183,41 @@
         color: #333 !important;
       }
     }
+	
+	/* Right-Click Lock Notification Warning overlay */
+      .code-alert {
+        position: fixed;
+        top: 25px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-120px);
+        background: var(--bg-card, #111827);
+        border: 2px solid var(--accent-cyan, #0ea5e9);
+        color: #fff;
+        padding: 0.9rem 2.2rem;
+        border-radius: 35px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 15px rgba(14, 165, 233, 0.4);
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        z-index: 10000;
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        pointer-events: none;
+      }
+
+      .code-alert.alert-active {
+        transform: translateX(-50%) translateY(0);
+      }
+	
   </style>
 </head>
 <body>
-
+  <!-- Interactive Warning Lock Banner Overlay -->
+  <div class="code-alert" id="rightClickAlert">
+    <span>🔒</span> Right click disabled to protect source files.
+  </div> 
   <div class="shell">
     <div class="site">
       
@@ -1395,8 +1426,8 @@
                 <li>Coordinate enterprise-wide security patching cycles and operating system upgrades to meet strict audit compliance.</li>
                 <li>Monitor performance and availability, troubleshoot incidents, and improve system reliability.</li>
                 <li>Partner with cross-functional development teams on release deployment, testing verification, and maintenance windows.</li>
-                <li>Maintain infrastructure, patching, and upgrade documentation while creating AI-assisted Ansible playbooks for package installation automation.</li>
-				<li>Creating AI-assisted Ansible playbooks for package installation automation using Jenkins.</li>
+                <li>Maintain infrastructure, patching, troubleshooting and upgrading the documentation.</li>
+				<li>Creating AI-assisted Ansible playbooks for package installation and OS unattended upgrade automations using Jenkins.</li>
               </ul>
             </article>
 
@@ -1410,7 +1441,7 @@
                 <li>Managed VMware staging cluster powering more than 600 virtual machines and staging servers.</li>
                 <li>Planned and implemented on-premises VDI for remote workforce enablement using existing hardware.</li>
                 <li>Supported servers, storage, and network devices, coordinating with vendors and internal teams to minimize downtime.</li>
-                <li>Deployed Prometheus and Grafana monitoring and Apache Guacamole for remote access.</li>
+                <li>Deployed Prometheus and Grafana for monitoring and Apache Guacamole for remote access.</li>
                 <li>Mentored team members and led an on-premises OpenStack implementation using existing hardware.</li>
               </ul>
             </article>
@@ -1423,8 +1454,8 @@
               <p class="place">OBOPAY Mobile Technologies - Bangalore &amp; Mumbai, India</p>
               <ul>
                 <li>Managed end-to-end deployments of mission-critical mobile money platforms, from hardware staging and system configuration through production go-live for enterprise clients across Burundi, Uganda, Zimbabwe, Burkina Faso and Kenya.</li>
-                <li>Oversaw data center facilities including deploymennt, power, cabling, cooling, and audit compliance at DAKC, Navi Mumbai.</li>
-                <li>Deployed Nagios monitoring and cloud servers on AWS and GCP; delivered deployment and disaster recovery projects.</li>
+                <li>Oversaw data center facilities including deployment, power, cabling, cooling, and audit compliance at DAKC, Navi Mumbai.</li>
+                <li>Deployed Nagios monitoring and cloud servers on AWS and GCP, delivered deployment and disaster recovery projects.</li>
                 <li>Installed and hardened Linux servers; supported server, storage, and network environments.</li>
                 <li>Conducted internal ISMS audits, infrastructure assessments, inventory verification and compliance reporting.</li>
               </ul>
@@ -1616,6 +1647,34 @@
     const updateTopButton = () => topButton.classList.toggle('visible', window.scrollY > 380);
     window.addEventListener('scroll', updateTopButton, { passive: true });
     updateTopButton();
+	
+	/* Right-Click Inspect Protection with Interactive Warning */
+  const clickAlert = document.getElementById('rightClickAlert');
+  function fireProtectionAlert() {
+    if (!clickAlert) return;
+    clickAlert.classList.add('alert-active');
+    setTimeout(() => {
+      clickAlert.classList.remove('alert-active');
+    }, 2500);
+  }
+
+    // Disable Right-Click Context Menu
+    document.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      fireProtectionAlert();
+    });
+  
+    // Block Developer Shortcut Keys: F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U
+    document.addEventListener('keydown', (e) => {
+      if (
+        e.keyCode === 123 || // F12
+        (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || // Ctrl+Shift+I/J/C
+        (e.ctrlKey && e.keyCode === 85) // Ctrl+U (View Source)
+      ) {
+        e.preventDefault();
+        fireProtectionAlert();
+      }
+    });		
   </script>
 </body>
 </html>
