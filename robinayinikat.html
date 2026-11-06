@@ -1184,39 +1184,58 @@
       }
     }
 	
-	/* Right-Click Lock Notification Warning overlay */
-      .code-alert {
-        position: fixed;
-        top: 25px;
-        left: 50%;
-        transform: translateX(-50%) translateY(-120px);
-        background: var(--bg-card, #111827);
-        border: 2px solid var(--accent-cyan, #0ea5e9);
-        color: #fff;
-        padding: 0.9rem 2.2rem;
-        border-radius: 35px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 15px rgba(14, 165, 233, 0.4);
-        font-size: 0.88rem;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        z-index: 10000;
-        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        pointer-events: none;
-      }
+/* Right-Click Lock Notification Alert */
+.code-alert {
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-140px);
+  background: #111827 !important; /* High-contrast dark charcoal */
+  border: 1.5px solid #00e5ff !important; /* Electric cyan border */
+  border-radius: 9999px;
+  padding: 10px 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 15px rgba(0, 229, 255, 0.35);
+  z-index: 999999;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  white-space: nowrap; /* Prevents text from collapsing or wrapping */
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease, visibility 0.3s ease;
+}
 
-      .code-alert.alert-active {
-        transform: translateX(-50%) translateY(0);
-      }
-	
-  </style>
+/* Active State (Triggered on Right-Click or DevTools shortcut) */
+.code-alert.alert-active {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Explicit styling for the lock icon and text to ensure visibility */
+.code-alert-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+  display: inline-block;
+}
+
+.code-alert-text {
+  font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff !important; /* Crisp pure white */
+  letter-spacing: 0.4px;
+  display: inline-block;
+}
+ </style>
 </head>
 <body>
   <!-- Interactive Warning Lock Banner Overlay -->
   <div class="code-alert" id="rightClickAlert">
-    <span>🔒</span> Right click disabled to protect source files.
+  <span class="code-alert-icon">🔒</span>
+  <span class="code-alert-text">Right click disabled</span>
   </div> 
   <div class="shell">
     <div class="site">
@@ -1648,33 +1667,38 @@
     window.addEventListener('scroll', updateTopButton, { passive: true });
     updateTopButton();
 	
-	/* Right-Click Inspect Protection with Interactive Warning */
-  const clickAlert = document.getElementById('rightClickAlert');
-  function fireProtectionAlert() {
-    if (!clickAlert) return;
-    clickAlert.classList.add('alert-active');
-    setTimeout(() => {
-      clickAlert.classList.remove('alert-active');
-    }, 2500);
-  }
+/* Trigger Visible Warning on Blocked Inspect Attempts */
+const clickAlert = document.getElementById('rightClickAlert');
+let alertTimeout;
 
-    // Disable Right-Click Context Menu
-    document.addEventListener('contextmenu', (e) => {
-      e.preventDefault();
-      fireProtectionAlert();
-    });
+function fireProtectionAlert() {
+  if (!clickAlert) return;
   
-    // Block Developer Shortcut Keys: F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U
-    document.addEventListener('keydown', (e) => {
-      if (
-        e.keyCode === 123 || // F12
-        (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || // Ctrl+Shift+I/J/C
-        (e.ctrlKey && e.keyCode === 85) // Ctrl+U (View Source)
-      ) {
-        e.preventDefault();
-        fireProtectionAlert();
-      }
-    });		
+  clearTimeout(alertTimeout);
+  clickAlert.classList.add('alert-active');
+
+  alertTimeout = setTimeout(() => {
+    clickAlert.classList.remove('alert-active');
+  }, 2500);
+}
+
+// 1. Right Click Prevention
+document.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+  fireProtectionAlert();
+});
+
+// 2. Developer Key Combinations Prevention
+document.addEventListener('keydown', (e) => {
+  if (
+    e.keyCode === 123 || // F12
+    (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || // Ctrl+Shift+I/J/C
+    (e.ctrlKey && e.keyCode === 85) // Ctrl+U
+  ) {
+    e.preventDefault();
+    fireProtectionAlert();
+  }
+});	
   </script>
 </body>
 </html>
